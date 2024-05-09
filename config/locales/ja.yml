@@ -1,0 +1,243 @@
+ja:
+  are_you_sure: "この操作は取り消せません。本当に実行しますか？"
+  back: "戻る"
+  detail: "詳細"
+  destroy: "削除"
+  edit: "編集"
+  new: "新規作成"
+  not_allowed: "この操作をする権限がありません"
+  save: "保存"
+  setting: "設定"
+  optional: "任意項目"
+  password_warning: "パスワードは%{minimum}文字以上で入力してください"
+
+  account:
+    passwords:
+      updated: "パスワードを変更しました"
+      edit:
+        update_password: "パスワードを変更"
+        update: "変更する"
+
+  accounts:
+    admin_required: "アカウントの管理者のみが可能です"
+    created: "アカウントを作成しました"
+    updated: "アカウントを変更しました"
+    destroyed: "アカウントを削除しました"
+    index:
+      title: "アカウント"
+      current: "現在のアカウント"
+      switch: "アカウントを切り替える"
+    show:
+      switch: "このアカウントに切り替える"
+    new:
+      title: "アカウントを追加"
+    edit:
+      title: "アカウントを編集"
+    candidates:
+      created: "候補者を作成しました"
+      updated: "%{name}を変更しました"
+      destroyed: "%{name}を削除しました"
+      index:
+        title: "候補者"
+      show:
+        detail: "詳細情報"
+        comments: "コメント (%{count})"
+      new:
+        title: "候補者を追加"
+      edit:
+        title: "候補者を編集"
+    departments:
+      created: "事業所を作成しました"
+      updated: "事業所を変更しました"
+      destroyed: "事業所を削除しました"
+      index:
+        title: "事業所"
+      show:
+        jobs: "求人 (%{count})"
+        detail: "詳細情報"
+        comments: "コメント (%{count})"
+      new:
+        title: "事業所を追加"
+      edit:
+        title: "事業所を編集"
+    jobs:
+      new_from_department: "%{name}の求人を作成"
+      created: "求人を作成しました"
+      updated: "%{name}を変更しました"
+      destroyed: "%{name}を削除しました"
+      index:
+        title: "求人"
+      show:
+        matches: "候補者 (%{count})"
+        detail: "詳細情報"
+        comments: "コメント (%{count})"
+      new:
+        title: "求人を追加"
+      edit:
+        title: "求人を編集"
+      job_pipeline_stage:
+        stage_name: "%{name} (%{count})"
+        dropped_count: "不採用 (%{count})"
+    job_pipelines:
+      created: "選考フローを作成しました"
+      updated: "選考フローを変更しました"
+      destroyed: "選考フローを削除しました"
+      index:
+        title: "選考フロー"
+      new:
+        title: "選考フローを追加"
+      edit:
+        title: "選考フローを編集"
+      job_pipeline_stages:
+        created: "%{name}を作成しました"
+        updated: "%{name}を変更しました"
+        destroyed: "%{name}を削除しました"
+        kinds:
+          pending: "未対応"
+          processing: "選考中"
+          processed: "採用"
+        new:
+          title: "ステージを追加"
+        edit:
+          title: "ステージを編集"
+    matches:
+      new_from_job: "%{name}の選考を作成"
+      created: "選考を作成しました"
+      updated: "選考を変更しました"
+      destroyed: "選考を削除しました"
+      new:
+        title: "選考を追加"
+      edit:
+        title: "選考を編集"
+
+  announcements:
+    index:
+      title: "News"
+      empty: "新しいNewsはまだありません"
+
+  dashboard:
+    show:
+      title: "ダッシュボード"
+
+  notifications:
+    index:
+      title: "通知"
+
+  shared:
+    account_navbar:
+      password: "パスワード"
+      profile: "プロフィール"
+      accounts: "アカウント"
+    left_nav:
+      candidates: "候補者"
+      departments: "事業所"
+      jobs: "求人"
+      job_pipelines: "選考フロー設定"
+    navbar:
+      accounts: "アカウント"
+      announcements: "News"
+      admin: "管理画面"
+      password: "パスワード"
+      profile: "プロフィール"
+      sign_out: "ログアウト"
+      sign_in: "ログイン"
+      sign_up: "アカウント登録"
+
+  static_pages:
+    home:
+      title: "トップページ"
+      sign_up: "無料で始める"
+      sign_in: "ログイン"
+    terms:
+      title: "利用規約"
+    privacy:
+      title: "プライバシーポリシー"
+
+  activerecord:
+    models:
+      account: "アカウント"
+      account_user: "メンバー"
+      announcement: "News"
+      candidate: "候補者"
+      department: "事業所"
+      job: "求人"
+      job_pipeline: "選考フロー"
+      job_pipeline_stage: "ステージ"
+      match: "選考"
+      user: "ユーザー"
+
+    attributes:
+      account:
+        avatar: "アイコン"
+        name: "アカウント名"
+        owner_id: "オーナー"
+      account_user:
+        role: "権限"
+        user_id: "ユーザー"
+      announcement:
+        title: "タイトル"
+        kind: "種類"
+        published_at: "公開日"
+        description: "本文"
+      candidate:
+        owner_id: "オーナー"
+        avatar: "アイコン"
+        birth_date: "生年月日"
+        email: "メールアドレス"
+        gender: "性別"
+        is_employee: "雇用済み"
+        location: "住所"
+        name: "候補者名"
+        phone_number: "電話番号"
+        source_type: "登録導線"
+      department:
+        owner_id: "オーナー"
+        name: "事業所の名前"
+        jobs_count: "求人数"
+        description: "事業所の説明"
+        industry: "事業所の業界"
+        location: "事業所の所在地"
+        website: "事業所のホームページ"
+      job:
+        department_id: "事業所"
+        job_pipeline_id: "選考フロー"
+        owner_id: "オーナー"
+        position_name: "職種名"
+        contract: "契約"
+        currency: "給与通貨"
+        description: "求人概要"
+        frequency: "支払い頻度"
+        headcount: "採用可能数"
+        is_remote: "リモート勤務"
+        location: "勤務場所"
+        salary_min: "給与下限"
+        salary_max: "給与上限"
+        visibility: "表示設定"
+        matches_count: "候補者"
+      job_pipeline:
+        name: "選考フローの名前"
+        is_default: "デフォルト"
+      job_pipeline_stage:
+        name: "ステージの名前"
+        kind: "種別"
+        display_order: "表示順"
+      match:
+        candidate_id: "候補者"
+        dropped_at: "不採用日時"
+        drop_reasons: "不採用理由"
+        job_id: "求人"
+        pending_at: "選考作成日時"
+        processing_at: "選考開始日時"
+        processed_at: "選考終了日時"
+      user:
+        avatar: "アイコン"
+        email: "メールアドレス"
+        name: "名前"
+        terms_of_service: "利用規約"
+
+    errors:
+      models:
+        account_user:
+          attributes:
+            role:
+              cannot_be_changed: "はアカウント所有者のため変更できません"
