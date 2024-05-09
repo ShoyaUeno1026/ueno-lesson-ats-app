@@ -1,0 +1,29 @@
+services:
+  web:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bin/dev"
+    tty: true
+    stdin_open: true
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/ueno-lesson-ats-app:delegated
+      - bundle:/usr/local/bundle
+    depends_on:
+      - db
+  db:
+    image: postgres:13.6
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: ueno-lesson-ats-app
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: ueno-lesson-ats-app_development
+      TZ: "Asia/Tokyo"
+      POSTGRES_INITDB_ARGS: "--encoding=UTF-8 --locale=C"
+
+volumes:
+  bundle:
+  postgres:
