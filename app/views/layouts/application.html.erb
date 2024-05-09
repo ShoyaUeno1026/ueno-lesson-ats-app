@@ -1,7 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="<%= I18n.locale %>" class="h-100">
   <head>
-    <title>UenoLessonAtsApp</title>
+    <title>
+      <% if content_for?(:title) %>
+        <%= yield :title %> |
+      <% end %>
+      <%= Settings.application_name %>
+    </title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,7 +15,15 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+      <%= render "shared/header" %>
+
+      <div class="container mt-4 mx-auto">
+        <%= yield %>
+      </div>
+    </main>
+
+    <%= render "shared/footer" %>
   </body>
 </html>

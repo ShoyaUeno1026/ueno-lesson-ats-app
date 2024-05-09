@@ -1,0 +1,9 @@
+<footer class="footer mt-auto py-3 bg-body-tertiary border-top">
+  <div class="container d-flex justify-content-between mx-auto text-muted">
+    <span>&copy; <%= Date.today.year %> <%= Settings.business_name %></span>
+    <ul class="d-inline float-end list-inline mb-0">
+      <li class="list-inline-item"><%= link_to "Terms", terms_path %></li>
+      <li class="list-inline-item"><%= link_to "Privacy", privacy_path %></li>
+    </ul>
+  </div>
+</footer>

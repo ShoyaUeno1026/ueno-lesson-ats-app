@@ -23,5 +23,18 @@ module UenoLessonAtsApp
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # Where the I18n library should search for translation files
+    # Search nested folders in config/locales for better organization
+    config.i18n.load_path += Dir[Rails.root.join("config", "locales", "**", "*.{rb,yml}")]
+
+    # Set default locale
+    config.i18n.default_locale = :ja
+
+    # Use default language as fallback if translation is missing
+    config.i18n.fallbacks = true
+
+    # Don't generate system test files.
+    config.generators.system_tests = nil
   end
 end
