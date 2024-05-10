@@ -1,0 +1,9 @@
+# Additional translations at https://github.com/heartcombo/devise/wiki/I18n
+
+ja:
+  devise:
+    registrations:
+      new:
+        terms_html: "%{terms} と %{privacy} に同意する"
+      edit:
+        cancel: "退会"

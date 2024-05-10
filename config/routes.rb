@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root "static_pages#home"
   get "/terms"   => "static_pages#terms"
   get "/privacy" => "static_pages#privacy"
+  devise_for :users
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

@@ -133,7 +133,7 @@ ja:
       departments: "事業所"
       jobs: "求人"
       job_pipelines: "選考フロー設定"
-    navbar:
+    header:
       accounts: "アカウント"
       announcements: "News"
       admin: "管理画面"
