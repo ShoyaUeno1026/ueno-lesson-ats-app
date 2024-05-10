@@ -1,0 +1,2 @@
+module DashboadsHelper
+end
