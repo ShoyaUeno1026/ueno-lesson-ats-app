@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'registrations/update_resource'
   get 'dashboards/show'
   get 'announcements/index'
   # namespace :admin do
@@ -9,7 +10,10 @@ Rails.application.routes.draw do
 
   get "/terms"   => "static_pages#terms"
   get "/privacy" => "static_pages#privacy"
-  devise_for :users
+  devise_for :users, controllers: {
+        registrations: 'users/registrations',
+        sessions: 'users/sessions'
+      }
 
   devise_scope :user do
     get '/users/sign_out' => "devise/sessions#destroy"
