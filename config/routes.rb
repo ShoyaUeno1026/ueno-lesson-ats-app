@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'dashboards/show'
+  get 'announcements/index'
   # namespace :admin do
   #   resources :users
     
@@ -10,8 +12,11 @@ Rails.application.routes.draw do
   devise_for :users
 
   devise_scope :user do
-    get '/users/sign_out' => 'devise/sessions#destroy'
+    get '/users/sign_out' => "devise/sessions#destroy"
   end
+
+  get "/announcements" => "announcements#index"
+  get "/notifications" => "notifications#index"
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   
@@ -21,7 +26,7 @@ Rails.application.routes.draw do
   
   # Defines the root path route ("/")
   authenticated :user do
-    root "dashboads#show", as: :user_root
+    root "dashboards#show", as: :user_root
   end
 
   root "static_pages#home"
