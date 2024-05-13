@@ -115,7 +115,7 @@ ja:
       title: "News"
       empty: "新しいNewsはまだありません"
 
-  dashboard:
+  dashboards:
     show:
       title: "ダッシュボード"
 
@@ -128,7 +128,7 @@ ja:
       password: "パスワード"
       profile: "プロフィール"
       accounts: "アカウント"
-    left_nav:
+    header_left:
       candidates: "候補者"
       departments: "事業所"
       jobs: "求人"

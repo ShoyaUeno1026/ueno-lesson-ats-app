@@ -1,0 +1,18 @@
+<% if user_signed_in? %>
+  <%= link_to "#", class: "nav-link" do %>
+    <i class="bi bi-building-fill"></i>
+    <%= t(".departments") %>
+  <% end %>
+  <%= link_to "#", class: "nav-link" do %>
+    <i class="bi bi-bag-fill"></i>
+    <%= t(".jobs") %>
+  <% end %>
+  <%= link_to "#", class: "nav-link" do %>
+    <i class="bi bi-person-vcard-fill"></i>
+    <%= t(".candidates") %>
+  <% end %>
+  <%= link_to "#", class: "nav-link"  do %>
+    <i class="bi bi-gear-fill"></i>
+    <%= t(".job_pipelines") %>
+  <% end %>
+<% end %>

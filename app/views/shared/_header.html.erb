@@ -2,25 +2,25 @@
   <div class="container mx-auto">
     <%= link_to root_path, class: "navbar-brand" do %>
       <span><%= Settings.application_name %></span>
+      <span class="h6 text-decoration-underline"><%= current_user %></span>
     <% end %>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <%# ログインしていたら出てくる %>
-      </ul>
-      <ul class="navbar-nav">
-        <li class="nav-item"><%= link_to t(".announcements"), "#", class: "nav-link" %></li>
-        <% if user_signed_in? %>
-          <li class="nav-item"><%= link_to t(".log_out"), destroy_user_session_path, method: :delete, class: "nav-link" %></li>
-        <% else %>
-          <li class="nav-item"><%= link_to t(".sign_in"), new_user_session_path, class: "nav-link" %></li>
-          <li class="nav-item"><%= link_to t(".sign_up"), new_user_registration_path, class: "btn btn-primary" %></li>
-        <% end %>
+        <%= render "shared/header_left" %>
       </ul>
     </div>
+
+    <ul class="navbar-nav">
+      <li class="nav-item"><%= link_to t(".announcements"), "announcements", class: "nav-link" %></li>
+      <li class="nav-item"><%= link_to "通知", "notifications", class: "nav-link" %></li>
+      <% if user_signed_in? %>
+            <li class="nav-item"><%= link_to t(".sign_out"), destroy_user_session_path, method: :delete, class: "nav-link" %></li>
+      <% else %>
+            <li class="nav-item"><%= link_to t(".sign_in"), new_user_session_path, class: "nav-link" %></li>
+            <li class="nav-item"><%= link_to t(".sign_up"), new_user_registration_path, class: "btn btn-primary" %></li>
+      <% end %>
+    </ul>
 
   </div>
 </nav>
