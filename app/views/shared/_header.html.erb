@@ -15,10 +15,22 @@
       <li class="nav-item"><%= link_to t(".announcements"), "announcements", class: "nav-link" %></li>
       <li class="nav-item"><%= link_to "通知", "notifications", class: "nav-link" %></li>
       <% if user_signed_in? %>
+        <div class="dropdown">
+          <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <%# プロフィール画像を表示させる %>
+            <i class="bi bi-person"></i>
+          </button>
+          <ul class="dropdown-menu">
+            <li class="nav-item"><%= link_to t(".profile"), edit_user_registration_path, method: :delete, class: "nav-link" %></li>
+            <li class="nav-item"><%= link_to t(".password"), "#", method: :delete, class: "nav-link" %></li>
+            <li class="nav-item"><%= link_to t(".accounts"), "#", method: :delete, class: "nav-link" %></li>
+            <div class="dropdown-divider"></div>
             <li class="nav-item"><%= link_to t(".sign_out"), destroy_user_session_path, method: :delete, class: "nav-link" %></li>
+          </ul>
+        </div>
       <% else %>
-            <li class="nav-item"><%= link_to t(".sign_in"), new_user_session_path, class: "nav-link" %></li>
-            <li class="nav-item"><%= link_to t(".sign_up"), new_user_registration_path, class: "btn btn-primary" %></li>
+          <li class="nav-item"><%= link_to t(".sign_in"), new_user_session_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to t(".sign_up"), new_user_registration_path, class: "btn btn-primary" %></li>
       <% end %>
     </ul>
 
