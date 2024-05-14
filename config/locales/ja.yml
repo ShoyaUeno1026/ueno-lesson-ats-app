@@ -129,7 +129,7 @@ ja:
       update: 変更する
 
   shared:
-    account_navbar:
+    list:
       password: "パスワード"
       profile: "プロフィール"
       accounts: "アカウント"
