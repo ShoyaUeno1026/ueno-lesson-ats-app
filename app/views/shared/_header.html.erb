@@ -21,9 +21,9 @@
             <i class="bi bi-person"></i>
           </button>
           <ul class="dropdown-menu">
-            <li class="nav-item"><%= link_to t(".profile"), edit_user_registration_path, method: :delete, class: "nav-link" %></li>
-            <li class="nav-item"><%= link_to t(".password"), "#", method: :delete, class: "nav-link" %></li>
-            <li class="nav-item"><%= link_to t(".accounts"), "#", method: :delete, class: "nav-link" %></li>
+            <li class="nav-item"><%= link_to t(".profile"), edit_user_registration_path, class: "nav-link" %></li>
+            <li class="nav-item"><%= link_to t(".password"), edit_passwords_path, class: "nav-link" %></li>
+            <li class="nav-item"><%= link_to t(".accounts"), "#", class: "nav-link" %></li>
             <div class="dropdown-divider"></div>
             <li class="nav-item"><%= link_to t(".sign_out"), destroy_user_session_path, method: :delete, class: "nav-link" %></li>
           </ul>

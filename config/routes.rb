@@ -11,17 +11,20 @@ Rails.application.routes.draw do
   get "/terms"   => "static_pages#terms"
   get "/privacy" => "static_pages#privacy"
   devise_for :users, controllers: {
-        registrations: 'users/registrations',
-        sessions: 'users/sessions'
-      }
-
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
+  }
+  
   devise_scope :user do
     get '/users/sign_out' => "devise/sessions#destroy"
   end
-
+  
+  resource :passwords
+  
   get "/announcements" => "announcements#index"
   get "/notifications" => "notifications#index"
-  
+
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
