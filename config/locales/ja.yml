@@ -123,6 +123,11 @@ ja:
     index:
       title: "通知"
 
+  passwords:
+    edit:
+      update_password: パスワードを変更
+      update: 変更する
+
   shared:
     account_navbar:
       password: "パスワード"
