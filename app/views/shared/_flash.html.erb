@@ -1,0 +1,19 @@
+<div id="flash">
+  <% if notice %>
+    <div class="container mt-4 mx-auto">
+      <div class="alert alert-primary alert-dismissible show" role="alert">
+        <%= notice %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    </div>
+  <% end %>
+
+  <% if alert %>
+    <div class="container mt-4 mx-auto">
+      <div class="alert alert-warning alert-dismissible show" role="alert">
+        <%= alert %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    </div>
+  <% end %>
+</div>
