@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   validates_acceptance_of :accepted, allow_nil: false, on: :create
+
+  has_one_attached :image
 end
