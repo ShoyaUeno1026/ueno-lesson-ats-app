@@ -235,7 +235,7 @@ ja:
         processing_at: "選考開始日時"
         processed_at: "選考終了日時"
       user:
-        avatar: "アイコン"
+        image: "アイコン"
         email: "メールアドレス"
         name: "名前"
         terms_of_service: "利用規約"
