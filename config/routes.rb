@@ -24,6 +24,11 @@ Rails.application.routes.draw do
   get "/announcements" => "announcements#index"
   get "/notifications" => "notifications#index"
 
+  resources :accounts do
+    scope module: :accounts do
+      resources :departments
+    end
+  end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   
