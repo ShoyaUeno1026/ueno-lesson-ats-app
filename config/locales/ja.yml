@@ -173,7 +173,7 @@ ja:
 
     attributes:
       account:
-        avatar: "アイコン"
+        image: "アイコン"
         name: "アカウント名"
         owner_id: "オーナー"
       account_user:
