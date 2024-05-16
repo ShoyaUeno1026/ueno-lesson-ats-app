@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-lg-3 mb-4">
+    <%= render partial: "shared/list" %>
+  </div>
+  <div class="col-lg-9">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h1 class="h2"><%= t(".title") %></h1>
+    </div>
+
+    <div id="accounts">
+      <div class="text-nowrap table-responsive">
+        <table class="table table-hover table-fixed">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody class="align-middle">
+            <% @accounts.each do |account| %>
+              <tr>
+                <td>
+                  <%# アイコンを表示する %>
+                  <%= link_to account.name, account, class: "btn btn-link fixed-link", title: account.name %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
