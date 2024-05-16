@@ -4,6 +4,7 @@ class Accounts::DepartmentsController < Accounts::BaseController
   before_action :require_account_admin, only: %i[new create]
 
   def index
+    @departments = @account.departments.all
   end
 
   def show
