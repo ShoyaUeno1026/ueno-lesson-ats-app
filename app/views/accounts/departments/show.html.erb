@@ -1,0 +1,22 @@
+<div class="mb-3">
+  <%= link_to t("back"), account_departments_path(@account) %>
+</div>
+
+<div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+  <%= tag.h1 truncate(@department.name), class: "h2", title: @department.name %>
+  <div class="d-flex gap-2">
+    <%= link_to t("edit"), edit_account_department_path(@account, @department), class: "btn btn-primary" %>
+    <%= button_to t("destroy"), [@account, @department], data: { turbo_confirm: t("are_you_sure") }, method: :delete, class: "btn btn-outline-danger" %>
+  </div>
+</div>
+
+<div class="mb-3">
+  <div class="d-flex align-items-center">
+    <%# アイコンを表示する %>
+    <span><%= @department.owner&.name %></span>
+  </div>
+  <div class="d-flex align-items-center">
+    <i class="bi bi-geo-alt-fill me-2"></i>
+    <span><%= @department.location %></span>
+  </div>
+</div>

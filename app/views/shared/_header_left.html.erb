@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <%= link_to "#", class: "nav-link" do %>
+  <%= link_to account_departments_path(current_account), class: "nav-link" do %>
     <i class="bi bi-building-fill"></i>
     <%= t(".departments") %>
   <% end %>
