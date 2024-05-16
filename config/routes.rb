@@ -19,7 +19,9 @@ Rails.application.routes.draw do
     get '/users/sign_out' => "devise/sessions#destroy"
   end
   
-  resource :passwords
+  namespace :account do
+    resource :passwords
+  end
   
   get "/announcements" => "announcements#index"
   get "/notifications" => "notifications#index"

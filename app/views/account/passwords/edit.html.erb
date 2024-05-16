@@ -5,7 +5,7 @@
   <div class="col-lg-9">
     <h2><%= t(".update_password") %></h2>
 
-<%= form_with(model: current_user, url: passwords_path, html: { method: :put }) do |f| %>
+<%= form_with(model: current_user, url: account_passwords_path, html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: current_user %>
 
   <div class="mb-3">

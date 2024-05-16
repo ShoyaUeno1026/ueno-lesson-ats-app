@@ -2,7 +2,6 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_request_details
 
-  protect_from_forgery with: :exception
   helper_method :current_account, :current_account_user, :current_account_admin?
 
   def current_account
