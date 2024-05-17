@@ -20,11 +20,10 @@
 
   <div class="mb-3">
     <%= f.label :image, class: "form-label" %>
+    <%= f.hidden_field :image, value: resource.image.signed_id if resource.image.attached? %>
     <%= f.file_field :image %>
   </div>
-  <% if current_user.image.attached? %>
-    <%= image_tag current_user.image.variant(resize_to_fill: [180, 180]), class: "rounded border shadow-sm d-block mx-auto my-3" %>
-  <% end %>
+    <%= image_tag image_path(f.object), class: "rounded border shadow-sm d-block mx-auto my-3" %>
     
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
