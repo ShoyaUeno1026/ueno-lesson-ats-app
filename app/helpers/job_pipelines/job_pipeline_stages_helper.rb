@@ -1,0 +1,2 @@
+module JobPipelines::JobPipelineStagesHelper
+end

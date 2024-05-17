@@ -1,0 +1,2 @@
+module JobPipelinesHelper
+end
