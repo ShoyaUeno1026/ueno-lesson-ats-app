@@ -1,0 +1,12 @@
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+    <h1 class="h2"><%= t(".title") %></h1>
+
+    <%= render "form", job_pipeline: @job_pipeline %>
+
+    <div>
+      <%= link_to t("detail"), [@account, @job_pipeline] %>
+      <%= link_to t("back"), account_job_pipelines_path(@account) %>
+    </div>
+  </div>
+</div>
