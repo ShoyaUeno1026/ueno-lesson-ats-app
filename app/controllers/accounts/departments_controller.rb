@@ -1,7 +1,8 @@
 class Accounts::DepartmentsController < Accounts::BaseController
   before_action :set_account
-  before_action :set_department, only: %i[show edit]
+  before_action :set_department, only: %i[show edit update destroy]
   before_action :require_account_admin, only: %i[new create]
+  before_action :require_department_owner_or_admin, only: %i[edit update destroy]
 
   def index
     @departments = @account.departments.all
@@ -27,6 +28,20 @@ class Accounts::DepartmentsController < Accounts::BaseController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def update
+    if @department.update(department_params)
+      redirect_to account_department_url(@account, @department), notice: t(".updated")
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @department.destroy!
+
+    redirect_to account_departments_url(@account), notice: t(".destroyed")
   end
 
   private
