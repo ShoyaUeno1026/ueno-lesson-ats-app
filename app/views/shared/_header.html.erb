@@ -18,14 +18,10 @@
               <span><i class="bi bi-bell-fill"></i></span>
             <% end %>
           </li>
-          <div class="dropdown">
-            <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <% if current_user.image.attached? %>
-                <%= image_tag current_user.image.variant(resize_to_fill: [20, 20]), class: "rounded" %>
-              <% else %>
-                <i class="bi bi-person"></i>
-              <% end %>
-            </button>
+          <li class="nav-item dropdown">
+            <%= link_to "#", class: "nav-link dropdown-toggle", data: { bs_toggle: "dropdown" }, aria: { expanded: false } do %>
+              <%= image_tag image_path(current_user, size:40), height: 20, width: 20, class: "rounded" %>
+            <% end %>
             <ul class="dropdown-menu">
               <li class="nav-item"><%= link_to t(".profile"), edit_user_registration_path, class: "nav-link" %></li>
               <li class="nav-item"><%= link_to t(".password"), edit_account_passwords_path, class: "nav-link" %></li>
@@ -33,7 +29,7 @@
               <div class="dropdown-divider"></div>
               <li class="nav-item"><%= link_to t(".sign_out"), destroy_user_session_path, method: :delete, class: "nav-link" %></li>
             </ul>
-          </div>
+          </li>
         <% else %>
           <li class="nav-item"><%= link_to t(".sign_in"), new_user_session_path, class: "nav-link" %></li>
           <li class="nav-item"><%= link_to t(".sign_up"), new_user_registration_path, class: "btn btn-primary" %></li>

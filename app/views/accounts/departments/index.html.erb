@@ -21,7 +21,7 @@
           <tr>
             <td><%= link_to department.name, [@account, department], class: "btn btn-link fixed-link", title: department.name %></td>
             <td>
-              <%# アイコンを表示する %>
+              <%= image_tag image_path(department.owner, size:40), height: 20, width: 20, class: "rounded" %>
               <span><%= department.owner&.name %></span>
             </td>
             <td><%= department.jobs_count %></td>

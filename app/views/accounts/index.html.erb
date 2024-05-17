@@ -20,8 +20,15 @@
             <% @accounts.each do |account| %>
               <tr>
                 <td>
-                  <%# アイコンを表示する %>
+                  <%= image_tag image_path(current_user, size:40), height: 20, width: 20, class: "rounded" %>
                   <%= link_to account.name, account, class: "btn btn-link fixed-link", title: account.name %>
+                </td>
+                <td>
+                  <% if current_account != account %>
+                    <%= button_to t(".switch"), switch_account_path(account), method: :patch, class: "btn btn-secondary" %>
+                  <% else %>
+                    <span><%= t(".current") %></span>
+                  <% end %>
                 </td>
               </tr>
             <% end %>

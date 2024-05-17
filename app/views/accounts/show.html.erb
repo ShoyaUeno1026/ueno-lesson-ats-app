@@ -20,7 +20,7 @@
                 <strong><%= Account.human_attribute_name(:image) %></strong>
               </div>
               <div class="col-md-8">
-                <%# アカウントのアイコンを表示させる %>
+                <%= image_tag image_path(@account), class: "rounded" %>
               </div>
             </div>
           </li>
@@ -40,7 +40,7 @@
                 <strong><%= Account.human_attribute_name(:owner_id) %></strong>
               </div>
               <div class="col-md-8">
-                <%# オーナーのアイコンを表示させる %>
+                <%= image_tag image_path(@account.owner, size:40), height: 20, width: 20, class: "rounded" %>
                 <span><%= @account.owner.name %></span>
               </div>
             </div>
@@ -63,7 +63,7 @@
               <% user = account_user.user %>
               <tr>
                 <td>
-                  <%# ユーザーのアイコンを表示させる %>
+                  <%= image_tag image_path(user, size:40), height: 20, width: 20, class: "rounded" %>
                   <span><%= user.name %></span>
                 </td>
                 <td><%= account_user.role %></td>
