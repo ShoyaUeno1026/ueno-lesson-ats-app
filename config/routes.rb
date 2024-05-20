@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   resources :accounts do
     scope module: :accounts do
       resources :departments
+      resources :jobs
       resources :job_pipelines do
         resources :job_pipeline_stages, path: :stages, module: :job_pipelines
       end

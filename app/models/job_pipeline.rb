@@ -1,6 +1,7 @@
 class JobPipeline < ApplicationRecord
   belongs_to :account
   has_many :stages, class_name: "JobPipelineStage", dependent: :destroy
+  has_many :jobs, dependent: :nullify
 
   validates :name, presence: true
 

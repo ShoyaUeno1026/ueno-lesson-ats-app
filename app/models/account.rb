@@ -3,6 +3,7 @@ class Account < ApplicationRecord
   has_many :account_users, dependent: :destroy
   has_many :users, through: :account_users
   has_many :departments, dependent: :destroy
+  has_many :jobs, dependent: :destroy
   has_many :job_pipelines, dependent: :destroy
   has_many :job_pipeline_stages, dependent: :destroy
 

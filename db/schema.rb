@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_17_060727) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_17_083055) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -99,6 +99,30 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_17_060727) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["account_id"], name: "index_job_pipelines_on_account_id"
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.bigint "account_id", null: false
+    t.bigint "department_id"
+    t.bigint "job_pipeline_id"
+    t.bigint "owner_id"
+    t.string "position_name"
+    t.integer "headcount"
+    t.string "contract"
+    t.integer "salary_min"
+    t.integer "salary_max"
+    t.string "currency"
+    t.string "frequency"
+    t.string "location"
+    t.boolean "is_remote", default: false, null: false
+    t.string "visibility"
+    t.integer "matches_count", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_jobs_on_account_id"
+    t.index ["department_id"], name: "index_jobs_on_department_id"
+    t.index ["job_pipeline_id"], name: "index_jobs_on_job_pipeline_id"
+    t.index ["owner_id"], name: "index_jobs_on_owner_id"
   end
 
   create_table "users", force: :cascade do |t|
