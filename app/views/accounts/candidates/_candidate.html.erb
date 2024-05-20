@@ -1,0 +1,102 @@
+<div id="<%= dom_id candidate %>">
+  <div class="py-4">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-md-4">
+            <strong><%=  Candidate.human_attribute_name(:name) %></strong>
+          </div>
+          <div class="col-md-8">
+            <div class="d-flex align-items-center">
+              <%= image_tag image_path(candidate, size: 40), height: 20, width: 20, class: "rouded me-2" %>
+              <span><%= candidate.name %></span>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-md-4">
+            <strong><%= Candidate.human_attribute_name(:gender) %></strong>
+          </div>
+          <div class="col-md-8">
+            <%= candidate.gender %>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-md-4">
+            <strong><%= Candidate.human_attribute_name(:birth_date) %></strong>
+          </div>
+          <div class="col-md-8">
+            <%= candidate.birth_date %>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-md-4">
+            <strong><%= Candidate.human_attribute_name(:email) %></strong>
+          </div>
+          <div class="col-md-8">
+            <%= candidate.email %>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-md-4">
+            <strong><%= Candidate.human_attribute_name(:phone_number) %></strong>
+          </div>
+          <div class="col-md-8">
+            <%= candidate.phone_number %>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-md-4">
+            <strong><%= Candidate.human_attribute_name(:location) %></strong>
+          </div>
+          <div class="col-md-8">
+            <%= candidate.location %>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-md-4">
+            <strong><%= Candidate.human_attribute_name(:owner_id) %></strong>
+          </div>
+          <div class="col-md-8">
+            <div class="d-flex align-items-center">
+              <%= image_tag image_path(candidate.owner, size: 40), height: 20, width: 20, class: "rouded me-2" %>
+              <span><%= candidate.owner&.name %></span>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-md-4">
+            <strong><%= Candidate.human_attribute_name(:source_type) %></strong>
+          </div>
+          <div class="col-md-8">
+            <%= candidate.source_type %>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-md-4">
+            <strong><%= Candidate.human_attribute_name(:is_employee) %></strong>
+          </div>
+          <div class="col-md-8">
+            <%= candidate.is_employee %>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

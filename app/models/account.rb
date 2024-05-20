@@ -2,6 +2,7 @@ class Account < ApplicationRecord
   belongs_to :owner, class_name: "User"
   has_many :account_users, dependent: :destroy
   has_many :users, through: :account_users
+  has_many :candidates, dependent: :destroy
   has_many :departments, dependent: :destroy
   has_many :jobs, dependent: :destroy
   has_many :job_pipelines, dependent: :destroy

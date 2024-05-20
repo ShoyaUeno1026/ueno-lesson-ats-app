@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_17_083055) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_20_071354) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -65,6 +65,25 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_17_083055) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "candidates", force: :cascade do |t|
+    t.bigint "account_id"
+    t.bigint "owner_id"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "phone_number"
+    t.string "gender"
+    t.date "birth_date"
+    t.string "location"
+    t.string "source_type"
+    t.boolean "is_employee", default: false, null: false
+    t.jsonb "custom_fields", default: {}, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_candidates_on_account_id"
+    t.index ["owner_id"], name: "index_candidates_on_owner_id"
   end
 
   create_table "departments", force: :cascade do |t|
@@ -133,9 +152,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_17_083055) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
     t.boolean "accepted", default: false, null: false
     t.boolean "admin", default: false, null: false
+    t.string "first_name"
+    t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

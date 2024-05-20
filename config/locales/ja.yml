@@ -186,7 +186,7 @@ ja:
         description: "本文"
       candidate:
         owner_id: "オーナー"
-        avatar: "アイコン"
+        image: "アイコン"
         birth_date: "生年月日"
         email: "メールアドレス"
         gender: "性別"
