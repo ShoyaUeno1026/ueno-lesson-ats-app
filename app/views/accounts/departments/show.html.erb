@@ -20,3 +20,34 @@
     <span><%= @department.location %></span>
   </div>
 </div>
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="jobs-tab" data-bs-toggle="tab" data-bs-target="#jobs-tab-pane" type="button" role="tab" aria-controls="jobs-tab-pane" aria-selected="true"><%= t(".jobs", count: @department.jobs_count) %></button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="detail-tab" data-bs-toggle="tab" data-bs-target="#detail-tab-pane" type="button" role="tab" aria-controls="detail-tab-pane" aria-selected="false"><%= t(".detail") %></button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="comments-tab" data-bs-toggle="tab" data-bs-target="#comments-tab-pane" type="button" role="tab" aria-controls="comments-tab-pane" aria-selected="false"><%= t(".comments", count: 0) %></button>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <%# 求人 %>
+  <div class="tab-pane fade show active" id="jobs-tab-pane" role="tabpanel" aria-labelledby="jobs-tab" tabindex="0">
+    <div class="my-4">
+      <%= link_to t("new"), new_account_job_path(@account, department_id: @department.id), class: "btn btn-primary" %>
+    </div>
+    <div>
+      <%= render partial: "accounts/jobs/index", locals: {jobs: @department.jobs, account: @account} %>
+    </div>
+  </div>
+  <%# 詳細 %>
+  <div class="tab-pane fade" id="detail-tab-pane" role="tabpanel" aria-labelledby="detail-tab" tabindex="0">
+    <%= render partial: "department", locals: {department: @department} %>
+  </div>
+  <%# コメント %>
+  <div class="tab-pane fade" id="comments-tab-pane" role="tabpanel" aria-labelledby="comments-tab" tabindex="0">
+    <p>TODO</p>
+  </div>
+</div>
