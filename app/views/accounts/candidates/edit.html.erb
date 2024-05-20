@@ -1,0 +1,12 @@
+
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+    <h1 class="h2"><%= t(".title") %></h1>
+
+    <%= render "form", candidate: @candidate %>
+
+    <div>
+      <%= link_to t("back"), account_candidates_path(@account) %>
+    </div>
+  </div>
+</div>

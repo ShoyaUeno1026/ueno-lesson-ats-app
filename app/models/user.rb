@@ -7,6 +7,8 @@ class User < ApplicationRecord
   
   validates_acceptance_of :accepted, allow_nil: false, on: :create
 
+  has_person_name
+
   has_one_attached :image
 
   has_many :departments, class_name: "Department", foreign_key: :owner_id, inverse_of: :owner, dependent: :nullify
