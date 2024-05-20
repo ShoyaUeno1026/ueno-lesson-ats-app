@@ -1,0 +1,47 @@
+<div id="jobs">
+  <div class="text-nowrap table-responsive">
+    <table class="table table-hover table-fixed">
+      <thead>
+        <tr>
+          <th scope="col"><%= Job.human_attribute_name(:position_name) %></th>
+          <th scope="col"><%= Job.human_attribute_name(:department_id) %></th>
+          <th scope="col"><%= Job.human_attribute_name(:owner_id) %></th>
+          <th scope="col"><%= Job.human_attribute_name(:job_pipeline_id) %></th>
+          <th scope="col"><%= Job.human_attribute_name(:visibility) %></th>
+          <th scope="col"><%= Job.human_attribute_name(:contract) %></th>
+          <th scope="col"><%= Job.human_attribute_name(:matches_count) %></th>
+          <th scope="col"><%= Job.human_attribute_name(:headcount) %></th>
+          <th scope="col"><%= Job.human_attribute_name(:currency) %></th>
+          <th scope="col"><%= Job.human_attribute_name(:salary_min) %></th>
+          <th scope="col"><%= Job.human_attribute_name(:salary_max) %></th>
+          <th scope="col"><%= Job.human_attribute_name(:frequency) %></th>
+          <th scope="col"><%= Job.human_attribute_name(:location) %></th>
+          <th scope="col"><%= Job.human_attribute_name(:is_remote) %></th>
+        </tr>
+      </thead>
+      <tbody class="align-middle">
+        <% jobs.each do |job| %>
+          <tr>
+            <td><%= link_to job.position_name, [account, job], class: "btn btn-link fixed-link", title: job.position_name %></td>
+            <td><%= link_to job.department.name, [account, job.department], class: "btn btn-link fixed-link", title: job.department.name %></td>
+            <td>
+              <%= image_tag image_path(job.owner, size:40), height: 20, width: 20, class: "rounded me-2" %>
+              <span><%= job.owner&.name %></span>
+            </td>
+            <td class="fixed-text"><%= job.job_pipeline&.name %></td>
+            <td class="fixed-text"><%= job.visibility %></td>
+            <td class="fixed-text"><%= job.contract %></td>
+            <td class="fixed-text"><%= job.matches_count %></td>
+            <td class="fixed-text"><%= job.headcount %></td>
+            <td class="fixed-text"><%= job.currency %></td>
+            <td class="fixed-text"><%= job.salary_min %></td>
+            <td class="fixed-text"><%= job.salary_max %></td>
+            <td class="fixed-text"><%= job.frequency %></td>
+            <td class="fixed-text"><%= job.location %></td>
+            <td class="fixed-text"><%= job.is_remote %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

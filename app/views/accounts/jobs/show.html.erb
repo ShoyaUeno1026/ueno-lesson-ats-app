@@ -1,0 +1,30 @@
+<div class="mb-3">
+  <%= link_to t("back"), account_jobs_path(@account) %>
+</div>
+
+<div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+  <%= tag.h1 truncate(@job.position_name), class: "h2", title: @job.position_name %>
+  <div class="d-flex gap-2">
+    <%= link_to t("edit"), edit_account_job_path(@account, @job), class: "btn btn-primary" %>
+    <%= button_to t("destroy"), [@account, @job], data: { turbo_confirm: t("are_you_sure") }, method: :delete, class: "btn btn-outline-danger" %>
+  </div>
+</div>
+
+<div class="mb-3">
+  <div class="d-flex align-items-center">
+    <i class="bi bi-building-fill me-2"></i>
+    <span><%= link_to @job.department.name, [@account, @job.department] %></span>
+  </div>
+  <div class="d-flex align-items-center">
+    <%= image_tag image_path(@job.owner, size:40), height: 20, width: 20, class: "rounded" %>
+    <span><%= @job.owner&.name %></span>
+  </div>
+  <div class="d-flex align-items-center">
+    <i class="bi bi-geo-alt-fill me-2"></i>
+    <span><%= @job.location %></span>
+  </div>
+  <div class="d-flex align-items-center">
+    <i class="bi bi-currency-yen me-2"></i>
+    <span><%= @job.salary_to_text %></span>
+  </div>
+</div>

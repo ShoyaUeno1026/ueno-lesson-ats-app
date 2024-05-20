@@ -1,6 +1,6 @@
 class Accounts::JobPipelinesController < Accounts::BaseController
   before_action :set_account
-  before_action :set_job_pipeline, only: %i[show edit]
+  before_action :set_job_pipeline, only: %i[show edit update destroy]
   before_action :require_account_admin
 
   def index
@@ -26,6 +26,12 @@ class Accounts::JobPipelinesController < Accounts::BaseController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def update
+  end
+
+  def destroy
   end
 
   private

@@ -1,0 +1,6 @@
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1 class="h2"><%= t(".title") %></h1>
+  <%= link_to t("new"), new_account_job_path(@account), class: "btn btn-primary" %>
+</div>
+
+<%= render partial: "accounts/jobs/index", locals: {jobs: @jobs, account: @account} %>
