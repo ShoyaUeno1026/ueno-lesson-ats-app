@@ -2,11 +2,16 @@ Rails.application.routes.draw do
   get 'registrations/update_resource'
   get 'dashboards/show'
   get 'announcements/index'
-  # namespace :admin do
-  #   resources :users
-    
-  #   root to: "users#index"
-  # end
+
+  authenticate :user, lambda { |u| u.admin? } do
+    namespace :admin do
+      resources :accounts
+      resources :account_users
+      resources :departments
+
+      root to: "users#index"
+    end
+  end
 
   get "/terms"   => "static_pages#terms"
   get "/privacy" => "static_pages#privacy"

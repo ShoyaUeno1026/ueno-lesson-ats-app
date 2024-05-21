@@ -26,6 +26,12 @@
               <li class="nav-item"><%= link_to t(".profile"), edit_user_registration_path, class: "nav-link" %></li>
               <li class="nav-item"><%= link_to t(".password"), edit_account_passwords_path, class: "nav-link" %></li>
               <li class="nav-item"><%= link_to t(".accounts"), accounts_path, class: "nav-link" %></li>
+
+              <% if current_user.admin? %>
+                <div class="dropdown-divider"></div>
+                <li class="nav-item"><%= link_to t(".admin"), admin_root_path, class: "nav-link" %></li>
+              <% end %>
+    
               <div class="dropdown-divider"></div>
               <li class="nav-item"><%= link_to t(".sign_out"), destroy_user_session_path, method: :delete, class: "nav-link" %></li>
             </ul>
