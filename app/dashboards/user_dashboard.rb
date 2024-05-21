@@ -9,13 +9,23 @@ class UserDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
+    admin: Field::Boolean,
+    image: Field::ActiveStorage,
+    terms_of_service: Field::Boolean,
+    accepted_privacy_at: Field::DateTime,
+    accepted_terms_at: Field::DateTime,
+    announcements_read_at: Field::DateTime,
     email: Field::String,
-    encrypted_password: Field::String,
+    first_name: Field::String,
+    last_name: Field::String,
+    name: Field::String.with_options(searchable: false),
+    password: Field::Password.with_options(searchable: false),
+    password_confirmation: Field::Password.with_options(searchable: false),
     remember_created_at: Field::DateTime,
     reset_password_sent_at: Field::DateTime,
     reset_password_token: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -25,17 +35,19 @@ class UserDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
+    name
     email
-    encrypted_password
-    remember_created_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
+    admin
+    image
     email
-    encrypted_password
+    first_name
+    last_name
     remember_created_at
     reset_password_sent_at
     reset_password_token
@@ -47,11 +59,10 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
+    name
     email
-    encrypted_password
-    remember_created_at
-    reset_password_sent_at
-    reset_password_token
+    password
+    terms_of_service
   ].freeze
 
   # COLLECTION_FILTERS
@@ -69,7 +80,7 @@ class UserDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how users are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(user)
-  #   "User ##{user.id}"
-  # end
+  def display_resource(user)
+    user.email.to_s
+  end
 end

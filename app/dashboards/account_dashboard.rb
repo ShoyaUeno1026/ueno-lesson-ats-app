@@ -10,19 +10,13 @@ class AccountDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     account_users: Field::HasMany,
-    candidates: Field::HasMany,
+    image: Field::ActiveStorage,
     departments: Field::HasMany,
-    image_attachment: Field::HasOne,
-    image_blob: Field::HasOne,
-    job_pipeline_stages: Field::HasMany,
-    job_pipelines: Field::HasMany,
-    jobs: Field::HasMany,
-    matches: Field::HasMany,
     name: Field::String,
     owner: Field::BelongsTo,
     users: Field::HasMany,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -32,24 +26,18 @@ class AccountDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
+    name
+    owner
     account_users
-    candidates
-    departments
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
+    image
     account_users
-    candidates
     departments
-    image_attachment
-    image_blob
-    job_pipeline_stages
-    job_pipelines
-    jobs
-    matches
     name
     owner
     users
@@ -61,18 +49,8 @@ class AccountDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    account_users
-    candidates
-    departments
-    image_attachment
-    image_blob
-    job_pipeline_stages
-    job_pipelines
-    jobs
-    matches
     name
     owner
-    users
   ].freeze
 
   # COLLECTION_FILTERS
@@ -90,7 +68,7 @@ class AccountDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how accounts are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(account)
-  #   "Account ##{account.id}"
-  # end
+  def display_resource(account)
+    account.name
+  end
 end

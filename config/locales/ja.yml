@@ -176,9 +176,14 @@ ja:
         image: "アイコン"
         name: "アカウント名"
         owner_id: "オーナー"
+        owner: "オーナー"
+        account_users: "メンバー"
       account_user:
         role: "権限"
         user_id: "ユーザー"
+        account: "アカウント"
+        user: "ユーザー"
+        account_id: "アカウント"
       announcement:
         title: "タイトル"
         kind: "種類"
@@ -203,6 +208,9 @@ ja:
         industry: "事業所の業界"
         location: "事業所の所在地"
         website: "事業所のホームページ"
+        account: "アカウント"
+        owner: "オーナー"
+        account_id: "アカウント"
       job:
         department_id: "事業所"
         job_pipeline_id: "選考フロー"

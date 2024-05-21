@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       resources :accounts
       resources :account_users
       resources :departments
-
+      resources :users
       root to: "users#index"
     end
   end

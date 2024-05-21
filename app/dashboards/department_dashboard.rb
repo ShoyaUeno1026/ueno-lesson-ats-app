@@ -11,15 +11,15 @@ class DepartmentDashboard < Administrate::BaseDashboard
     id: Field::Number,
     account: Field::BelongsTo,
     industry: Field::String,
-    jobs: Field::HasMany,
     jobs_count: Field::Number,
     location: Field::String,
     name: Field::String,
     owner: Field::BelongsTo,
     rich_text_description: Field::HasOne,
+    description: Field::Text,
     website: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -29,23 +29,23 @@ class DepartmentDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
+    name
     account
-    industry
-    jobs
+    owner
+    jobs_count
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
+    name
     account
+    owner
     industry
-    jobs
     jobs_count
     location
-    name
-    owner
-    rich_text_description
+    description
     website
     created_at
     updated_at
@@ -56,14 +56,7 @@ class DepartmentDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     account
-    industry
-    jobs
-    jobs_count
-    location
     name
-    owner
-    rich_text_description
-    website
   ].freeze
 
   # COLLECTION_FILTERS
@@ -81,7 +74,7 @@ class DepartmentDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how departments are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(department)
-  #   "Department ##{department.id}"
-  # end
+  def display_resource(department)
+    department.name
+  end
 end
