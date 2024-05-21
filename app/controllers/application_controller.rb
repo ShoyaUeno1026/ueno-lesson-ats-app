@@ -33,8 +33,9 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    added_attrs = [:name, :accepted ]
-    devise_parameter_sanitizer.permit(:sign_up, keys: added_attrs)
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :image])
+    extra_keys = [:image, :name]
+    signup_keys = extra_keys + [:terms_of_service]
+    devise_parameter_sanitizer.permit(:sign_up, keys: signup_keys)
+    devise_parameter_sanitizer.permit(:account_update, keys: extra_keys)
   end
 end
