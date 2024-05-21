@@ -10,10 +10,10 @@ class AccountUserDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     account: Field::BelongsTo,
-    role: Field::String,
     user: Field::BelongsTo,
+    role: Field::Select.with_options(collection: AccountUser::ROLES),
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -24,8 +24,8 @@ class AccountUserDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     id
     account
-    role
     user
+    role
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -44,8 +44,8 @@ class AccountUserDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     account
-    role
     user
+    role
   ].freeze
 
   # COLLECTION_FILTERS
@@ -63,7 +63,7 @@ class AccountUserDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how account users are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(account_user)
-  #   "AccountUser ##{account_user.id}"
-  # end
+  def display_resource(account_user)
+    account_user.account.name
+  end
 end
