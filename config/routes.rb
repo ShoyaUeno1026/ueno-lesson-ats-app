@@ -34,6 +34,7 @@ Rails.application.routes.draw do
       resources :job_pipelines do
         resources :job_pipeline_stages, path: :stages, module: :job_pipelines
       end
+      resources :matches
     end
   end
 

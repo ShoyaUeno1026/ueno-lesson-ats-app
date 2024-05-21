@@ -16,7 +16,7 @@
     <span><%= link_to @job.department.name, [@account, @job.department] %></span>
   </div>
   <div class="d-flex align-items-center">
-    <%= image_tag image_path(@job.owner, size:40), height: 20, width: 20, class: "rounded" %>
+    <%= image_tag image_path(@job.owner, size:40), height: 20, width: 20, class: "rounded me-2" %>
     <span><%= @job.owner&.name %></span>
   </div>
   <div class="d-flex align-items-center">
@@ -28,3 +28,36 @@
     <span><%= @job.salary_to_text %></span>
   </div>
 </div>
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="jobs-tab" data-bs-toggle="tab" data-bs-target="#jobs-tab-pane" type="button" role="tab" aria-controls="jobs-tab-pane" aria-selected="true"><%= t(".matches", count: @job.matches_count) %></button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="detail-tab" data-bs-toggle="tab" data-bs-target="#detail-tab-pane" type="button" role="tab" aria-controls="detail-tab-pane" aria-selected="false"><%= t(".detail") %></button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="comments-tab" data-bs-toggle="tab" data-bs-target="#comments-tab-pane" type="button" role="tab" aria-controls="comments-tab-pane" aria-selected="false"><%= t(".comments", count: 0) %></button>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <%# 選考 %>
+  <div class="tab-pane fade show active" id="jobs-tab-pane" role="tabpanel" aria-labelledby="jobs-tab" tabindex="0">
+    <div class="d-flex justify-content-between pt-3">
+      <%= link_to t("new"), new_account_match_path(@account, job_id: @job.id), class: "btn btn-primary" %>
+      <%= link_to t("setting"), account_job_pipelines_path(@account, @job.job_pipeline) %>
+    </div>
+    <div class="row flex-nowrap p-3 overflow-auto">
+      <% @job.job_pipeline_stages.each do |job_pipeline_stage| %>
+        <%= render partial: "accounts/jobs/job_pipeline_stage", locals: { job_pipeline_stage: job_pipeline_stage} %>
+      <% end %>
+    </div>
+  </div>
+  <%# 詳細 %>
+  <div class="tab-pane fade" id="detail-tab-pane" role="tabpanel" aria-labelledby="detail-tab" tabindex="0">
+    <%= render partial: "job", locals: {job: @job} %>
+  </div>
+  <%# コメント %>
+  <div class="tab-pane fade" id="comments-tab-pane" role="tabpanel" aria-labelledby="comments-tab" tabindex="0">
+    <p>TODO</p>
+  </div>
