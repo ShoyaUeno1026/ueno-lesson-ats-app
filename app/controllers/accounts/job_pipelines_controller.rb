@@ -22,7 +22,7 @@ class Accounts::JobPipelinesController < Accounts::BaseController
     @job_pipeline.account = @account
 
     if @job_pipeline.save
-      redirect_to account_job_pipeline_url(@account, @job_pipeline), notice: t(".created", name: @job_pipeline_stage.name)
+      redirect_to account_job_pipeline_url(@account, @job_pipeline), notice: t(".created")
     else
       render :new, status: :unprocessable_entity
     end

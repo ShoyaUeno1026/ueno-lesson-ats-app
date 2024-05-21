@@ -1,2 +1,2 @@
-class Accounts::JobPipelines::JobPipelineStagesController < ApplicationController
+class Accounts::JobPipelines::JobPipelineStagesController < Accounts::BaseController
 end
