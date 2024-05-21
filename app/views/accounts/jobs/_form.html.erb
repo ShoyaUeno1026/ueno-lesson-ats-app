@@ -3,6 +3,7 @@
 
   <div class="mb-3">
     <%= form.label :department_id, class: "form-label" %>
+    <%# disabled: 非活性　persisted?: 保存済みならtrue %>
     <%= form.collection_select :department_id, @account.departments, :id, :name, {prompt: true}, class: "form-select", disabled: form.object.persisted? %>
   </div>
 

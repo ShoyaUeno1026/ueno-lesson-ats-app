@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_20_071354) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_20_073728) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -142,6 +142,25 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_20_071354) do
     t.index ["department_id"], name: "index_jobs_on_department_id"
     t.index ["job_pipeline_id"], name: "index_jobs_on_job_pipeline_id"
     t.index ["owner_id"], name: "index_jobs_on_owner_id"
+  end
+
+  create_table "matches", force: :cascade do |t|
+    t.bigint "account_id", null: false
+    t.bigint "job_id", null: false
+    t.bigint "candidate_id", null: false
+    t.bigint "job_pipeline_stage_id"
+    t.datetime "pending_at"
+    t.datetime "processing_at"
+    t.datetime "processed_at"
+    t.datetime "dropped_at"
+    t.string "drop_reasons", default: [], array: true
+    t.integer "display_order"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_matches_on_account_id"
+    t.index ["candidate_id"], name: "index_matches_on_candidate_id"
+    t.index ["job_id"], name: "index_matches_on_job_id"
+    t.index ["job_pipeline_stage_id"], name: "index_matches_on_job_pipeline_stage_id"
   end
 
   create_table "users", force: :cascade do |t|

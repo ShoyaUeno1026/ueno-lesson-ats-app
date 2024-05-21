@@ -1,0 +1,39 @@
+<%= form_with(model: [@account, match]) do |form| %>
+  <%= render "shared/error_messages", resource: match %>
+  <%# 新規作成用　new_record?: 保存されていなければtrue %>
+  <% if form.object.new_record? %>
+    <div class="mb-3">
+      <%= form.label :job_id, class: "form-label" %>
+      <%= form.collection_select :job_id, @account.jobs, :id, :position_name, {prompt: true}, class: "form-select" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :candidate_id, class: "form-label" %>
+      <%= form.collection_select :candidate_id, @account.candidates, :id, :name, {prompt: true}, class: "form-select" %>
+    </div>
+  <%# 編集用 %>
+  <% else %>
+    <div class="mb-3">
+      <%= form.label :job_pipeline_stage_id, class: "form-label" %>
+      <%= form.collection_select :job_pipeline_stage_id, match.selectable_stages, :id, :name, {prompt: true}, class: "form-select" %>
+    </div>
+
+    <div class="mb-3">
+      <hr>
+      <p class="h4"><%= Match.human_attribute_name(:drop_reasons) %></p>
+    </div>
+
+    <div class="mb-3 form-check">
+      <% Match::DROP_REASONS.each do |r| %>
+        <label>
+          <%= form.check_box :drop_reasons, {multiple: true}, r, nil %>
+          <%= r %>
+        </label>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="mb-3 d-grid">
+    <%= form.submit t("save"), class: "btn btn-primary" %>
+  </div>
+<% end %>
