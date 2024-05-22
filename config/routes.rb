@@ -32,6 +32,10 @@ Rails.application.routes.draw do
   get "/notifications" => "notifications#index"
 
   resources :accounts do
+    member do
+      patch :switch
+    end
+
     scope module: :accounts do
       resources :departments
       resources :candidates
