@@ -1,2 +1,33 @@
 @import "bootstrap/scss/bootstrap";
 @import "bootstrap-icons/font/bootstrap-icons";
+
+.unread-announcements:before {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background: $red;
+  content: "";
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  margin-right: 6px;
+}
+
+.table-fixed th:first-child,
+td:first-child {
+  position: sticky;
+  position: -webkit-sticky;
+  left: 0;
+}
+
+.fixed-link,
+.fixed-text {
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  white-space: nowrap;
+}
