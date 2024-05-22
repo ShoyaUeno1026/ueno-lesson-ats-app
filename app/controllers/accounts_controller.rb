@@ -1,5 +1,5 @@
 class AccountsController < Accounts::BaseController
-  before_action :set_account, only: %i[show edit update destroy]
+  before_action :set_account, only: %i[show edit update destroy switch]
   before_action :require_account_admin, only: %i[edit update destroy]
 
   def index
@@ -9,7 +9,24 @@ class AccountsController < Accounts::BaseController
   def show
   end
 
+  def new
+    @account = Account.new
+  end
+
   def edit
+  end
+
+  def create
+    @account = Account.new(account_params)
+    @account.owner = current_user
+    @account.account_users.new(user: current_user, role: "admin")
+
+    if @account.save
+      flash[:notice] = t(".created")
+      switch
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def update
@@ -21,6 +38,14 @@ class AccountsController < Accounts::BaseController
   end
 
   def destroy
+    @account.destroy!
+
+    redirect_to accounts_url, notice: t(".destroyed")
+  end
+
+  def switch
+    session[:account_id] = @account.id
+    redirect_to root_path
   end
 
   private
