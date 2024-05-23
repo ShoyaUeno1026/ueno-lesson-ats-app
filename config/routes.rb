@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+
   get 'registrations/update_resource'
   get 'dashboards/show'
   get 'announcements/index'
@@ -18,7 +20,7 @@ Rails.application.routes.draw do
   get "/privacy" => "static_pages#privacy"
   devise_for :users, controllers: {
     registrations: 'users/registrations',
-    sessions: 'users/sessions'
+    sessions: 'users/sessions',
   }
   
   devise_scope :user do
