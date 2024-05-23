@@ -2,9 +2,11 @@
   <div class="container mx-auto">
     <%= link_to root_path, class: "navbar-brand" do %>
       <span><%= Settings.application_name %></span>
-      <span class="h6 text-decoration-underline"><%= current_account&.name %></span>
+      <span class="h6 text-decoration-underline"><%= truncate(current_account&.name) %></span>
     <% end %>
-
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <%= render "shared/header_left" %>
@@ -12,6 +14,7 @@
 
       <ul class="navbar-nav">
         <li class="nav-item"><%= link_to t(".announcements"), announcements_path, class: "nav-link" %></li>
+
         <% if user_signed_in? %>
           <li class="nav-item">
             <%= link_to notifications_path, class: "nav-link" do %>
@@ -27,9 +30,16 @@
               <li class="nav-item"><%= link_to t(".password"), edit_account_passwords_path, class: "nav-link" %></li>
               <li class="nav-item"><%= link_to t(".accounts"), accounts_path, class: "nav-link" %></li>
 
+              <%# Admin menu %>
               <% if current_user.admin? %>
                 <div class="dropdown-divider"></div>
                 <li class="nav-item"><%= link_to t(".admin"), admin_root_path, class: "nav-link" %></li>
+              <% end %>
+
+              <%# Developer menu %>
+              <% if Rails.env.development? %>
+                <div class="dropdown-divider"></div>
+                <li class="nav-item"><%= link_to "Letter Opener", letter_opener_web_path, class: "nav-link", target: :_blank, data: { turbo: false } %></li>
               <% end %>
     
               <div class="dropdown-divider"></div>
