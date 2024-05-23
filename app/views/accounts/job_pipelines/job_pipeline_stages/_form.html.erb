@@ -1,0 +1,22 @@
+<%= form_with(model: [@account, @job_pipeline, job_pipeline_stage]) do |form| %>
+  <%= render "shared/error_messages", resource: job_pipeline_stage %>
+
+  <div class="mb-3">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :kind, class: "form-label" %>
+    <%= form.select :kind, JobPipelineStage::KINDS, {}, class: "form-select", disabled: !form.object.kind_editable? %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :display_order, class: "form-label" %>
+    <%= form.number_field :display_order, class: "form-control" %>
+  </div>
+
+  <div class="mb-3 d-grid">
+    <%= form.submit t("save"), class: "btn btn-primary" %>
+  </div>
+<% end %>
