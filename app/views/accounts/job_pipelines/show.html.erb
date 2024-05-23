@@ -14,6 +14,10 @@
   </div>
 </div>
 
+<div>
+  <%= link_to t("new"), new_account_job_pipeline_job_pipeline_stage_path(@account, @job_pipeline), class: "btn btn-primary" %>
+</div>
+
 <div id="job-pipeline-stages">
   <div class="text-nowrap table-responsive">
     <table class="table table-hover table-fixed">
@@ -31,8 +35,11 @@
           <td><%= stage.kind %></td>
           <td>
             <div class="d-flex gap-2">
-              <%# 編集 %>
-              <%# 削除 %>
+              <%= link_to t("edit"), edit_account_job_pipeline_job_pipeline_stage_path(@account, @job_pipeline, stage), class: "btn btn-primary" %>
+
+              <% if stage.deletable? %>
+                <%= button_to t("destroy"), [@account, @job_pipeline, stage], data: { turbo_confirm: t("are_you_sure") }, method: :delete, class: "btn btn-outline-danger" %>
+              <% end %>
             </div>
           </td>
         </tr>
