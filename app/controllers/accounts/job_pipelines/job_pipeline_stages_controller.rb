@@ -62,13 +62,4 @@ class Accounts::JobPipelines::JobPipelineStagesController < Accounts::BaseContro
     params.require(:job_pipeline_stage)
       .permit(:name, :kind, :display_order)
   end
-
-  # def reset_job_pipeline_stage
-  #   # previous_stageを定義する（
-  #   if previous_stage
-  #     matches.update(@job_pipeline_stage_id)
-  #   else
-  #     #デフォルトのステージ（未対応）に戻す
-  #   end
-  # end
 end

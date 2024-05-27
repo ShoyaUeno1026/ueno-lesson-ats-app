@@ -9,6 +9,7 @@ class Accounts::JobsController < Accounts::BaseController
 
   def show
     @job_pipeline_stages = @job.job_pipeline.stages.list
+    @match_histories = @account.match_histories.where(job_id: @job.id).order(created_at: :desc)
   end
 
   def new
