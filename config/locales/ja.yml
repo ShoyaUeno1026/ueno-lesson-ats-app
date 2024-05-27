@@ -83,6 +83,9 @@ ja:
       job_pipeline_stage:
         stage_name: "%{name} (%{count})"
         dropped_count: "不採用 (%{count})"
+      match_history:
+        dropped: "不採用"
+
     job_pipelines:
       created: "選考フローを作成しました"
       updated: "選考フローを変更しました"
