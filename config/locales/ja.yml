@@ -11,6 +11,10 @@ ja:
   optional: "任意項目"
   password_warning: "パスワードは%{minimum}文字以上で入力してください"
 
+  time:
+    formats:
+      default: "%Y/%m/%d (%a) %H:%M:%S"
+
   account:
     passwords:
       updated: "パスワードを変更しました"

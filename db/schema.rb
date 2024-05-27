@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_22_051714) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_24_090923) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -153,6 +153,29 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_22_051714) do
     t.index ["owner_id"], name: "index_jobs_on_owner_id"
   end
 
+  create_table "match_histories", force: :cascade do |t|
+    t.bigint "account_id", null: false
+    t.bigint "match_id", null: false
+    t.bigint "job_id", null: false
+    t.bigint "candidate_id", null: false
+    t.bigint "job_pipeline_stage_id"
+    t.datetime "pending_at"
+    t.datetime "processing_at"
+    t.datetime "processed_at"
+    t.datetime "dropped_at"
+    t.string "drop_reasons", default: [], array: true
+    t.integer "display_order"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["account_id"], name: "index_match_histories_on_account_id"
+    t.index ["candidate_id"], name: "index_match_histories_on_candidate_id"
+    t.index ["job_id"], name: "index_match_histories_on_job_id"
+    t.index ["job_pipeline_stage_id"], name: "index_match_histories_on_job_pipeline_stage_id"
+    t.index ["match_id"], name: "index_match_histories_on_match_id"
+    t.index ["user_id"], name: "index_match_histories_on_user_id"
+  end
+
   create_table "matches", force: :cascade do |t|
     t.bigint "account_id", null: false
     t.bigint "job_id", null: false
@@ -166,10 +189,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_22_051714) do
     t.integer "display_order"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["account_id"], name: "index_matches_on_account_id"
     t.index ["candidate_id"], name: "index_matches_on_candidate_id"
     t.index ["job_id"], name: "index_matches_on_job_id"
     t.index ["job_pipeline_stage_id"], name: "index_matches_on_job_pipeline_stage_id"
+    t.index ["user_id"], name: "index_matches_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -192,4 +217,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_22_051714) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "match_histories", "users"
+  add_foreign_key "matches", "users"
 end

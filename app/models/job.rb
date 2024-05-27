@@ -11,6 +11,7 @@ class Job < ApplicationRecord
   belongs_to :job_pipeline, optional: true
   has_many :matches, dependent: :destroy
   has_many :candidates, through: :matches
+  has_many :match_histories, dependent: :destroy
   
   has_rich_text :description
 

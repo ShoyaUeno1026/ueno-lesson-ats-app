@@ -1,5 +1,6 @@
 class Accounts::MatchesController < Accounts::BaseController
   before_action :set_account
+  before_action :set_user
   before_action :set_match, only: %i[show edit update destroy]
 
   def index
@@ -24,6 +25,7 @@ class Accounts::MatchesController < Accounts::BaseController
   def create
     @match = Match.new(create_params)
     @match.account = @account
+    @match.user = @user
     # アカウント内から取得するように再定義
     @match.job = @account.jobs.find(@match.job_id)
     @match.candidate = @account.candidates.find(@match.candidate_id)
@@ -55,6 +57,22 @@ class Accounts::MatchesController < Accounts::BaseController
     end
 
     if @match.save
+      # 求人履歴更新
+      new_history = @match.match_histories.new
+      new_history.account_id = @match.account.id
+      new_history.match_id = @match.id
+      new_history.job_id = @match.job.id
+      new_history.candidate_id = @match.candidate.id
+      new_history.job_pipeline_stage_id = @match.job_pipeline_stage.id
+      new_history.pending_at = @match.pending_at
+      new_history.processing_at = @match.processing_at
+      new_history.processed_at = @match.processed_at
+      new_history.dropped_at = @match.dropped_at
+      new_history.drop_reasons = @match.drop_reasons
+      new_history.display_order = @match.display_order
+      new_history.user_id = @match.user.id
+      new_history.save
+
       redirect_to account_job_url(@account, @match.job), notice: t(".updated")
     else
       render :edit, status: :unprocessable_entity
@@ -73,9 +91,14 @@ class Accounts::MatchesController < Accounts::BaseController
     @account = current_user.accounts.find(params[:account_id])
   end
 
+  def set_user
+    @user = current_user
+  end
+
   def set_match
     @match = @account.matches.find(params[:id])
   end
+  
 
   def create_params
     params.require(:match)

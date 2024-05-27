@@ -2,9 +2,11 @@ class Match < ApplicationRecord
   DROP_REASONS = ["社風に合わない", "条件に合わない", "応答なし", "充足", "その他"]
 
   belongs_to :account
+  belongs_to :user
   belongs_to :job, counter_cache: true
   belongs_to :candidate
   belongs_to :job_pipeline_stage, optional: true
+  has_many :match_histories, dependent: :destroy
 
   validates :candidate_id, uniqueness: {scope: :job_id}
 
