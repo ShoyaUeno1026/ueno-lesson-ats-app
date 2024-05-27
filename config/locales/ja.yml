@@ -75,6 +75,7 @@ ja:
         matches: "候補者 (%{count})"
         detail: "詳細情報"
         comments: "コメント (%{count})"
+        history: "変更履歴"
       new:
         title: "求人を追加"
       edit:

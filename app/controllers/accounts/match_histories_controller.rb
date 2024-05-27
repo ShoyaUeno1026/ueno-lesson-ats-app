@@ -2,7 +2,7 @@ class Accounts::MatchHistoriesController < Accounts::BaseController
   before_action :set_account
 
   def index
-    @match_histories = @account.match_histories.all
+    @match_histories = @account.match_histories.all.order(created_at: :desc)
   end
 
   private
