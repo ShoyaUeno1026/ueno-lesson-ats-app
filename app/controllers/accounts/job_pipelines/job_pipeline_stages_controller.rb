@@ -1,9 +1,10 @@
 class Accounts::JobPipelines::JobPipelineStagesController < Accounts::BaseController
   before_action :set_account
   before_action :set_job_pipeline
+  before_action :set_matches
   before_action :set_job_pipeline_stage, only: %i[show edit update destroy]
   before_action :require_account_admin
-  # before_action :reset_job_pipeline_stage, only: :destroy
+  before_action :reset_job_pipeline_stage, only: :destroy
 
   def index
   end
@@ -34,7 +35,7 @@ class Accounts::JobPipelines::JobPipelineStagesController < Accounts::BaseContro
     if @job_pipeline_stage.update(job_pipeline_stage_params)
       redirect_to account_job_pipeline_url(@account, @job_pipeline), notice: t(".updated", name: @job_pipeline_stage.name)
     else
-      rendere :edit, status: :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -54,6 +55,10 @@ class Accounts::JobPipelines::JobPipelineStagesController < Accounts::BaseContro
     @job_pipeline = @account.job_pipelines.find(params[:job_pipeline_id])
   end
 
+  def set_matches
+    @matches = @account.matches.all
+  end
+
   def set_job_pipeline_stage
     @job_pipeline_stage = @job_pipeline.stages.find(params[:id])
   end
@@ -61,5 +66,17 @@ class Accounts::JobPipelines::JobPipelineStagesController < Accounts::BaseContro
   def job_pipeline_stage_params
     params.require(:job_pipeline_stage)
       .permit(:name, :kind, :display_order)
+  end
+
+  def reset_job_pipeline_stage
+    @matches.each do |match|
+      if match.job_pipeline_stage_id == @job_pipeline_stage.id
+        match_histories = match.match_histories.all
+        previous_stage = match_histories.where.not(job_pipeline_stage_id: @job_pipeline_stage.id)
+                                        .where(job_pipeline_stage_id: JobPipelineStage.pluck(:id))
+                                        .order(created_at: :desc).first
+        match.update(job_pipeline_stage_id: previous_stage.job_pipeline_stage_id)
+      end
+    end
   end
 end
