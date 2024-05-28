@@ -95,3 +95,5 @@ gem "devise-i18n", "~> 1.12"
 gem "rails-i18n", "~> 7.0"
 
 gem "name_of_person"
+# なりすましログイン
+gem "pretender"
