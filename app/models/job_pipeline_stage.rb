@@ -4,7 +4,7 @@ class JobPipelineStage < ApplicationRecord
   belongs_to :account
   belongs_to :job_pipeline
   has_many :matches
-  has_many :match_histories
+  has_many :match_histories, dependent: :destroy
 
   validates :kind, :name, presence: true
   validates :kind, inclusion: {in: KINDS}
