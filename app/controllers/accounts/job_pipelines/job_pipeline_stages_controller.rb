@@ -72,9 +72,7 @@ class Accounts::JobPipelines::JobPipelineStagesController < Accounts::BaseContro
     @matches.each do |match|
       if match.job_pipeline_stage_id == @job_pipeline_stage.id
         match_histories = match.match_histories.all
-        previous_stage = match_histories.where.not(job_pipeline_stage_id: @job_pipeline_stage.id)
-                                        .where(job_pipeline_stage_id: JobPipelineStage.pluck(:id))
-                                        .order(created_at: :desc).first
+        previous_stage = match_histories.where.not(job_pipeline_stage_id: @job_pipeline_stage.id).order(created_at: :desc).first
         match.update(job_pipeline_stage_id: previous_stage.job_pipeline_stage_id)
       end
     end
