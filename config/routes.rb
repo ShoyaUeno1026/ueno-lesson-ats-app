@@ -3,23 +3,28 @@ Rails.application.routes.draw do
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
 
-  get 'registrations/update_resource'
-  get 'dashboards/show'
-  get 'announcements/index'
-
+  
   authenticate :user, lambda { |u| u.admin? } do
     namespace :admin do
       resources :accounts
       resources :account_users
       resources :announcements
       resources :departments
-      resources :users
+      resources :users do
+        resource :impersonate, module: :user
+      end
+      
       root to: "users#index"
     end
   end
 
+  get 'registrations/update_resource'
+  get 'dashboards/show'
+  get 'announcements/index'
+  
   get "/terms"   => "static_pages#terms"
   get "/privacy" => "static_pages#privacy"
+  
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions',

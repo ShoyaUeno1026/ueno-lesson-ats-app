@@ -8,8 +8,10 @@ module Admin
   class ApplicationController < Administrate::ApplicationController
     before_action :authenticate_admin
 
+    impersonates :user
+
     def authenticate_admin
-      redirect_to "/", alert: "Not authorized." unless user_signed_in?
+      redirect_to "/", alert: "Not authorized." unless user_signed_in? && true_user.admin?
     end
 
     # Override this value to specify the number of elements to display at a time

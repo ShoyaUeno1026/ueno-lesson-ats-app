@@ -1,0 +1,6 @@
+<% if current_user != true_user %>
+  <div class="alert alert-primary text-center m-0 rounded-0" role="alert">
+    <%= link_to "#{current_user.name} (#{current_user.email})", main_app.admin_user_path(current_user), class: "alert-link" %> としてログインしています。
+    <%= button_to "ログアウト", main_app.admin_user_impersonate_path(current_user), method: :delete, data: {turbo: false}, form_class: "d-inline-block", class: "btn btn-sm btn-primary" %>
+  </div>
+<% end %>

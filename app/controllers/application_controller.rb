@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_account, :current_account_user, :current_account_admin?
 
+  impersonates :user
+
   def current_account
     @_current_account
   end
