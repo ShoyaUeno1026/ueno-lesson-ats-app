@@ -40,13 +40,24 @@
                 <strong><%= Account.human_attribute_name(:owner_id) %></strong>
               </div>
               <div class="col-md-8">
-                <%= image_tag image_path(@account.owner, size:40), height: 20, width: 20, class: "rounded" %>
+                <%= image_tag image_path(@account.owner, size:40), height: 20, width: 20, class: "rounded me-2" %>
                 <span><%= @account.owner.name %></span>
               </div>
             </div>
           </li>
         </ul>
       </div>
+    </div>
+
+    <div class="mb-3 text-center">
+      <% if current_account != @account %>
+        <%= button_to t(".switch"), switch_account_path(@account), method: :patch, class: "btn btn-secondary" %>
+      <% end %>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h1 class="h3"><%= t(".member") %></h1>
+      <%= link_to t(".add"), new_account_account_user_path(@account), class: "btn btn-primary" %>
     </div>
 
     <div id="account_users">
@@ -63,7 +74,7 @@
               <% user = account_user.user %>
               <tr>
                 <td>
-                  <%= image_tag image_path(user, size:40), height: 20, width: 20, class: "rounded" %>
+                  <%= image_tag image_path(user, size:40), height: 20, width: 20, class: "rounded me-2" %>
                   <span><%= user.name %></span>
                 </td>
                 <td><%= account_user.role %></td>

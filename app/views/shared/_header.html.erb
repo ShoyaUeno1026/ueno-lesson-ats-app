@@ -33,7 +33,7 @@
               <%# Admin menu %>
               <% if current_user.admin? %>
                 <div class="dropdown-divider"></div>
-                <li class="nav-item"><%= link_to t(".admin"), admin_root_path, class: "nav-link" %></li>
+                <li class="nav-item"><%= link_to t(".admin"), admin_root_path, class: "nav-link", target: :_blank %></li>
               <% end %>
 
               <%# Developer menu %>
