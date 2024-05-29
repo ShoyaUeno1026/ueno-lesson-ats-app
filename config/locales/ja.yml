@@ -33,6 +33,8 @@ ja:
       switch: "アカウントを切り替える"
     show:
       switch: "このアカウントに切り替える"
+      member: "メンバー"
+      add: "追加"
     new:
       title: "アカウントを追加"
     edit:
@@ -85,7 +87,6 @@ ja:
         dropped_count: "不採用 (%{count})"
       match_history:
         dropped: "不採用"
-
     job_pipelines:
       created: "選考フローを作成しました"
       updated: "選考フローを変更しました"
@@ -117,6 +118,11 @@ ja:
         title: "選考を追加"
       edit:
         title: "選考を編集"
+    account_users:
+      new_from_account: "%{name}のメンバーを作成"
+      created: "メンバーを追加しました"
+      new:
+        title: "メンバーを追加"
 
   announcements:
     index:

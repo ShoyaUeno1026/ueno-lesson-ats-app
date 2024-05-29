@@ -1,0 +1,17 @@
+<%= form_with(model: [@account, account_user]) do |form| %>
+  <%= render "shared/error_messages", resource: account_user %>
+  
+  <div class="mb-3">
+    <%= form.label :user_id, class: "form-label" %>
+    <%= form.collection_select :user_id, @users, :id, :name, {prompt: true}, class: "form-select" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :role, class: "form-label" %>
+    <%= form.select :role, AccountUser::ROLES, {prompt: true}, class: "form-select" %>
+  </div>
+
+  <div class="mb-3 d-grid">
+    <%= form.submit t("save"), class: "btn btn-primary" %>
+  </div>
+<% end %>

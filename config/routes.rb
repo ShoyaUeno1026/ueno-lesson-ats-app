@@ -55,6 +55,7 @@ Rails.application.routes.draw do
       end
       resources :matches
       resources :match_histories
+      resources :account_users
     end
   end
   
