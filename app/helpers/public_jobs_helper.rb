@@ -1,0 +1,2 @@
+module PublicJobsHelper
+end

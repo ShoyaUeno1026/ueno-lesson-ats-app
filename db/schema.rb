@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_28_021630) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_30_070018) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -195,6 +195,19 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_28_021630) do
     t.index ["job_id"], name: "index_matches_on_job_id"
     t.index ["job_pipeline_stage_id"], name: "index_matches_on_job_pipeline_stage_id"
     t.index ["user_id"], name: "index_matches_on_user_id"
+  end
+
+  create_table "public_jobs", force: :cascade do |t|
+    t.bigint "account_id", null: false
+    t.bigint "job_id"
+    t.bigint "department_id"
+    t.bigint "owner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_public_jobs_on_account_id"
+    t.index ["department_id"], name: "index_public_jobs_on_department_id"
+    t.index ["job_id"], name: "index_public_jobs_on_job_id"
+    t.index ["owner_id"], name: "index_public_jobs_on_owner_id"
   end
 
   create_table "users", force: :cascade do |t|

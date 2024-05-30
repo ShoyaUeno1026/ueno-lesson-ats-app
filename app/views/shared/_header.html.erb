@@ -48,7 +48,9 @@
           </li>
         <% else %>
           <li class="nav-item"><%= link_to t(".sign_in"), new_user_session_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to t(".public_job"), public_jobs_path, class: "nav-link" %></li>
           <li class="nav-item"><%= link_to t(".sign_up"), new_user_registration_path, class: "btn btn-primary" %></li>
+          
         <% end %>
       </ul>
     </div>

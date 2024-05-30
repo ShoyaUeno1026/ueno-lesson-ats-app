@@ -41,6 +41,8 @@ Rails.application.routes.draw do
   get "/announcements" => "announcements#index"
   get "/notifications" => "notifications#index"
 
+  resources :public_jobs
+
   resources :accounts do
     member do
       patch :switch
