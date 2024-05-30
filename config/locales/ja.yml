@@ -142,6 +142,10 @@ ja:
       update_password: パスワードを変更
       update: 変更する
 
+  public_jobs:
+    index:
+      title: "公開されている求人"
+
   shared:
     list:
       password: "パスワード"
@@ -161,6 +165,7 @@ ja:
       sign_out: "ログアウト"
       sign_in: "ログイン"
       sign_up: "アカウント登録"
+      public_job: "公開求人"
 
   static_pages:
     home:
@@ -226,6 +231,7 @@ ja:
         owner: "オーナー"
         account_id: "アカウント"
       job:
+        account_id: "企業名"
         department_id: "事業所"
         job_pipeline_id: "選考フロー"
         owner_id: "オーナー"
