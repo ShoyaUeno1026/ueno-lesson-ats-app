@@ -13,7 +13,6 @@ class User < ApplicationRecord
   has_many :departments, class_name: "Department", foreign_key: :owner_id, inverse_of: :owner, dependent: :nullify
   has_many :jobs, class_name: "Job", foreign_key: :owner_id, inverse_of: :owner, dependent: :nullify
   has_many :candidates, class_name: "Candidate", foreign_key: :owner_id, inverse_of: :owner, dependent: :nullify
-  has_many :accounts, through: :account_users
 
   before_create :skip_confirmation!
   

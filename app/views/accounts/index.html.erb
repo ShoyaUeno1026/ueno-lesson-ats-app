@@ -21,7 +21,7 @@
             <% @accounts.each do |account| %>
               <tr>
                 <td>
-                  <%= image_tag image_path(current_user, size:40), height: 20, width: 20, class: "rounded" %>
+                  <%= image_tag image_path(account, size:40), height: 20, width: 20, class: "rounded" %>
                   <%= link_to account.name, account, class: "btn btn-link fixed-link", title: account.name %>
                 </td>
                 <td>
