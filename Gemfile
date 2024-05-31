@@ -75,11 +75,16 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
+  # テスト実行時にテストデータをクリア
+  gem "database_cleaner-active_record"
+  
   gem "selenium-webdriver"
   gem "rspec-rails"
   # テスト用データの作成をサポート
   gem "factory_bot_rails"
   gem "faker"
+  # コードカバレッジ分析（テストされたコードの割合）
+  gem "simplecov", require: false 
 end
 
 # 管理画面生成

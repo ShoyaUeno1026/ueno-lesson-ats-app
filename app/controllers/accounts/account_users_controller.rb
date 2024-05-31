@@ -33,6 +33,6 @@ class Accounts::AccountUsersController < Accounts::BaseController
 
   def account_user_params
     params.require(:account_user)
-      .permit(:account_id, :user_id, :role)
+      .permit(:user_id, :role)
   end
 end
