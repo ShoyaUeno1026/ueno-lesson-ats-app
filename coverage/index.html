@@ -1,666 +1,1059 @@
 <!DOCTYPE html>
-<html xmlns='http://www.w3.org/1999/xhtml'>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <title>Code coverage for Ueno-lesson-ats-app</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <script src='./assets/0.12.3/application.js' type='text/javascript'></script>
-    <link href='./assets/0.12.3/application.css' media='screen, projection, print' rel='stylesheet' type='text/css' />
-    <link rel="shortcut icon" type="image/png" href="./assets/0.12.3/favicon_green.png" />
+    <script
+      src="./assets/0.12.3/application.js"
+      type="text/javascript"
+    ></script>
+    <link
+      href="./assets/0.12.3/application.css"
+      media="screen, projection, print"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="./assets/0.12.3/favicon_green.png"
+    />
     <link rel="icon" type="image/png" href="./assets/0.12.3/favicon.png" />
   </head>
 
   <body>
     <div id="loading">
-      <img src="./assets/0.12.3/loading.gif" alt="loading"/>
+      <img src="./assets/0.12.3/loading.gif" alt="loading" />
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2024-05-31T11:40:51+09:00">2024-05-31T11:40:51+09:00</abbr></div>
+      <div class="timestamp">
+        Generated
+        <abbr class="timeago" title="2024-05-31T11:40:51+09:00"
+          >2024-05-31T11:40:51+09:00</abbr
+        >
+      </div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
-  <h2>
-    <span class="group_name">All Files</span>
-    (<span class="covered_percent">
-      <span class="green">
-  93.58%
-</span>
+          <h2>
+            <span class="group_name">All Files</span>
+            (<span class="covered_percent">
+              <span class="green"> 93.58% </span>
+            </span>
+            covered at
+            <span class="covered_strength">
+              <span class="green"> 1.19 </span>
+            </span>
+            hits/line )
+          </h2>
 
-     </span>
-     covered at
-     <span class="covered_strength">
-       <span class="green">
-         1.19
-       </span>
-    </span> hits/line
-    )
-  </h2>
+          <a name="AllFiles"></a>
 
-  <a name="AllFiles"></a>
+          <div><b>50</b> files in total.</div>
 
-  <div>
-    <b>50</b> files in total.
-  </div>
+          <div class="t-line-summary">
+            <b>327</b> relevant lines,
+            <span class="green"><b>306</b> lines covered</span> and
+            <span class="red"><b>21</b> lines missed. </span>
+            (<span class="green"> 93.58% </span>
+            )
+          </div>
 
-  <div class="t-line-summary">
-    <b>327</b> relevant lines,
-    <span class="green"><b>306</b> lines covered</span> and
-    <span class="red"><b>21</b> lines missed. </span>
-    (<span class="green">
-  93.58%
-</span>
-)
-  </div>
+          <div class="file_list--responsive">
+            <table class="file_list">
+              <thead>
+                <tr>
+                  <th>File</th>
+                  <th class="cell--number">% covered</th>
+                  <th class="cell--number">Lines</th>
+                  <th class="cell--number">Relevant Lines</th>
+                  <th class="cell--number">Lines covered</th>
+                  <th class="cell--number">Lines missed</th>
+                  <th class="cell--number">Avg. Hits / Line</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#b213cb166f974aecfdb80744def8bfdee4325925"
+                      class="src_link"
+                      title="app/controllers/application_controller.rb"
+                      >app/controllers/application_controller.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    92.00 %
+                  </td>
+                  <td class="cell--number">43</td>
+                  <td class="cell--number">25</td>
+                  <td class="cell--number">23</td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">2.52</td>
+                </tr>
 
-  
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#bd022c09d7affa599f7126e04db92807ce24af21"
+                      class="src_link"
+                      title="app/controllers/dashboards_controller.rb"
+                      >app/controllers/dashboards_controller.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">4</td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
 
-  <div class="file_list--responsive">
-    <table class="file_list">
-      <thead>
-        <tr>
-          <th>File</th>
-          <th class="cell--number">% covered</th>
-          <th class="cell--number">Lines</th>
-          <th class="cell--number">Relevant Lines</th>
-          <th class="cell--number">Lines covered</th>
-          <th class="cell--number">Lines missed</th>
-          <th class="cell--number">Avg. Hits / Line</th>
-          
-        </tr>
-      </thead>
-      <tbody>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#b213cb166f974aecfdb80744def8bfdee4325925" class="src_link" title="app/controllers/application_controller.rb">app/controllers/application_controller.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">92.00 %</td>
-            <td class="cell--number">43</td>
-            <td class="cell--number">25</td>
-            <td class="cell--number">23</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">2.52</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#bd022c09d7affa599f7126e04db92807ce24af21" class="src_link" title="app/controllers/dashboards_controller.rb">app/controllers/dashboards_controller.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">4</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#244a07245a6e5e81c29b4c8e8165ebf2a700db39" class="src_link" title="app/controllers/users/sessions_controller.rb">app/controllers/users/sessions_controller.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">27</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#eb79f3b4ac0de077b9fe32bbf9165f35a65108cc" class="src_link" title="app/helpers/account_users_helper.rb">app/helpers/account_users_helper.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#3e417356454fb1a6c0cef364abab8142e2985685" class="src_link" title="app/helpers/accounts/base_helper.rb">app/helpers/accounts/base_helper.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#e16c6b4df7eb9c047fa48010f5dbcf0dbff53d2b" class="src_link" title="app/helpers/accounts_helper.rb">app/helpers/accounts_helper.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#5d127a05b47fa06a856b6082c084cd9feff53592" class="src_link" title="app/helpers/admin/impersonates_helper.rb">app/helpers/admin/impersonates_helper.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#2ecb8d70478b3778b1039c6e73bf7ad414b0f2b9" class="src_link" title="app/helpers/announcements_helper.rb">app/helpers/announcements_helper.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">33.33 %</td>
-            <td class="cell--number">10</td>
-            <td class="cell--number">6</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">4</td>
-            <td class="cell--number">0.33</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#4e27ad77529fa84f2a7a93cd6a7b330373f67f6f" class="src_link" title="app/helpers/application_helper.rb">app/helpers/application_helper.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#cf6f69529bea9d1372e93d2b2c52a0746a6c4a14" class="src_link" title="app/helpers/candidates_helper.rb">app/helpers/candidates_helper.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#5bde74f3b5cdca456092e8bcb1faf2ada390c399" class="src_link" title="app/helpers/dashboards_helper.rb">app/helpers/dashboards_helper.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#9c47b8347aa3cccb583a38a98a2b4b3dc6f327f5" class="src_link" title="app/helpers/departments_helper.rb">app/helpers/departments_helper.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#7b178def7e475ae983bdb89a26a2ec28f5201951" class="src_link" title="app/helpers/image_helper.rb">app/helpers/image_helper.rb</a></td>
-            <td class="yellow strong cell--number t-file__coverage">83.33 %</td>
-            <td class="cell--number">17</td>
-            <td class="cell--number">12</td>
-            <td class="cell--number">10</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">0.83</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#fe2ab753b657d879e142f82b6867c9c1502ebc13" class="src_link" title="app/helpers/job_pipelines/job_pipeline_stages_helper.rb">app/helpers/job_pipelines/job_pipeline_stages_helper.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#3b4fa762aaa9a2f2b68c9ee0013a09e1fdeeda2a" class="src_link" title="app/helpers/job_pipelines_helper.rb">app/helpers/job_pipelines_helper.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#630b80049186d10908f39f4558ff7b68fe6af8bf" class="src_link" title="app/helpers/jobs_helper.rb">app/helpers/jobs_helper.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#9ef5b5be95033d764537808ad8e8962993b78e88" class="src_link" title="app/helpers/match_histories_helper.rb">app/helpers/match_histories_helper.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#03df07509bf57ab3bcf357a65ef8f62b0d76458d" class="src_link" title="app/helpers/matches_helper.rb">app/helpers/matches_helper.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#cb92dd02ddc345012842e792030129c7e5a7704c" class="src_link" title="app/helpers/notifications_helper.rb">app/helpers/notifications_helper.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#a5cefc689bfffb1a496762732d2fdaf061096331" class="src_link" title="app/helpers/passwords_helper.rb">app/helpers/passwords_helper.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#d69e7af3aa334b892d84652a3ad90a772dfbb22d" class="src_link" title="app/helpers/public_jobs_helper.rb">app/helpers/public_jobs_helper.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#eca22923173d064acfc3b286ba60fb43bfa00d77" class="src_link" title="app/helpers/static_pages_helper.rb">app/helpers/static_pages_helper.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#76105069b6e136445d03ff80e288e2c1d3209884" class="src_link" title="app/models/account.rb">app/models/account.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">26</td>
-            <td class="cell--number">19</td>
-            <td class="cell--number">19</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.21</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#8c12604a77dae81ec6e86d178a6728daab45e278" class="src_link" title="app/models/account_user.rb">app/models/account_user.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">75.00 %</td>
-            <td class="cell--number">14</td>
-            <td class="cell--number">8</td>
-            <td class="cell--number">6</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">0.75</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#c3aeb8ba691c4feb2dd3a49f29d7c88b2d1ce73d" class="src_link" title="app/models/application_record.rb">app/models/application_record.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">3</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#2878e35e319694c4ffbbc23050c32e06a070bf94" class="src_link" title="app/models/job_pipeline.rb">app/models/job_pipeline.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">92.86 %</td>
-            <td class="cell--number">29</td>
-            <td class="cell--number">14</td>
-            <td class="cell--number">13</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">1.57</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#a67942029da013ba1c61fe6ccd95ef4cc4012696" class="src_link" title="app/models/job_pipeline_stage.rb">app/models/job_pipeline_stage.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">73.68 %</td>
-            <td class="cell--number">33</td>
-            <td class="cell--number">19</td>
-            <td class="cell--number">14</td>
-            <td class="cell--number">5</td>
-            <td class="cell--number">0.74</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#8a4f3e1a55a3798c8992f9072acffb1c74bc3818" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">20</td>
-            <td class="cell--number">11</td>
-            <td class="cell--number">11</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#2013f9432f616c09f628ba93ca5018eae78daf5e" class="src_link" title="app/models/user/accounts.rb">app/models/user/accounts.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">23</td>
-            <td class="cell--number">14</td>
-            <td class="cell--number">14</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.36</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#c50d7e035f48583d70b1cdab627eb6a3fb4fa8ee" class="src_link" title="app/models/user/agreement.rb">app/models/user/agreement.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">20</td>
-            <td class="cell--number">11</td>
-            <td class="cell--number">11</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.18</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#23814f82b2020bc78fe38cf80fcbf1b7b95a71e5" class="src_link" title="config/application.rb">config/application.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">44</td>
-            <td class="cell--number">13</td>
-            <td class="cell--number">13</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#5e41432224a24ab21bf3a6e25589f84f62d6d4f5" class="src_link" title="config/boot.rb">config/boot.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">4</td>
-            <td class="cell--number">3</td>
-            <td class="cell--number">3</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#680b4c49fb0d28d90f08d733ae2e206b51b58711" class="src_link" title="config/environment.rb">config/environment.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">5</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#bd11b963d2a3c069de5a768641c2e32c4d189c2f" class="src_link" title="config/environments/test.rb">config/environments/test.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">64</td>
-            <td class="cell--number">18</td>
-            <td class="cell--number">18</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#93e44b3cad8184ebc8727b275f340e55bef574d9" class="src_link" title="config/initializers/assets.rb">config/initializers/assets.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">13</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#b69295709d414c626ebcd97860df38de4540fb57" class="src_link" title="config/initializers/config.rb">config/initializers/config.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">33.33 %</td>
-            <td class="cell--number">68</td>
-            <td class="cell--number">3</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">0.33</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#7ddf250f3fe043ee06566aa10d1aa3d74c836142" class="src_link" title="config/initializers/content_security_policy.rb">config/initializers/content_security_policy.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">25</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">0.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#4f458cea9df1a425e044a88c3ac26467f0295fcb" class="src_link" title="config/initializers/devise.rb">config/initializers/devise.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">313</td>
-            <td class="cell--number">15</td>
-            <td class="cell--number">15</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#379b161aa9906d340aa186e5b43f058144cc25cb" class="src_link" title="config/initializers/filter_parameter_logging.rb">config/initializers/filter_parameter_logging.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">8</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#8899d6ff6e2bdab4a78e4983b22b0943440dee67" class="src_link" title="config/initializers/inflections.rb">config/initializers/inflections.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">16</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">0.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#280a800931b757396daa530c0d309f3177d025a3" class="src_link" title="config/initializers/permissions_policy.rb">config/initializers/permissions_policy.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">13</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">0.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#cab7a83d7c103ad630dd2e4f4e0409a5b19cdefa" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">97.56 %</td>
-            <td class="cell--number">76</td>
-            <td class="cell--number">41</td>
-            <td class="cell--number">40</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">0.98</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#2b7d4e3dc4a74e28c9f5b55b694c97d1f51e023d" class="src_link" title="spec/factories/users.rb">spec/factories/users.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">10</td>
-            <td class="cell--number">8</td>
-            <td class="cell--number">8</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">2.13</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#d9913eafbf74a2c4257b550dba01d9d89ab9a185" class="src_link" title="spec/models/user_spec.rb">spec/models/user_spec.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">20</td>
-            <td class="cell--number">13</td>
-            <td class="cell--number">13</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.15</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#c2a4ca7b2bc7956861ce72077e5134e7935f16a8" class="src_link" title="spec/rails_helper.rb">spec/rails_helper.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">93.33 %</td>
-            <td class="cell--number">71</td>
-            <td class="cell--number">15</td>
-            <td class="cell--number">14</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">1.20</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#08ec204225e0e2baa779b8738a78ba9d93e7f6a9" class="src_link" title="spec/support/capybara.rb">spec/support/capybara.rb</a></td>
-            <td class="yellow strong cell--number t-file__coverage">83.33 %</td>
-            <td class="cell--number">11</td>
-            <td class="cell--number">6</td>
-            <td class="cell--number">5</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#abe6dcca7771f3deee242cafc1ab9f3626404250" class="src_link" title="spec/support/database_cleaner.rb">spec/support/database_cleaner.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">10</td>
-            <td class="cell--number">5</td>
-            <td class="cell--number">5</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#b25e5aeff6333665465dee754b3faafef2998f58" class="src_link" title="spec/support/devise.rb">spec/support/devise.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">3</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#cdd2bcb857f1dbc9411ce9b92d388848b984bd9d" class="src_link" title="spec/support/factory_bot.rb">spec/support/factory_bot.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">5</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#0365cedf199eda9b095b550c6a72fc80e6d0e9f8" class="src_link" title="spec/system/login_system_spec.rb">spec/system/login_system_spec.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">29</td>
-            <td class="cell--number">17</td>
-            <td class="cell--number">17</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.35</td>
-            
-          </tr>
-        
-      </tbody>
-    </table>
-  </div>
-</div>
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#244a07245a6e5e81c29b4c8e8165ebf2a700db39"
+                      class="src_link"
+                      title="app/controllers/users/sessions_controller.rb"
+                      >app/controllers/users/sessions_controller.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">27</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
 
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#eb79f3b4ac0de077b9fe32bbf9165f35a65108cc"
+                      class="src_link"
+                      title="app/helpers/account_users_helper.rb"
+                      >app/helpers/account_users_helper.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
 
-        
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#3e417356454fb1a6c0cef364abab8142e2985685"
+                      class="src_link"
+                      title="app/helpers/accounts/base_helper.rb"
+                      >app/helpers/accounts/base_helper.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#e16c6b4df7eb9c047fa48010f5dbcf0dbff53d2b"
+                      class="src_link"
+                      title="app/helpers/accounts_helper.rb"
+                      >app/helpers/accounts_helper.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#5d127a05b47fa06a856b6082c084cd9feff53592"
+                      class="src_link"
+                      title="app/helpers/admin/impersonates_helper.rb"
+                      >app/helpers/admin/impersonates_helper.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#2ecb8d70478b3778b1039c6e73bf7ad414b0f2b9"
+                      class="src_link"
+                      title="app/helpers/announcements_helper.rb"
+                      >app/helpers/announcements_helper.rb</a
+                    >
+                  </td>
+                  <td class="red strong cell--number t-file__coverage">
+                    33.33 %
+                  </td>
+                  <td class="cell--number">10</td>
+                  <td class="cell--number">6</td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">4</td>
+                  <td class="cell--number">0.33</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#4e27ad77529fa84f2a7a93cd6a7b330373f67f6f"
+                      class="src_link"
+                      title="app/helpers/application_helper.rb"
+                      >app/helpers/application_helper.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#cf6f69529bea9d1372e93d2b2c52a0746a6c4a14"
+                      class="src_link"
+                      title="app/helpers/candidates_helper.rb"
+                      >app/helpers/candidates_helper.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#5bde74f3b5cdca456092e8bcb1faf2ada390c399"
+                      class="src_link"
+                      title="app/helpers/dashboards_helper.rb"
+                      >app/helpers/dashboards_helper.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#9c47b8347aa3cccb583a38a98a2b4b3dc6f327f5"
+                      class="src_link"
+                      title="app/helpers/departments_helper.rb"
+                      >app/helpers/departments_helper.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#7b178def7e475ae983bdb89a26a2ec28f5201951"
+                      class="src_link"
+                      title="app/helpers/image_helper.rb"
+                      >app/helpers/image_helper.rb</a
+                    >
+                  </td>
+                  <td class="yellow strong cell--number t-file__coverage">
+                    83.33 %
+                  </td>
+                  <td class="cell--number">17</td>
+                  <td class="cell--number">12</td>
+                  <td class="cell--number">10</td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">0.83</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#fe2ab753b657d879e142f82b6867c9c1502ebc13"
+                      class="src_link"
+                      title="app/helpers/job_pipelines/job_pipeline_stages_helper.rb"
+                      >app/helpers/job_pipelines/job_pipeline_stages_helper.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#3b4fa762aaa9a2f2b68c9ee0013a09e1fdeeda2a"
+                      class="src_link"
+                      title="app/helpers/job_pipelines_helper.rb"
+                      >app/helpers/job_pipelines_helper.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#630b80049186d10908f39f4558ff7b68fe6af8bf"
+                      class="src_link"
+                      title="app/helpers/jobs_helper.rb"
+                      >app/helpers/jobs_helper.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#9ef5b5be95033d764537808ad8e8962993b78e88"
+                      class="src_link"
+                      title="app/helpers/match_histories_helper.rb"
+                      >app/helpers/match_histories_helper.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#03df07509bf57ab3bcf357a65ef8f62b0d76458d"
+                      class="src_link"
+                      title="app/helpers/matches_helper.rb"
+                      >app/helpers/matches_helper.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#cb92dd02ddc345012842e792030129c7e5a7704c"
+                      class="src_link"
+                      title="app/helpers/notifications_helper.rb"
+                      >app/helpers/notifications_helper.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#a5cefc689bfffb1a496762732d2fdaf061096331"
+                      class="src_link"
+                      title="app/helpers/passwords_helper.rb"
+                      >app/helpers/passwords_helper.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#d69e7af3aa334b892d84652a3ad90a772dfbb22d"
+                      class="src_link"
+                      title="app/helpers/public_jobs_helper.rb"
+                      >app/helpers/public_jobs_helper.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#eca22923173d064acfc3b286ba60fb43bfa00d77"
+                      class="src_link"
+                      title="app/helpers/static_pages_helper.rb"
+                      >app/helpers/static_pages_helper.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#76105069b6e136445d03ff80e288e2c1d3209884"
+                      class="src_link"
+                      title="app/models/account.rb"
+                      >app/models/account.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">26</td>
+                  <td class="cell--number">19</td>
+                  <td class="cell--number">19</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.21</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#8c12604a77dae81ec6e86d178a6728daab45e278"
+                      class="src_link"
+                      title="app/models/account_user.rb"
+                      >app/models/account_user.rb</a
+                    >
+                  </td>
+                  <td class="red strong cell--number t-file__coverage">
+                    75.00 %
+                  </td>
+                  <td class="cell--number">14</td>
+                  <td class="cell--number">8</td>
+                  <td class="cell--number">6</td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">0.75</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#c3aeb8ba691c4feb2dd3a49f29d7c88b2d1ce73d"
+                      class="src_link"
+                      title="app/models/application_record.rb"
+                      >app/models/application_record.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">3</td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#2878e35e319694c4ffbbc23050c32e06a070bf94"
+                      class="src_link"
+                      title="app/models/job_pipeline.rb"
+                      >app/models/job_pipeline.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    92.86 %
+                  </td>
+                  <td class="cell--number">29</td>
+                  <td class="cell--number">14</td>
+                  <td class="cell--number">13</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">1.57</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#a67942029da013ba1c61fe6ccd95ef4cc4012696"
+                      class="src_link"
+                      title="app/models/job_pipeline_stage.rb"
+                      >app/models/job_pipeline_stage.rb</a
+                    >
+                  </td>
+                  <td class="red strong cell--number t-file__coverage">
+                    73.68 %
+                  </td>
+                  <td class="cell--number">33</td>
+                  <td class="cell--number">19</td>
+                  <td class="cell--number">14</td>
+                  <td class="cell--number">5</td>
+                  <td class="cell--number">0.74</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#8a4f3e1a55a3798c8992f9072acffb1c74bc3818"
+                      class="src_link"
+                      title="app/models/user.rb"
+                      >app/models/user.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">20</td>
+                  <td class="cell--number">11</td>
+                  <td class="cell--number">11</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#2013f9432f616c09f628ba93ca5018eae78daf5e"
+                      class="src_link"
+                      title="app/models/user/accounts.rb"
+                      >app/models/user/accounts.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">23</td>
+                  <td class="cell--number">14</td>
+                  <td class="cell--number">14</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.36</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#c50d7e035f48583d70b1cdab627eb6a3fb4fa8ee"
+                      class="src_link"
+                      title="app/models/user/agreement.rb"
+                      >app/models/user/agreement.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">20</td>
+                  <td class="cell--number">11</td>
+                  <td class="cell--number">11</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.18</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#23814f82b2020bc78fe38cf80fcbf1b7b95a71e5"
+                      class="src_link"
+                      title="config/application.rb"
+                      >config/application.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">44</td>
+                  <td class="cell--number">13</td>
+                  <td class="cell--number">13</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#5e41432224a24ab21bf3a6e25589f84f62d6d4f5"
+                      class="src_link"
+                      title="config/boot.rb"
+                      >config/boot.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">4</td>
+                  <td class="cell--number">3</td>
+                  <td class="cell--number">3</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#680b4c49fb0d28d90f08d733ae2e206b51b58711"
+                      class="src_link"
+                      title="config/environment.rb"
+                      >config/environment.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">5</td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#bd11b963d2a3c069de5a768641c2e32c4d189c2f"
+                      class="src_link"
+                      title="config/environments/test.rb"
+                      >config/environments/test.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">64</td>
+                  <td class="cell--number">18</td>
+                  <td class="cell--number">18</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#93e44b3cad8184ebc8727b275f340e55bef574d9"
+                      class="src_link"
+                      title="config/initializers/assets.rb"
+                      >config/initializers/assets.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">13</td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#b69295709d414c626ebcd97860df38de4540fb57"
+                      class="src_link"
+                      title="config/initializers/config.rb"
+                      >config/initializers/config.rb</a
+                    >
+                  </td>
+                  <td class="red strong cell--number t-file__coverage">
+                    33.33 %
+                  </td>
+                  <td class="cell--number">68</td>
+                  <td class="cell--number">3</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">0.33</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#7ddf250f3fe043ee06566aa10d1aa3d74c836142"
+                      class="src_link"
+                      title="config/initializers/content_security_policy.rb"
+                      >config/initializers/content_security_policy.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">25</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">0.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#4f458cea9df1a425e044a88c3ac26467f0295fcb"
+                      class="src_link"
+                      title="config/initializers/devise.rb"
+                      >config/initializers/devise.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">313</td>
+                  <td class="cell--number">15</td>
+                  <td class="cell--number">15</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#379b161aa9906d340aa186e5b43f058144cc25cb"
+                      class="src_link"
+                      title="config/initializers/filter_parameter_logging.rb"
+                      >config/initializers/filter_parameter_logging.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">8</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#8899d6ff6e2bdab4a78e4983b22b0943440dee67"
+                      class="src_link"
+                      title="config/initializers/inflections.rb"
+                      >config/initializers/inflections.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">16</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">0.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#280a800931b757396daa530c0d309f3177d025a3"
+                      class="src_link"
+                      title="config/initializers/permissions_policy.rb"
+                      >config/initializers/permissions_policy.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">13</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">0.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#cab7a83d7c103ad630dd2e4f4e0409a5b19cdefa"
+                      class="src_link"
+                      title="config/routes.rb"
+                      >config/routes.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    97.56 %
+                  </td>
+                  <td class="cell--number">76</td>
+                  <td class="cell--number">41</td>
+                  <td class="cell--number">40</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">0.98</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#2b7d4e3dc4a74e28c9f5b55b694c97d1f51e023d"
+                      class="src_link"
+                      title="spec/factories/users.rb"
+                      >spec/factories/users.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">10</td>
+                  <td class="cell--number">8</td>
+                  <td class="cell--number">8</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">2.13</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#d9913eafbf74a2c4257b550dba01d9d89ab9a185"
+                      class="src_link"
+                      title="spec/models/user_spec.rb"
+                      >spec/models/user_spec.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">20</td>
+                  <td class="cell--number">13</td>
+                  <td class="cell--number">13</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.15</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#c2a4ca7b2bc7956861ce72077e5134e7935f16a8"
+                      class="src_link"
+                      title="spec/rails_helper.rb"
+                      >spec/rails_helper.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    93.33 %
+                  </td>
+                  <td class="cell--number">71</td>
+                  <td class="cell--number">15</td>
+                  <td class="cell--number">14</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">1.20</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#08ec204225e0e2baa779b8738a78ba9d93e7f6a9"
+                      class="src_link"
+                      title="spec/support/capybara.rb"
+                      >spec/support/capybara.rb</a
+                    >
+                  </td>
+                  <td class="yellow strong cell--number t-file__coverage">
+                    83.33 %
+                  </td>
+                  <td class="cell--number">11</td>
+                  <td class="cell--number">6</td>
+                  <td class="cell--number">5</td>
+                  <td class="cell--number">1</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#abe6dcca7771f3deee242cafc1ab9f3626404250"
+                      class="src_link"
+                      title="spec/support/database_cleaner.rb"
+                      >spec/support/database_cleaner.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">10</td>
+                  <td class="cell--number">5</td>
+                  <td class="cell--number">5</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#b25e5aeff6333665465dee754b3faafef2998f58"
+                      class="src_link"
+                      title="spec/support/devise.rb"
+                      >spec/support/devise.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">3</td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#cdd2bcb857f1dbc9411ce9b92d388848b984bd9d"
+                      class="src_link"
+                      title="spec/support/factory_bot.rb"
+                      >spec/support/factory_bot.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">5</td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">2</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.00</td>
+                </tr>
+
+                <tr class="t-file">
+                  <td class="strong t-file__name">
+                    <a
+                      href="#0365cedf199eda9b095b550c6a72fc80e6d0e9f8"
+                      class="src_link"
+                      title="spec/system/login_system_spec.rb"
+                      >spec/system/login_system_spec.rb</a
+                    >
+                  </td>
+                  <td class="green strong cell--number t-file__coverage">
+                    100.00 %
+                  </td>
+                  <td class="cell--number">29</td>
+                  <td class="cell--number">17</td>
+                  <td class="cell--number">17</td>
+                  <td class="cell--number">0</td>
+                  <td class="cell--number">1.35</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
 
       <div id="footer">
-        Generated by <a href="https://github.com/simplecov-ruby/simplecov">simplecov</a> v0.22.0
-        and simplecov-html v0.12.3<br/>
+        Generated by
+        <a href="https://github.com/simplecov-ruby/simplecov">simplecov</a>
+        v0.22.0 and simplecov-html v0.12.3<br />
         using RSpec
       </div>
 
       <div class="source_files">
-      
         <div class="source_table" id="b213cb166f974aecfdb80744def8bfdee4325925">
-  <div class="header">
-    <h3>app/controllers/application_controller.rb</h3>
-    <h4>
-      <span class="green">
-  92.0%
-</span>
+          <div class="header">
+            <h3>app/controllers/application_controller.rb</h3>
+            <h4>
+              <span class="green"> 92.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>25</b> relevant lines.
+              <span class="green"><b>23</b> lines covered</span> and
+              <span class="red"><b>2</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>25</b> relevant lines.
-      <span class="green"><b>23</b> lines covered</span> and
-      <span class="red"><b>2</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -1138,33 +1531,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="bd022c09d7affa599f7126e04db92807ce24af21">
-  <div class="header">
-    <h3>app/controllers/dashboards_controller.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>app/controllers/dashboards_controller.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>2</b> relevant lines.
+              <span class="green"><b>2</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>2</b> relevant lines.
-      <span class="green"><b>2</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -1213,33 +1598,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="244a07245a6e5e81c29b4c8e8165ebf2a700db39">
-  <div class="header">
-    <h3>app/controllers/users/sessions_controller.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>app/controllers/users/sessions_controller.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>1</b> relevant lines.
+              <span class="green"><b>1</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>1</b> relevant lines.
-      <span class="green"><b>1</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -1541,33 +1918,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="eb79f3b4ac0de077b9fe32bbf9165f35a65108cc">
-  <div class="header">
-    <h3>app/helpers/account_users_helper.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>app/helpers/account_users_helper.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>1</b> relevant lines.
+              <span class="green"><b>1</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>1</b> relevant lines.
-      <span class="green"><b>1</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -1594,33 +1963,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="3e417356454fb1a6c0cef364abab8142e2985685">
-  <div class="header">
-    <h3>app/helpers/accounts/base_helper.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>app/helpers/accounts/base_helper.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>1</b> relevant lines.
+              <span class="green"><b>1</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>1</b> relevant lines.
-      <span class="green"><b>1</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -1647,33 +2008,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="e16c6b4df7eb9c047fa48010f5dbcf0dbff53d2b">
-  <div class="header">
-    <h3>app/helpers/accounts_helper.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>app/helpers/accounts_helper.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>1</b> relevant lines.
+              <span class="green"><b>1</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>1</b> relevant lines.
-      <span class="green"><b>1</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -1700,33 +2053,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="5d127a05b47fa06a856b6082c084cd9feff53592">
-  <div class="header">
-    <h3>app/helpers/admin/impersonates_helper.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>app/helpers/admin/impersonates_helper.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>1</b> relevant lines.
+              <span class="green"><b>1</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>1</b> relevant lines.
-      <span class="green"><b>1</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -1753,33 +2098,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="2ecb8d70478b3778b1039c6e73bf7ad414b0f2b9">
-  <div class="header">
-    <h3>app/helpers/announcements_helper.rb</h3>
-    <h4>
-      <span class="red">
-  33.33%
-</span>
+          <div class="header">
+            <h3>app/helpers/announcements_helper.rb</h3>
+            <h4>
+              <span class="red"> 33.33% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>6</b> relevant lines.
+              <span class="green"><b>2</b> lines covered</span> and
+              <span class="red"><b>4</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>6</b> relevant lines.
-      <span class="green"><b>2</b> lines covered</span> and
-      <span class="red"><b>4</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -1894,33 +2231,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="4e27ad77529fa84f2a7a93cd6a7b330373f67f6f">
-  <div class="header">
-    <h3>app/helpers/application_helper.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>app/helpers/application_helper.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>1</b> relevant lines.
+              <span class="green"><b>1</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>1</b> relevant lines.
-      <span class="green"><b>1</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -1947,33 +2276,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="cf6f69529bea9d1372e93d2b2c52a0746a6c4a14">
-  <div class="header">
-    <h3>app/helpers/candidates_helper.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>app/helpers/candidates_helper.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>1</b> relevant lines.
+              <span class="green"><b>1</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>1</b> relevant lines.
-      <span class="green"><b>1</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -2000,33 +2321,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="5bde74f3b5cdca456092e8bcb1faf2ada390c399">
-  <div class="header">
-    <h3>app/helpers/dashboards_helper.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>app/helpers/dashboards_helper.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>1</b> relevant lines.
+              <span class="green"><b>1</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>1</b> relevant lines.
-      <span class="green"><b>1</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -2053,33 +2366,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="9c47b8347aa3cccb583a38a98a2b4b3dc6f327f5">
-  <div class="header">
-    <h3>app/helpers/departments_helper.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>app/helpers/departments_helper.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>1</b> relevant lines.
+              <span class="green"><b>1</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>1</b> relevant lines.
-      <span class="green"><b>1</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -2106,33 +2411,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="7b178def7e475ae983bdb89a26a2ec28f5201951">
-  <div class="header">
-    <h3>app/helpers/image_helper.rb</h3>
-    <h4>
-      <span class="yellow">
-  83.33%
-</span>
+          <div class="header">
+            <h3>app/helpers/image_helper.rb</h3>
+            <h4>
+              <span class="yellow"> 83.33% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>12</b> relevant lines.
+              <span class="green"><b>10</b> lines covered</span> and
+              <span class="red"><b>2</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>12</b> relevant lines.
-      <span class="green"><b>10</b> lines covered</span> and
-      <span class="red"><b>2</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -2324,33 +2621,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="fe2ab753b657d879e142f82b6867c9c1502ebc13">
-  <div class="header">
-    <h3>app/helpers/job_pipelines/job_pipeline_stages_helper.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>app/helpers/job_pipelines/job_pipeline_stages_helper.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>1</b> relevant lines.
+              <span class="green"><b>1</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>1</b> relevant lines.
-      <span class="green"><b>1</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -2377,33 +2666,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="3b4fa762aaa9a2f2b68c9ee0013a09e1fdeeda2a">
-  <div class="header">
-    <h3>app/helpers/job_pipelines_helper.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>app/helpers/job_pipelines_helper.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>1</b> relevant lines.
+              <span class="green"><b>1</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>1</b> relevant lines.
-      <span class="green"><b>1</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -2430,33 +2711,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="630b80049186d10908f39f4558ff7b68fe6af8bf">
-  <div class="header">
-    <h3>app/helpers/jobs_helper.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>app/helpers/jobs_helper.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>1</b> relevant lines.
+              <span class="green"><b>1</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>1</b> relevant lines.
-      <span class="green"><b>1</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -2483,33 +2756,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="9ef5b5be95033d764537808ad8e8962993b78e88">
-  <div class="header">
-    <h3>app/helpers/match_histories_helper.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>app/helpers/match_histories_helper.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>1</b> relevant lines.
+              <span class="green"><b>1</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>1</b> relevant lines.
-      <span class="green"><b>1</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -2536,33 +2801,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="03df07509bf57ab3bcf357a65ef8f62b0d76458d">
-  <div class="header">
-    <h3>app/helpers/matches_helper.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>app/helpers/matches_helper.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>1</b> relevant lines.
+              <span class="green"><b>1</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>1</b> relevant lines.
-      <span class="green"><b>1</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -2589,33 +2846,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="cb92dd02ddc345012842e792030129c7e5a7704c">
-  <div class="header">
-    <h3>app/helpers/notifications_helper.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>app/helpers/notifications_helper.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>1</b> relevant lines.
+              <span class="green"><b>1</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>1</b> relevant lines.
-      <span class="green"><b>1</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -2642,33 +2891,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="a5cefc689bfffb1a496762732d2fdaf061096331">
-  <div class="header">
-    <h3>app/helpers/passwords_helper.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>app/helpers/passwords_helper.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>1</b> relevant lines.
+              <span class="green"><b>1</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>1</b> relevant lines.
-      <span class="green"><b>1</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -2695,33 +2936,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="d69e7af3aa334b892d84652a3ad90a772dfbb22d">
-  <div class="header">
-    <h3>app/helpers/public_jobs_helper.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>app/helpers/public_jobs_helper.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>1</b> relevant lines.
+              <span class="green"><b>1</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>1</b> relevant lines.
-      <span class="green"><b>1</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -2748,33 +2981,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="eca22923173d064acfc3b286ba60fb43bfa00d77">
-  <div class="header">
-    <h3>app/helpers/static_pages_helper.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>app/helpers/static_pages_helper.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>1</b> relevant lines.
+              <span class="green"><b>1</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>1</b> relevant lines.
-      <span class="green"><b>1</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -2801,33 +3026,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="76105069b6e136445d03ff80e288e2c1d3209884">
-  <div class="header">
-    <h3>app/models/account.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>app/models/account.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>19</b> relevant lines.
+              <span class="green"><b>19</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>19</b> relevant lines.
-      <span class="green"><b>19</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -3118,33 +3335,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="8c12604a77dae81ec6e86d178a6728daab45e278">
-  <div class="header">
-    <h3>app/models/account_user.rb</h3>
-    <h4>
-      <span class="red">
-  75.0%
-</span>
+          <div class="header">
+            <h3>app/models/account_user.rb</h3>
+            <h4>
+              <span class="red"> 75.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>8</b> relevant lines.
+              <span class="green"><b>6</b> lines covered</span> and
+              <span class="red"><b>2</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>8</b> relevant lines.
-      <span class="green"><b>6</b> lines covered</span> and
-      <span class="red"><b>2</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -3303,33 +3512,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="c3aeb8ba691c4feb2dd3a49f29d7c88b2d1ce73d">
-  <div class="header">
-    <h3>app/models/application_record.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>app/models/application_record.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>2</b> relevant lines.
+              <span class="green"><b>2</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>2</b> relevant lines.
-      <span class="green"><b>2</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -3367,33 +3568,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="2878e35e319694c4ffbbc23050c32e06a070bf94">
-  <div class="header">
-    <h3>app/models/job_pipeline.rb</h3>
-    <h4>
-      <span class="green">
-  92.86%
-</span>
+          <div class="header">
+            <h3>app/models/job_pipeline.rb</h3>
+            <h4>
+              <span class="green"> 92.86% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>14</b> relevant lines.
+              <span class="green"><b>13</b> lines covered</span> and
+              <span class="red"><b>1</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>14</b> relevant lines.
-      <span class="green"><b>13</b> lines covered</span> and
-      <span class="red"><b>1</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -3717,33 +3910,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="a67942029da013ba1c61fe6ccd95ef4cc4012696">
-  <div class="header">
-    <h3>app/models/job_pipeline_stage.rb</h3>
-    <h4>
-      <span class="red">
-  73.68%
-</span>
+          <div class="header">
+            <h3>app/models/job_pipeline_stage.rb</h3>
+            <h4>
+              <span class="red"> 73.68% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>19</b> relevant lines.
+              <span class="green"><b>14</b> lines covered</span> and
+              <span class="red"><b>5</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>19</b> relevant lines.
-      <span class="green"><b>14</b> lines covered</span> and
-      <span class="red"><b>5</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -4111,33 +4296,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="8a4f3e1a55a3798c8992f9072acffb1c74bc3818">
-  <div class="header">
-    <h3>app/models/user.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>app/models/user.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>11</b> relevant lines.
+              <span class="green"><b>11</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>11</b> relevant lines.
-      <span class="green"><b>11</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -4362,33 +4539,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="2013f9432f616c09f628ba93ca5018eae78daf5e">
-  <div class="header">
-    <h3>app/models/user/accounts.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>app/models/user/accounts.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>14</b> relevant lines.
+              <span class="green"><b>14</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>14</b> relevant lines.
-      <span class="green"><b>14</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -4646,33 +4815,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="c50d7e035f48583d70b1cdab627eb6a3fb4fa8ee">
-  <div class="header">
-    <h3>app/models/user/agreement.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>app/models/user/agreement.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>11</b> relevant lines.
+              <span class="green"><b>11</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>11</b> relevant lines.
-      <span class="green"><b>11</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -4897,33 +5058,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="23814f82b2020bc78fe38cf80fcbf1b7b95a71e5">
-  <div class="header">
-    <h3>config/application.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>config/application.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>13</b> relevant lines.
+              <span class="green"><b>13</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>13</b> relevant lines.
-      <span class="green"><b>13</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -5412,33 +5565,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="5e41432224a24ab21bf3a6e25589f84f62d6d4f5">
-  <div class="header">
-    <h3>config/boot.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>config/boot.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>3</b> relevant lines.
+              <span class="green"><b>3</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>3</b> relevant lines.
-      <span class="green"><b>3</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -5487,33 +5632,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="680b4c49fb0d28d90f08d733ae2e206b51b58711">
-  <div class="header">
-    <h3>config/environment.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>config/environment.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>2</b> relevant lines.
+              <span class="green"><b>2</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>2</b> relevant lines.
-      <span class="green"><b>2</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -5573,33 +5710,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="bd11b963d2a3c069de5a768641c2e32c4d189c2f">
-  <div class="header">
-    <h3>config/environments/test.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>config/environments/test.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>18</b> relevant lines.
+              <span class="green"><b>18</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>18</b> relevant lines.
-      <span class="green"><b>18</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -6308,33 +6437,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="93e44b3cad8184ebc8727b275f340e55bef574d9">
-  <div class="header">
-    <h3>config/initializers/assets.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>config/initializers/assets.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>2</b> relevant lines.
+              <span class="green"><b>2</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>2</b> relevant lines.
-      <span class="green"><b>2</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -6482,33 +6603,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="b69295709d414c626ebcd97860df38de4540fb57">
-  <div class="header">
-    <h3>config/initializers/config.rb</h3>
-    <h4>
-      <span class="red">
-  33.33%
-</span>
+          <div class="header">
+            <h3>config/initializers/config.rb</h3>
+            <h4>
+              <span class="red"> 33.33% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>3</b> relevant lines.
+              <span class="green"><b>1</b> lines covered</span> and
+              <span class="red"><b>2</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>3</b> relevant lines.
-      <span class="green"><b>1</b> lines covered</span> and
-      <span class="red"><b>2</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -7261,33 +7374,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="7ddf250f3fe043ee06566aa10d1aa3d74c836142">
-  <div class="header">
-    <h3>config/initializers/content_security_policy.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>config/initializers/content_security_policy.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>0</b> relevant lines.
+              <span class="green"><b>0</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>0</b> relevant lines.
-      <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -7567,33 +7672,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="4f458cea9df1a425e044a88c3ac26467f0295fcb">
-  <div class="header">
-    <h3>config/initializers/devise.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>config/initializers/devise.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>15</b> relevant lines.
+              <span class="green"><b>15</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>15</b> relevant lines.
-      <span class="green"><b>15</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -9583,7 +9680,7 @@
 
             
 
-            <code class="ruby">  config.password_length = 6..128</code>
+            <code class="ruby">  config.password_length = 8..128</code>
           </li>
         </div>
       
@@ -11041,33 +11138,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="379b161aa9906d340aa186e5b43f058144cc25cb">
-  <div class="header">
-    <h3>config/initializers/filter_parameter_logging.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>config/initializers/filter_parameter_logging.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>1</b> relevant lines.
+              <span class="green"><b>1</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>1</b> relevant lines.
-      <span class="green"><b>1</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -11160,33 +11249,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="8899d6ff6e2bdab4a78e4983b22b0943440dee67">
-  <div class="header">
-    <h3>config/initializers/inflections.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>config/initializers/inflections.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>0</b> relevant lines.
+              <span class="green"><b>0</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>0</b> relevant lines.
-      <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -11367,33 +11448,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="280a800931b757396daa530c0d309f3177d025a3">
-  <div class="header">
-    <h3>config/initializers/permissions_policy.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>config/initializers/permissions_policy.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>0</b> relevant lines.
+              <span class="green"><b>0</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>0</b> relevant lines.
-      <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -11541,33 +11614,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="cab7a83d7c103ad630dd2e4f4e0409a5b19cdefa">
-  <div class="header">
-    <h3>config/routes.rb</h3>
-    <h4>
-      <span class="green">
-  97.56%
-</span>
+          <div class="header">
+            <h3>config/routes.rb</h3>
+            <h4>
+              <span class="green"> 97.56% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>41</b> relevant lines.
+              <span class="green"><b>40</b> lines covered</span> and
+              <span class="red"><b>1</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>41</b> relevant lines.
-      <span class="green"><b>40</b> lines covered</span> and
-      <span class="red"><b>1</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -12408,33 +12473,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="2b7d4e3dc4a74e28c9f5b55b694c97d1f51e023d">
-  <div class="header">
-    <h3>spec/factories/users.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>spec/factories/users.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>8</b> relevant lines.
+              <span class="green"><b>8</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>8</b> relevant lines.
-      <span class="green"><b>8</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -12549,33 +12606,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="d9913eafbf74a2c4257b550dba01d9d89ab9a185">
-  <div class="header">
-    <h3>spec/models/user_spec.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>spec/models/user_spec.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>13</b> relevant lines.
+              <span class="green"><b>13</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>13</b> relevant lines.
-      <span class="green"><b>13</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -12800,33 +12849,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="c2a4ca7b2bc7956861ce72077e5134e7935f16a8">
-  <div class="header">
-    <h3>spec/rails_helper.rb</h3>
-    <h4>
-      <span class="green">
-  93.33%
-</span>
+          <div class="header">
+            <h3>spec/rails_helper.rb</h3>
+            <h4>
+              <span class="green"> 93.33% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>15</b> relevant lines.
+              <span class="green"><b>14</b> lines covered</span> and
+              <span class="red"><b>1</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>15</b> relevant lines.
-      <span class="green"><b>14</b> lines covered</span> and
-      <span class="red"><b>1</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -13612,33 +13653,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="08ec204225e0e2baa779b8738a78ba9d93e7f6a9">
-  <div class="header">
-    <h3>spec/support/capybara.rb</h3>
-    <h4>
-      <span class="yellow">
-  83.33%
-</span>
+          <div class="header">
+            <h3>spec/support/capybara.rb</h3>
+            <h4>
+              <span class="yellow"> 83.33% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>6</b> relevant lines.
+              <span class="green"><b>5</b> lines covered</span> and
+              <span class="red"><b>1</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>6</b> relevant lines.
-      <span class="green"><b>5</b> lines covered</span> and
-      <span class="red"><b>1</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -13764,33 +13797,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="abe6dcca7771f3deee242cafc1ab9f3626404250">
-  <div class="header">
-    <h3>spec/support/database_cleaner.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>spec/support/database_cleaner.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>5</b> relevant lines.
+              <span class="green"><b>5</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>5</b> relevant lines.
-      <span class="green"><b>5</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -13905,33 +13930,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="b25e5aeff6333665465dee754b3faafef2998f58">
-  <div class="header">
-    <h3>spec/support/devise.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>spec/support/devise.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>2</b> relevant lines.
+              <span class="green"><b>2</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>2</b> relevant lines.
-      <span class="green"><b>2</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -13969,33 +13986,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="cdd2bcb857f1dbc9411ce9b92d388848b984bd9d">
-  <div class="header">
-    <h3>spec/support/factory_bot.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>spec/support/factory_bot.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>2</b> relevant lines.
+              <span class="green"><b>2</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>2</b> relevant lines.
-      <span class="green"><b>2</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -14055,33 +14064,25 @@
       
     </ol>
   </pre>
-</div>
+        </div>
 
-      
         <div class="source_table" id="0365cedf199eda9b095b550c6a72fc80e6d0e9f8">
-  <div class="header">
-    <h3>spec/system/login_system_spec.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
+          <div class="header">
+            <h3>spec/system/login_system_spec.rb</h3>
+            <h4>
+              <span class="green"> 100.0% </span>
 
-      lines covered
-    </h4>
+              lines covered
+            </h4>
 
-    
+            <div class="t-line-summary">
+              <b>17</b> relevant lines.
+              <span class="green"><b>17</b> lines covered</span> and
+              <span class="red"><b>0</b> lines missed.</span>
+            </div>
+          </div>
 
-    <div class="t-line-summary">
-      <b>17</b> relevant lines.
-      <span class="green"><b>17</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
+          <pre>
     <ol>
       
         <div>
@@ -14405,9 +14406,7 @@
       
     </ol>
   </pre>
-</div>
-
-      
+        </div>
       </div>
     </div>
   </body>
