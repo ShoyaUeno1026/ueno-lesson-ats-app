@@ -1,29 +1,22 @@
 <div id="match_histories">
   <div class="text-nowrap table-responsive">
   <table class="table table-hover table-fixed">
-    <thead>
-      <tr>
-        <th>更新日時</th>
-        <th>候補者名</th>
-        <th>選考フロー</th>
-        <th>更新者</th>
-      </tr>
-    </thead>
-    <tbody>
+    <tbody class="align-middle">
       <% @match_histories.each do |match_history| %>
         <tr>
           <td><%= l match_history.created_at %></td>
-          <td><%= match_history.candidate&.name %></td>
-
-          <% if match_history.dropped_at.nil?%>
-            <td><%= match_history.job_pipeline_stage&.name %></td>
-          <% else %>
-            <td><%= t(".dropped") %></td>
-          <% end %>
-
           <td>
             <%= image_tag image_path(match_history.user, size:40), height: 20, width: 20, class: "rounded" %>
-            <%= match_history.user&.name %>
+            <span><%= match_history.user&.name %></span>
+            <span class="ps-1">が</span>
+            <span class="ps-1"><%= match_history.candidate&.name %></span>
+            <span class="ps-1">の選考フローを</span>
+            <% if match_history.dropped_at.nil? %>
+              <span class="ps-1"><%= match_history.job_pipeline_stage&.name %></span>
+            <% else %>
+              <span class="ps-1"><%= t(".dropped") %></span>
+            <% end %>
+              <span class="ps-1">に変更しました</span>
           </td>
         </tr>
       <% end %>
