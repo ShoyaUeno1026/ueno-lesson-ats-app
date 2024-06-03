@@ -4,13 +4,13 @@
     <tbody class="align-middle">
       <% @match_histories.each do |match_history| %>
         <tr>
-          <td><%= l match_history.created_at %></td>
+          <td class="col-md-2"><%= l match_history.created_at %></td>
           <td>
             <%= image_tag image_path(match_history.user, size:40), height: 20, width: 20, class: "rounded" %>
             <span><%= match_history.user&.name %></span>
             <span class="ps-1">が</span>
             <span class="ps-1"><%= match_history.candidate&.name %></span>
-            <span class="ps-1">の選考フローを</span>
+            <span class="ps-1">を</span>
             <% if match_history.dropped_at.nil? %>
               <span class="ps-1"><%= match_history.job_pipeline_stage&.name %></span>
             <% else %>
