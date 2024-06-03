@@ -4,8 +4,6 @@
     <thead>
       <tr>
         <th>更新日時</th>
-        <th>事業所の名前</th>
-        <th>職種名</th>
         <th>候補者名</th>
         <th>選考フロー</th>
         <th>更新者</th>
@@ -15,8 +13,6 @@
       <% @match_histories.each do |match_history| %>
         <tr>
           <td><%= l match_history.created_at %></td>
-          <td><%= match_history.account&.name %></td>
-          <td><%= match_history.job&.position_name %></td>
           <td><%= match_history.candidate&.name %></td>
 
           <% if match_history.dropped_at.nil?%>
