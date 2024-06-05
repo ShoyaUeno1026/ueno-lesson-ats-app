@@ -8,6 +8,8 @@ module User::Accounts
 
     after_create :create_default_account, unless: :skip_default_account?
 
+    accepts_nested_attributes_for :owned_accounts, reject_if: :all_blank
+    
     # Used for skipping a default account on create
     attribute :skip_default_account, :boolean, default: false
   end
@@ -16,7 +18,7 @@ module User::Accounts
     return accounts.first if accounts.any?
 
     account = accounts.new(owner: self, name: name)
-    account.account_users.new(user: self, role: "admin")
+    account.account_users.new(user: self, admin: true)
     account.save!
     account
   end

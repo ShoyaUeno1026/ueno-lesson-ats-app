@@ -19,7 +19,7 @@ class AccountsController < Accounts::BaseController
   def create
     @account = Account.new(account_params)
     @account.owner = current_user
-    @account.account_users.new(user: current_user, role: "admin")
+    @account.account_users.new(user: current_user, roles: "admin")
 
     if @account.save
       flash[:notice] = t(".created")
@@ -56,6 +56,6 @@ class AccountsController < Accounts::BaseController
 
   def account_params
     params.require(:account)
-      .permit(:name, :image)
+      .permit(:name, :image, :account_type)
   end
 end

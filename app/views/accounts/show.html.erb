@@ -57,7 +57,7 @@
 
     <div class="d-flex justify-content-between align-items-center mb-4">
       <h1 class="h3"><%= t(".member") %></h1>
-      <%= link_to t(".add"), new_account_account_user_path(@account), class: "btn btn-primary" %>
+      <%= link_to t(".invitation"), new_account_account_invitation_path(@account), class: "btn btn-primary" %>
     </div>
 
     <div id="account_users">
@@ -66,7 +66,7 @@
           <thead>
             <tr>
               <th scope="col"><%= AccountUser.human_attribute_name(:user_id) %></th>
-              <th scope="col"><%= AccountUser.human_attribute_name(:role) %></th>
+              <th scope="col"><%= AccountUser.human_attribute_name(:roles) %></th>
             </tr>
           </thead>
           <tbody class="align-middle">
@@ -77,7 +77,7 @@
                   <%= image_tag image_path(user, size:40), height: 20, width: 20, class: "rounded me-2" %>
                   <span><%= user.name %></span>
                 </td>
-                <td><%= account_user.role %></td>
+                <td><%= account_user.roles %></td>
               </tr>
             <% end %>
           </tbody>
