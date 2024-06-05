@@ -1,4 +1,6 @@
 class Account < ApplicationRecord
+  extend Enumerize
+  
   belongs_to :owner, class_name: "User"
   has_many :account_users, dependent: :destroy
   has_many :users, through: :account_users
@@ -11,6 +13,8 @@ class Account < ApplicationRecord
   has_many :match_histories, dependent: :destroy
 
   has_one_attached :image
+
+  enumerize :account_type, in: [:agency, :company], default: :agency
 
   validates :name, presence: true
 

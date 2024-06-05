@@ -10,14 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_30_070018) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_05_010946) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "account_invitations", force: :cascade do |t|
+    t.bigint "account_id", null: false
+    t.bigint "invited_by_id"
+    t.string "token", null: false
+    t.string "name", null: false
+    t.string "email", null: false
+    t.jsonb "roles", default: {}, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_account_invitations_on_account_id"
+    t.index ["invited_by_id"], name: "index_account_invitations_on_invited_by_id"
+    t.index ["token"], name: "index_account_invitations_on_token", unique: true
+  end
 
   create_table "account_users", force: :cascade do |t|
     t.bigint "account_id", null: false
     t.bigint "user_id", null: false
-    t.string "role"
+    t.jsonb "roles", default: {}, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -27,6 +41,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_30_070018) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "account_type"
   end
 
   create_table "action_text_rich_texts", force: :cascade do |t|
@@ -232,6 +247,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_30_070018) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "account_invitations", "accounts"
+  add_foreign_key "account_invitations", "users", column: "invited_by_id"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "match_histories", "users"

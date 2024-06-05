@@ -1,67 +1,40 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
-
-  # GET /resource/sign_up
-  # def new
-  #   super
-  # end
-
-  # POST /resource
-  # def create
-  #   super
-  # end
-
-  # GET /resource/edit
-  # def edit
-  #   super
-  # end
-
-  # PUT /resource
-  # def update
-  #   super
-  # end
-
-  # DELETE /resource
-  # def destroy
-  #   super
-  # end
-
-  # GET /resource/cancel
-  # Forces the session data which is usually expired after sign
-  # in to be expired now. This is useful if the user wants to
-  # cancel oauth signing in/up in the middle of the process,
-  # removing all OAuth session data.
-  # def cancel
-  #   super
-  # end
-
   protected
 
-    #必須  更新（編集の反映）時にパスワード入力を省く
-    def update_resource(resource, params)
-      resource.update_without_password(params)
+  def build_resource(hash = {})
+    self.resource = resource_class.new_with_session(hash, session)
+
+    # Registering to accept an invitation should display the invitation on sign up
+    if params[:invite] && (invite = AccountInvitation.find_by(token: params[:invite]))
+      @account_invitation = invite
+      resource.skip_default_account = true
+      # Skip email confirmation on invitation
+      resource.skip_confirmation!
+
+    # Build and display account fields in registration form
+    else
+      account = resource.owned_accounts.first
+      account ||= resource.owned_accounts.new
+      account.account_users.new(user: resource, admin: true)
     end
+  end
 
-  # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
-  # end
+  #必須  更新（編集の反映）時にパスワード入力を省く
+  def update_resource(resource, params)
+    resource.update_without_password(params)
+  end
 
-  # If you have extra params to permit, append them to the sanitizer.
-  # def configure_account_update_params
-  #   devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
-  # end
+  def sign_up(resource_name, resource)
+    sign_in(resource_name, resource)
 
-  # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+    # If user registered through an invitation, automatically accept it after signing in
+    if @account_invitation
+      @account_invitation.accept!(current_user)
 
-  # The path used after sign up for inactive accounts.
-  # def after_inactive_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+      # Clear redirect to account invitation since it's already been accepted
+      stored_location_for(:user)
+    end
+  end
 end

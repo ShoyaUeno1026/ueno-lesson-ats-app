@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-lg-3 mb-4">
+    <%= render partial: "shared/list" %>
+  </div>
+  <div class="col-lg-9">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h1 class="h2"><%= t(".title") %></h1>
+    </div>
+
+    <%= render "form", account_invitation: @account_invitation %>
+    <%= link_to t("back"), account_path(@account) %>
+  </div>
+</div>

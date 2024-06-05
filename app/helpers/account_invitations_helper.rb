@@ -1,0 +1,2 @@
+module AccountInvitationsHelper
+end

@@ -58,8 +58,15 @@ Rails.application.routes.draw do
       resources :matches
       resources :match_histories
       resources :account_users
+      resources :account_invitations, path: :invitations do
+        member do
+          post :resend
+        end
+      end
     end
   end
+
+  resources :account_invitations
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   

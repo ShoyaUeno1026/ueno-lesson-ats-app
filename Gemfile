@@ -102,3 +102,5 @@ gem "rails-i18n", "~> 7.0"
 gem "name_of_person"
 # なりすましログイン
 gem "pretender"
+
+gem "enumerize"

@@ -1,4 +1,8 @@
 ja:
+  account_user_roles:
+    owner: "オーナー"
+    admin: "管理者"
+    member: "メンバー"
   are_you_sure: "この操作は取り消せません。本当に実行しますか？"
   back: "戻る"
   detail: "詳細"
@@ -7,6 +11,8 @@ ja:
   new: "新規作成"
   not_allowed: "この操作をする権限がありません"
   save: "保存"
+  update: "更新"
+  send: "送信"
   setting: "設定"
   optional: "任意項目"
   password_warning: "パスワードは%{minimum}文字以上で入力してください"
@@ -35,6 +41,7 @@ ja:
       switch: "このアカウントに切り替える"
       member: "メンバー"
       add: "追加"
+      invitation: "ユーザーを招待する"
     new:
       title: "アカウントを追加"
     edit:
@@ -123,6 +130,9 @@ ja:
       created: "メンバーを追加しました"
       new:
         title: "メンバーを追加"
+    account_invitations:
+      new:
+        title: "ユーザーを招待する"
 
   announcements:
     index:
@@ -267,6 +277,9 @@ ja:
         email: "メールアドレス"
         name: "名前"
         terms_of_service: "利用規約"
+      account_invitation:
+        name: "名前"
+        email: "メールアドレス"
 
     errors:
       models:

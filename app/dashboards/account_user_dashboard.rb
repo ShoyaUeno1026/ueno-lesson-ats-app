@@ -11,7 +11,7 @@ class AccountUserDashboard < Administrate::BaseDashboard
     id: Field::Number,
     account: Field::BelongsTo,
     user: Field::BelongsTo,
-    role: Field::Select.with_options(collection: AccountUser::ROLES),
+    roles: Field::Select.with_options(collection: AccountUser::ROLES),
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -25,7 +25,7 @@ class AccountUserDashboard < Administrate::BaseDashboard
     id
     account
     user
-    role
+    roles
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -33,7 +33,7 @@ class AccountUserDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     id
     account
-    role
+    roles
     user
     created_at
     updated_at
@@ -45,7 +45,7 @@ class AccountUserDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     account
     user
-    role
+    roles
   ].freeze
 
   # COLLECTION_FILTERS

@@ -1,0 +1,2 @@
+class AccountInvitationsController < ApplicationController
+end
