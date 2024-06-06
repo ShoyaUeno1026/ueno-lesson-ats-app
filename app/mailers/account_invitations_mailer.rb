@@ -6,7 +6,6 @@ class AccountInvitationsMailer < ApplicationMailer
 
     mail(
       to: email_address_with_name(@account_invitation.email, @account_invitation.name),
-      from: email_address_with_name(Rails.configuration.shiraha.support_email, @invited_by.name),
       subject: t(".subject", inviter: @invited_by.name, account: @account.name)
     )
   end

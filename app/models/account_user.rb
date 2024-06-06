@@ -1,5 +1,5 @@
 class AccountUser < ApplicationRecord
-  ROLES = %w[admin member]
+  ROLES = [:admin, :member]
 
   include Rolified
 
@@ -23,7 +23,7 @@ class AccountUser < ApplicationRecord
 
   def owner_must_be_admin
     unless admin?
-      errors.add :role, :cannot_be_changed
+      errors.add :admin, :cannot_be_changed
     end
   end
 end
