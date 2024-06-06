@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: Rails.configuration.shiraha.support_email
+  default from: 'from@example.com'
   layout "mailer"
 
   # Include any view helpers from your main app to use in mailers here

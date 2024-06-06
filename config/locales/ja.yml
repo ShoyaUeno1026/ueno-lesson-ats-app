@@ -17,6 +17,23 @@ ja:
   optional: "任意項目"
   password_warning: "パスワードは%{minimum}文字以上で入力してください"
 
+  account_invitations_mailer:
+    invite:
+      subject: "%{inviter} さんがあなたを%{account} に招待しました"
+      header_html: "%{inviter} さんから<strong>%{account}</strong> に招待されました。"
+      description_html: "この招待を%{link} できます。"
+      accept_or_decline: "受け取る または 拒否"
+      view_invitation: "招待を見る"
+
+  account_invitations:
+    invite_user: "ユーザーを招待"
+    authenticate: "この招待状を受け取るには、ログインするか、アカウントを作成してください。"
+    not_found: "おっと、この招待状は見つかりませんでした。新しい招待状がないか、アカウント管理者に確認してください。"
+    show:
+      invited_you_to_join_html: "<strong>%{inviter}</strong> さんから<strong>%{account}</strong>に招待されました。"
+      accept: "招待を受け取る"
+      decline: "拒否"
+
   time:
     formats:
       default: "%Y/%m/%d (%a) %H:%M:%S"
@@ -131,6 +148,7 @@ ja:
       new:
         title: "メンバーを追加"
     account_invitations:
+      sent: "%{email} に招待メールを送りました。"
       new:
         title: "ユーザーを招待する"
 
@@ -199,16 +217,16 @@ ja:
       job_pipeline_stage: "ステージ"
       match: "選考"
       user: "ユーザー"
-
     attributes:
       account:
+        account_type: "アカウント種類"
         image: "アイコン"
         name: "アカウント名"
         owner_id: "オーナー"
         owner: "オーナー"
         account_users: "メンバー"
       account_user:
-        role: "権限"
+        roles: "権限"
         user_id: "ユーザー"
         account: "アカウント"
         user: "ユーザー"
@@ -277,6 +295,7 @@ ja:
         email: "メールアドレス"
         name: "名前"
         terms_of_service: "利用規約"
+
       account_invitation:
         name: "名前"
         email: "メールアドレス"
@@ -287,3 +306,9 @@ ja:
           attributes:
             role:
               cannot_be_changed: "はアカウント所有者のため変更できません"
+
+  enumerize:
+    account:
+      account_type:
+        agency: "代理店"
+        company: "企業"

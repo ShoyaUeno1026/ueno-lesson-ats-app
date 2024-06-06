@@ -2,6 +2,7 @@ module User::Accounts
   extend ActiveSupport::Concern
 
   included do
+    has_many :account_invitations, dependent: :nullify, foreign_key: :invited_by_id
     has_many :account_users, dependent: :destroy
     has_many :accounts, through: :account_users
     has_many :owned_accounts, class_name: "Account", foreign_key: :owner_id, inverse_of: :owner, dependent: :destroy
@@ -15,6 +16,7 @@ module User::Accounts
   end
 
   def create_default_account
+    return unless name.present?
     return accounts.first if accounts.any?
 
     account = accounts.new(owner: self, name: name)

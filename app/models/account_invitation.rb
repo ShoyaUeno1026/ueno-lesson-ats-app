@@ -18,5 +18,22 @@ class AccountInvitation < ApplicationRecord
     AccountInvitationsMailer.with(account_invitation: self).invite.deliver_later
   end
 
-  
+  def accept!(user)
+    account_user = account.account_users.new(user: user, roles: roles)
+    if account_user.valid?
+      ApplicationRecord.transaction do
+        account_user.save!
+        destroy!
+      end
+
+      account_user
+    else
+      errors.add(:base, account_user.errors.full_messages.first)
+      nil
+    end
+  end
+
+  def to_param
+    token
+  end
 end
