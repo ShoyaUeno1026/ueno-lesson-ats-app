@@ -104,3 +104,4 @@ gem "name_of_person"
 gem "pretender"
 
 gem "enumerize"
+gem "inline_svg"

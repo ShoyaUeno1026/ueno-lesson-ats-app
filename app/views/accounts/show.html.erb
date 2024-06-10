@@ -77,6 +77,23 @@
               <span><%= user.name %></span>
             </td>
             <td><%= account_user_roles(@account, account_user).join(", ") %></td>
+            <td>
+              <% if account_admin?(@account, current_user) %>
+                <div class="dropdown member-menu">
+                  <button type="button" class="btn dropdown-toggle text-dark" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-three-dots"></i>
+                  </button>
+                  <ul class="dropdown-menu ">                  
+                    <li class="dropdown-item">
+                      <%= link_to t("edit"), edit_account_account_user_path(@account, account_user), class: "nav-link text-body-secondary" %>
+                    </li>
+                    <li class="dropdown-item">
+                      <%= link_to t("destroy"), account_account_user_path(@account, account_user), data: { turbo_method: :delete, turbo_confirm: t("are_you_sure") }, class: "nav-link text-danger" %>
+                    </li>
+                  </ul>
+                </div>
+              <% end %>
+            </td>
           </tr>
         <% end %>
         
@@ -103,7 +120,7 @@
                       <%= tag.button t(".copy_link"), data: { controller: "clipboard", clipboard_text: account_invitation_url(account_invitation)}, class: "nav-link text-body-secondary" %>
                     </li>
                     <li class="dropdown-item">
-                      <%= link_to t(".edit"), edit_account_account_invitation_path(@account, account_invitation), class: "nav-link text-body-secondary" %>
+                      <%= link_to t("edit"), edit_account_account_invitation_path(@account, account_invitation), class: "nav-link text-body-secondary" %>
                     </li>
                     <li class="dropdown-item">
                       <%= link_to t(".destroy"), account_account_invitation_path(@account, account_invitation), data: { turbo_method: :delete, turbo_confirm: t("are_you_sure") }, class: "nav-link text-danger" %>

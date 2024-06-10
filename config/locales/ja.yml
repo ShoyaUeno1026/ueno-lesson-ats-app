@@ -50,6 +50,7 @@ ja:
     created: "アカウントを作成しました"
     updated: "アカウントを変更しました"
     destroyed: "アカウントを削除しました"
+    roles: "権限"
     index:
       title: "アカウント"
       current: "現在のアカウント"
@@ -58,7 +59,6 @@ ja:
       switch: "このアカウントに切り替える"
       member: "メンバー"
       add: "追加"
-      edit: "編集"
       invitation: "ユーザーを招待する"
       resend_invite: "招待メールを再送"
       copy_link: "招待リンクをコピー"
@@ -147,10 +147,14 @@ ja:
       edit:
         title: "選考を編集"
     account_users:
+      updated: "アカウントメンバーを更新しました。"
+      destroyed: "アカウントメンバーが削除されました。"
       new_from_account: "%{name}のメンバーを作成"
       created: "メンバーを追加しました"
-      new:
-        title: "メンバーを追加"
+      edit:
+        title: "メンバーを編集"
+        back: "戻る"
+        update: "更新する"
     account_invitations:
       sent: "%{email} に招待メールを送りました。"
       updated: "招待を更新しました。"
