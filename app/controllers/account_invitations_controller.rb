@@ -5,6 +5,12 @@ class AccountInvitationsController < ApplicationController
   def show
     @account = @account_invitation.account
     @invited_by = @account_invitation.invited_by
+
+    if user_signed_in?
+      @account_invitation.accept!(current_user)
+      stored_location_for(:user)
+      redirect_to root_path
+    end
   end
 
   private
