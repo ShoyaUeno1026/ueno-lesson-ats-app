@@ -7,18 +7,15 @@
       <h1 class="h2"><%= t(".title") %></h1>
     </div>
 
-    <%= form_with(model: @account_invitation, url: account_account_invitations_path(@account)) do |form| %>
+    <%= form_with(model: [@account, @account_invitation]) do |form| %>
     <%= render "shared/error_messages", resource: @account_invitation %>
-  
-      <div class="mb-3">
-        <%= form.label :name, class: "form-label" %>
-        <%= form.text_field :name, class: "form-control" %>
-      </div>
 
-      <div class="mb-3">
-        <%= form.label :email, class: "form-label" %>
-        <%= form.email_field :email, class: "form-control" %>
-      </div>
+      <section>
+        <div class="mb-3">
+          <%= form.label :name, class: "form-label" %>
+          <%= form.text_field :name, class: "form-control", required: true, placeholder: true %>
+        </div>
+      </section>
 
       <section>
         <h5 class="mb-2"><%= t("accounts.roles") %></h5>
@@ -36,11 +33,14 @@
         </div>
       </section>
 
+
       <div class="mb-3 d-grid gap-2 col-6 mx-auto">
-        <%= form.submit t("send"), class: "btn btn-primary" %>
+        <%= form.submit t("update"), class: "btn btn-primary" %>
+      </div>
+
+      <div>
+        <%= link_to t("back"), account_path(@account) %>
       </div>
     <% end %>
-
-    <%= link_to t("back"), account_path(@account) %>
   </div>
 </div>

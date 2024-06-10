@@ -60,30 +60,62 @@
       <%= link_to t(".invitation"), new_account_account_invitation_path(@account), class: "btn btn-primary" %>
     </div>
 
-    <div id="account_users">
-      <div class="text_nowrap table-responsive">
-        <table class="table table-hover table-fixed">
-          <thead>
-            <tr>
-              <th scope="col"><%= AccountUser.human_attribute_name(:user_id) %></th>
-              <th scope="col"><%= AccountUser.human_attribute_name(:roles) %></th>
-            </tr>
-          </thead>
-          <tbody class="align-middle">
-            <% @account.account_users.each do |account_user| %>
-              <% user = account_user.user %>
-              <tr>
-                <td>
-                  <%= image_tag image_path(user, size:40), height: 20, width: 20, class: "rounded me-2" %>
-                  <span><%= user.name %></span>
-                </td>
-                <td><%= account_user_roles(@account, account_user).join(", ") %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <table class="table table-borderless">
+      <thead>
+        <tr class>
+            <th class="p-1" scope="col"><%= AccountUser.human_attribute_name(:user_id) %></th>
+            <th class="p-1" scope="col"><%= AccountUser.human_attribute_name(:roles) %></th>
+          </tr>
+      </thead>
+
+      <tbody>
+        <% @account.account_users.each do |account_user| %>
+          <% user = account_user.user %>
+          <tr>
+            <td>
+              <%= image_tag image_path(user, size:40), height: 20, width: 20, class: "rounded me-2" %>
+              <span><%= user.name %></span>
+            </td>
+            <td><%= account_user_roles(@account, account_user).join(", ") %></td>
+          </tr>
+        <% end %>
+        
+        <%# invitations %>
+        <% @account.account_invitations.each do |account_invitation| %>
+          <tr>
+            <td class="d-flex">
+              <%= image_tag image_path(account_invitation, size:40), height: 20, width: 20, class: "rounded me-2" %>
+              <span class="px-1"><%= account_invitation.name %></span>
+              <span class="badge text-bg-light">返信待ち</span>
+            </td>
+            <td><%= account_user_roles(@account, account_invitation).join(", ") %></td>
+            <td>
+              <% if account_admin?(@account, current_user) %>
+                <div class="dropdown member-menu">
+                  <button type="button" class="btn dropdown-toggle text-dark" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-three-dots"></i>
+                  </button>
+                  <ul class="dropdown-menu ">
+                    <li class="dropdown-item">
+                      <%= button_to t(".resend_invite"), resend_account_account_invitation_path(@account, account_invitation), class: "nav-link text-body-secondary" %>
+                    </li>
+                    <li class="dropdown-item">
+                      <%= tag.button t(".copy_link"), data: { controller: "clipboard", clipboard_text: account_invitation_url(account_invitation)}, class: "nav-link text-body-secondary" %>
+                    </li>
+                    <li class="dropdown-item">
+                      <%= link_to t(".edit"), edit_account_account_invitation_path(@account, account_invitation), class: "nav-link text-body-secondary" %>
+                    </li>
+                    <li class="dropdown-item">
+                      <%= link_to t(".destroy"), account_account_invitation_path(@account, account_invitation), data: { turbo_method: :delete, turbo_confirm: t("are_you_sure") }, class: "nav-link text-danger" %>
+                    </li>
+                  </ul>
+                </div>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
   </div>
 </div>

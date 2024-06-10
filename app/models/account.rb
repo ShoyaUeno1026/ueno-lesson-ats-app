@@ -2,6 +2,7 @@ class Account < ApplicationRecord
   extend Enumerize
   
   belongs_to :owner, class_name: "User"
+  has_many :account_invitations, dependent: :destroy
   has_many :account_users, dependent: :destroy
   has_many :users, through: :account_users
   has_many :candidates, dependent: :destroy

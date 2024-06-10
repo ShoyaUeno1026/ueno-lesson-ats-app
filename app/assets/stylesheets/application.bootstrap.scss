@@ -31,3 +31,9 @@ td:first-child {
   text-align: left;
   white-space: nowrap;
 }
+
+.member-menu {
+  .dropdown-toggle::after {
+    display: none;
+  }
+}
