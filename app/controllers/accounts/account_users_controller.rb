@@ -1,7 +1,19 @@
 class Accounts::AccountUsersController < Accounts::BaseController
+  before_action :authenticate_user!
   before_action :set_account
   before_action :set_users, only: %i[new create]
+  before_action :set_account_user, only: [:edit, :update, :destroy]
+  before_action :require_account_admin, except: [:index, :show]
 
+
+  def index
+    redirect_to @account
+  end
+
+  def show
+    redirect_to @account
+  end
+  
   def new
     @account_user = AccountUser.new
     
@@ -21,6 +33,22 @@ class Accounts::AccountUsersController < Accounts::BaseController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @account_user.update(account_user_params)
+      redirect_to @account, notice: t(".updated")
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @account_user.destroy
+    redirect_to @account, status: :see_other, notice: t(".destroyed")
+  end
+
   private
 
   def set_account
@@ -31,8 +59,11 @@ class Accounts::AccountUsersController < Accounts::BaseController
     @users = User.where.not(id: @account.users.pluck(:id))
   end
 
+  def set_account_user
+    @account_user = @account.account_users.find(params[:id])
+  end
+
   def account_user_params
-    params.require(:account_user)
-      .permit(:user_id, AccountUser::ROLES)
+    params.require(:account_user).permit(*AccountUser::ROLES)
   end
 end
