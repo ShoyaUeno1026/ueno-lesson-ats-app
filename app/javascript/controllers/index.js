@@ -2,22 +2,10 @@
 // Run that command whenever you add a new controller or create them with
 // ./bin/rails generate stimulus controllerName
 
-import { application } from "./application";
+import { application } from "./application"
 
-import HelloController from "./hello_controller";
-application.register("hello", HelloController);
+import ClipboardController from "./clipboard_controller"
+application.register("clipboard", ClipboardController)
 
-document.addEventListener("turbo:load", () => {
-  const popoverTriggerList = document.querySelectorAll(
-    '[data-bs-toggle="popover"]'
-  );
-  const popoverList = [...popoverTriggerList].map(
-    (d) => new bootstrap.Popover(d)
-  );
-  const tooltipTriggerList = document.querySelectorAll(
-    '[data-bs-toggle="tooltip"]'
-  );
-  const tooltipList = [...tooltipTriggerList].map(
-    (d) => new bootstrap.Tooltip(d)
-  );
-});
+import HelloController from "./hello_controller"
+application.register("hello", HelloController)

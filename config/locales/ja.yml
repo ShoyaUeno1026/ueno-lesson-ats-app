@@ -58,7 +58,11 @@ ja:
       switch: "このアカウントに切り替える"
       member: "メンバー"
       add: "追加"
+      edit: "編集"
       invitation: "ユーザーを招待する"
+      resend_invite: "招待メールを再送"
+      copy_link: "招待リンクをコピー"
+      destroy: "招待を取り消す"
     new:
       title: "アカウントを追加"
     edit:
@@ -149,6 +153,8 @@ ja:
         title: "メンバーを追加"
     account_invitations:
       sent: "%{email} に招待メールを送りました。"
+      updated: "招待を更新しました。"
+      destroyed: "招待を削除しました。"
       new:
         title: "ユーザーを招待する"
 

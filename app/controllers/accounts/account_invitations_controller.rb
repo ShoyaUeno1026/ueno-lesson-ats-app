@@ -20,12 +20,21 @@ class Accounts::AccountInvitationsController < Accounts::BaseController
   end
 
   def update
+    if @account_invitation.update(invitation_params)
+      redirect_to @account, notice: t(".updated")
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
+    @account_invitation.destroy
+    redirect_to @account, status: :see_other, notice: t(".destroyed")
   end
 
   def resend
+    @account_invitation.send_invite
+    redirect_to @account, status: :see_other, notice: t(".sent", email: @account_invitation.email)
   end
 
   private
