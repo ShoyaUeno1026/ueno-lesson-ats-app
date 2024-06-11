@@ -23,7 +23,7 @@ ja:
       header_html: "%{inviter} さんから<strong>%{account}</strong> に招待されました。"
       description_html: "この招待を%{link} できます。"
       accept_or_decline: "受け取る または 拒否"
-      view_invitation: "招待を見る"
+      accept_invitation: "招待を受け取る"
 
   account_invitations:
     invite_user: "ユーザーを招待"
