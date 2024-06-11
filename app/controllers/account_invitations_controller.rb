@@ -5,12 +5,6 @@ class AccountInvitationsController < ApplicationController
   def show
     @account = @account_invitation.account
     @invited_by = @account_invitation.invited_by
-
-    if user_signed_in?
-      @account_invitation.accept!(current_user)
-      stored_location_for(:user)
-      redirect_to root_path
-    end
   end
 
   private
@@ -22,7 +16,11 @@ class AccountInvitationsController < ApplicationController
   end
 
   def authenticate_user_with_invite!
-    unless user_signed_in?
+    if user_signed_in?
+      @account_invitation.accept!(current_user)
+      stored_location_for(:user)
+      redirect_to root_path
+    else
       store_location_for(:user, request.fullpath)
       redirect_to new_user_registration_path(invite: @account_invitation.token), alert: t(".authenticate")
     end
