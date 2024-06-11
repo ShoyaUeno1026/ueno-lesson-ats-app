@@ -70,7 +70,7 @@
             <strong><%= Job.human_attribute_name(:salary_min) %></strong>
           </div>
           <div class="col-md-8">
-            <%= job.salary_min %>
+            <%= job.salary_min.to_fs(:delimited) %>
           </div>
         </div>
       </li>
@@ -80,7 +80,7 @@
             <strong><%= Job.human_attribute_name(:salary_max) %></strong>
           </div>
           <div class="col-md-8">
-            <%= job.salary_max %>
+            <%= job.salary_max.to_fs(:delimited) %>
           </div>
         </div>
       </li>

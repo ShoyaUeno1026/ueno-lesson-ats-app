@@ -35,8 +35,8 @@ class Job < ApplicationRecord
   end
 
   def salary_to_text
-    min = salary_min.presence || "***"
-    max = salary_max.presence || "***"
+    min = salary_min.presence.to_fs(:delimited) || "***"
+    max = salary_max.presence.to_fs(:delimited) || "***"
     [min, max].join(" - ") + frequency
   end
 

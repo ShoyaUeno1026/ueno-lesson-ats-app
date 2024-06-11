@@ -28,8 +28,8 @@
             <td class="fixed-text"><%= public_job.contract %></td>
             <td class="fixed-text"><%= public_job.headcount %></td>
             <td class="fixed-text"><%= public_job.currency %></td>
-            <td class="fixed-text"><%= public_job.salary_min %></td>
-            <td class="fixed-text"><%= public_job.salary_max %></td>
+            <td class="fixed-text"><%= public_job.salary_min.to_fs(:delimited) %></td>
+            <td class="fixed-text"><%= public_job.salary_max.to_fs(:delimited) %></td>
             <td class="fixed-text"><%= public_job.frequency %></td>
             <td class="fixed-text"><%= public_job.location %></td>
             <td class="fixed-text"><%= public_job.is_remote %></td>

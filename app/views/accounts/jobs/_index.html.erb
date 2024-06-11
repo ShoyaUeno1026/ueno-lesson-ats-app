@@ -34,8 +34,8 @@
             <td class="fixed-text"><%= job.matches_count %></td>
             <td class="fixed-text"><%= job.headcount %></td>
             <td class="fixed-text"><%= job.currency %></td>
-            <td class="fixed-text"><%= job.salary_min %></td>
-            <td class="fixed-text"><%= job.salary_max %></td>
+            <td class="fixed-text"><%= job.salary_min.to_fs(:delimited) %></td>
+            <td class="fixed-text"><%= job.salary_max.to_fs(:delimited) %></td>
             <td class="fixed-text"><%= job.frequency %></td>
             <td class="fixed-text"><%= job.location %></td>
             <td class="fixed-text"><%= job.is_remote %></td>
