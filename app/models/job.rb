@@ -33,10 +33,10 @@ class Job < ApplicationRecord
   def dropped_matches_on_stage(stage:)
     matches.where(job_pipeline_stage: stage).dropped
   end
-
+  
   def salary_to_text
-    min = salary_min.presence || "***"
-    max = salary_max.presence || "***"
+    min = salary_min.present? ? salary_min.to_fs(:delimited) : "***"
+    max = salary_max.present? ? salary_max.to_fs(:delimited) : "***"
     frequency + [min, max].join(" - ")
   end
 
