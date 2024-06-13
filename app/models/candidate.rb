@@ -7,7 +7,6 @@ class Candidate < ApplicationRecord
   belongs_to :account
   has_many :jobs, through: :matches
   has_many :match_histories, dependent: :destroy
-  has_many :public_jobs
 
   has_person_name
 

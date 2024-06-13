@@ -9,7 +9,6 @@ class Job < ApplicationRecord
   belongs_to :account
   belongs_to :department, counter_cache: true, optional: true
   belongs_to :job_pipeline, optional: true
-  belongs_to :public_job
   has_many :matches, dependent: :destroy
   has_many :candidates, through: :matches
   has_many :match_histories, dependent: :destroy
