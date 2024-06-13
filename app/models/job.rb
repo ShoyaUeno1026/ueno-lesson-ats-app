@@ -9,6 +9,7 @@ class Job < ApplicationRecord
   belongs_to :account
   belongs_to :department, counter_cache: true, optional: true
   belongs_to :job_pipeline, optional: true
+  belongs_to :public_job
   has_many :matches, dependent: :destroy
   has_many :candidates, through: :matches
   has_many :match_histories, dependent: :destroy
@@ -35,9 +36,9 @@ class Job < ApplicationRecord
   end
 
   def salary_to_text
-    min = salary_min.presence.to_fs(:delimited) || "***"
-    max = salary_max.presence.to_fs(:delimited) || "***"
-    [min, max].join(" - ") + frequency
+    min = salary_min.presence || "***"
+    max = salary_max.presence || "***"
+    frequency + [min, max].join(" - ")
   end
 
   def job_pipeline_stages

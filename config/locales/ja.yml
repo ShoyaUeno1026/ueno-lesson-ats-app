@@ -71,6 +71,7 @@ ja:
       created: "候補者を作成しました"
       updated: "%{name}を変更しました"
       destroyed: "%{name}を削除しました"
+      entered: "応募が完了しました"
       index:
         title: "候補者"
       show:

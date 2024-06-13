@@ -2,4 +2,28 @@
   <h1 class="h2"><%= t(".title") %></h1>
 </div>
 
-<%= render partial: "public_jobs/index", locals: {public_jobs: @public_jobs, account: @account} %>
+<div id="public_jobs">
+  <% @public_jobs.each do |public_job| %>
+    <div class="card mb-4">
+      <%= link_to public_job_path(public_job), class: "card-body nav-link" do %>
+        <div>
+          <h4 class="p-1 text-success fw-semibold"><%= public_job.position_name %></h4>
+        </div>
+        <div>
+          <div>
+            <span><%= public_job.account.name %></span>
+          </div>
+          <div class="bg-body-secondary">
+            <p><%= public_job.description %></p>
+          </div>
+          <div>
+            <span><%= public_job.salary_to_text %></span>
+          </div>
+          <div>
+            <td class="fixed-text"><%= public_job.location %></td>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
