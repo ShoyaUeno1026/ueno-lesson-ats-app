@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+  <h1 class="h2"><%= t(".title") %></h1>
+  <%= form_with(model: @candidate, url: create_from_public_job_account_candidates_path(account_id: @account.id), method: :post) do |form|%>
+    <%= render "shared/error_messages", resource: @candidate %>
+
+    <div class="mb-3">
+      <%= form.label :name, class: "form-label" %>
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :gender, class: "form-label" %>
+      <%= form.select :gender, Candidate::GENDERS, {prompt: true}, class: "form-select" %>
+    </div>
+
+    <%= form.hidden_field :source_type, value: "entry" %>
+
+    <div class="mb-3">
+      <%= form.label :birth_date, class: "form-label" %>
+      <%= form.date_field :birth_date, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :location, class: "form-label" %>
+      <%= form.text_field :location, placeholder: "大分県大分市", class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :email, class: "form-label" %>
+      <%= form.email_field :email, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :phone_number, class: "form-label" %>
+      <%= form.telephone_field :phone_number, class: "form-control" %>
+    </div>
+
+    <div class="mb-3 d-grid">
+      <%= form.submit t("save"), class: "btn btn-primary" %>
+    </div>
+
+  <% end %>

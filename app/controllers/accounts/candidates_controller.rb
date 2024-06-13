@@ -1,7 +1,8 @@
 class Accounts::CandidatesController < Accounts::BaseController
-  before_action :set_account
+  before_action :set_account, except: [:create_from_public_job]
   before_action :set_candidate, only: %i[show edit update destroy]
   before_action :require_candidate_owner_or_admin, only: %i[edit update destroy]
+  skip_before_action :authenticate_user!, only: [:create_from_public_job] # ログイン不要なアクション
 
   def index
     @candidates = @account.candidates.all
@@ -29,6 +30,21 @@ class Accounts::CandidatesController < Accounts::BaseController
     end
   end
 
+  def create_from_public_job
+    @candidate = Candidate.new(candidate_params)
+    @account = Account.find_by(id: session[:account_id])
+    @candidate.account = @account
+    @candidate.owner = @account.owner
+
+    if @candidate.save
+      session.delete(:account_id)
+      redirect_to public_jobs_url, notice: t(".entered")
+    else
+      render 'public_jobs/new'
+    end
+
+  end
+
   def update
     if @candidate.update(candidate_params)
       redirect_to account_candidate_url(@account, @candidate), notice: t(".updated", name: @candidate.name)
@@ -42,8 +58,6 @@ class Accounts::CandidatesController < Accounts::BaseController
 
     redirect_to account_candidates_url(@account), notice: t(".destroyed", name: @candidate.name)
   end
-
-
 
   private
 

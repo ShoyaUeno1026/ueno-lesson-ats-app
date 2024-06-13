@@ -3,7 +3,6 @@ Rails.application.routes.draw do
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
 
-  
   authenticate :user, lambda { |u| u.admin? } do
     namespace :admin do
       resources :accounts
@@ -50,7 +49,9 @@ Rails.application.routes.draw do
 
     scope module: :accounts do
       resources :departments
-      resources :candidates
+      resources :candidates do        
+        post 'create_from_public_job', on: :collection
+      end
       resources :jobs
       resources :job_pipelines do
         resources :job_pipeline_stages, path: :stages, module: :job_pipelines

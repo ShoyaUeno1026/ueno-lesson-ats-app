@@ -26,7 +26,7 @@
 
   <div class="mb-3">
     <%= form.label :source_type, class: "form-label" %>
-    <%= form.select :source_type,Candidate::SOURCE_TYPES, {prompt: true}, class: "form-select" %>
+    <%= form.select :source_type, options_for_select(Candidate::SOURCE_TYPES, "form"), {prompt: true}, class: "form-select" %>
   </div>
 
   <div class="mb-3">
