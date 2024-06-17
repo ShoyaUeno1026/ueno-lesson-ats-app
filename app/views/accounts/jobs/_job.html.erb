@@ -40,7 +40,7 @@
             <strong><%= Job.human_attribute_name(:visibility) %></strong>
           </div>
           <div class="col-md-8">
-            <%= job.visibility %>
+            <%= t("job_visibilities." + job.visibility) %>
           </div>
         </div>
       </li>
@@ -50,7 +50,9 @@
             <strong><%= Job.human_attribute_name(:contract) %></strong>
           </div>
           <div class="col-md-8">
-            <%= job.contract %>
+            <% if job.contract.present? %>
+              <%= t("job_contracts." + job.contract) %>
+            <% end %>
           </div>
         </div>
       </li>
@@ -70,7 +72,9 @@
             <strong><%= Job.human_attribute_name(:salary_min) %></strong>
           </div>
           <div class="col-md-8">
-            <%= job.salary_min %>
+            <% if job.salary_min.present? %>
+              <%= job.salary_min.to_fs(:delimited) %>
+            <% end %>
           </div>
         </div>
       </li>
@@ -80,7 +84,9 @@
             <strong><%= Job.human_attribute_name(:salary_max) %></strong>
           </div>
           <div class="col-md-8">
-            <%= job.salary_max %>
+            <% if job.salary_max.present? %>
+              <%= job.salary_max.to_fs(:delimited) %>
+            <% end %>
           </div>
         </div>
       </li>
@@ -90,7 +96,9 @@
             <strong><%= Job.human_attribute_name(:frequency) %></strong>
           </div>
           <div class="col-md-8">
-            <%= job.frequency %>
+            <% if job.frequency.present? %>
+              <%= t("job_frequencies." + job.frequency) %>
+            <% end %>
           </div>
         </div>
       </li>
@@ -120,7 +128,7 @@
             <strong><%= Job.human_attribute_name(:is_remote) %></strong>
           </div>
           <div class="col-md-8">
-            <%= job.is_remote %>
+            <%= job.is_remote ? "可" : "不可" %>
           </div>
         </div>
       </li>

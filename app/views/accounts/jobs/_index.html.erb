@@ -29,16 +29,38 @@
               <span><%= job.owner&.name %></span>
             </td>
             <td class="fixed-text"><%= job.job_pipeline&.name %></td>
-            <td class="fixed-text"><%= job.visibility %></td>
-            <td class="fixed-text"><%= job.contract %></td>
+            <td class="fixed-text"><%= t("job_visibilities." + job.visibility) %></td>
+            
+            <% if job.contract.present? %>
+              <td class="fixed-text"><%= t("job_contracts." + job.contract) %></td>
+            <% else %>
+              <td class="fixed-text"><%= job.contract %></td>
+            <% end %>
+            
             <td class="fixed-text"><%= job.matches_count %></td>
             <td class="fixed-text"><%= job.headcount %></td>
             <td class="fixed-text"><%= job.currency %></td>
-            <td class="fixed-text"><%= job.salary_min %></td>
-            <td class="fixed-text"><%= job.salary_max %></td>
-            <td class="fixed-text"><%= job.frequency %></td>
+            
+            <% if job.salary_min.present? %>
+              <td class="fixed-text"><%= job.salary_min.to_fs(:delimited) %></td>
+            <% else %>
+              <td class="fixed-text"><%= job.salary_min %></td>
+            <% end %>
+            
+            <% if job.salary_max.present? %>
+              <td class="fixed-text"><%= job.salary_max.to_fs(:delimited) %></td>
+            <% else %>
+              <td class="fixed-text"><%= job.salary_max %></td>
+            <% end %>
+            
+            <% if job.frequency.present? %>
+              <td class="fixed-text"><%= t("job_frequencies." + job.frequency) %></td>
+            <% else %>
+              <td class="fixed-text"><%= job.frequency %></td>
+            <% end %>
+            
             <td class="fixed-text"><%= job.location %></td>
-            <td class="fixed-text"><%= job.is_remote %></td>
+            <td class="fixed-text"><%= job.is_remote ? "可" : "不可" %></td>
           </tr>
         <% end %>
       </tbody>

@@ -6,6 +6,9 @@
       <div class="flex items-center justify-center mb-4 text-center">
           <%= image_tag image_path(@account_invitation.account, size:40), height: 20, width: 20, class: "h-5 w-5 rounded-full inline-block mr-1" %>
           <strong><%= @account_invitation.invited_by.name %></strong> invited you to join <strong><%= @account_invitation.account.name %></strong>
+          <div class="pt-4">
+            <%= link_to t(".refuse_invitation"), account_invitation_url(@account_invitation), data: { turbo_method: :delete }, style: "background:#c74d53; color:#fff; border-radius: 4px; text-decoration: none; padding:.75rem 1rem;" %>
+          </div>
       </div>
     <% end %>
 

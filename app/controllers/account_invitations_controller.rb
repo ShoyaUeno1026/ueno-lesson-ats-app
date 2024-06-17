@@ -1,10 +1,15 @@
 class AccountInvitationsController < ApplicationController
   before_action :set_account_invitation
-  before_action :authenticate_user_with_invite!
+  before_action :authenticate_user_with_invite!, except: [:destroy]
 
   def show
     @account = @account_invitation.account
     @invited_by = @account_invitation.invited_by
+  end
+
+  def destroy
+    @account_invitation.destroy
+    redirect_to root_path, status: :see_other, notice: t("refused")
   end
 
   private

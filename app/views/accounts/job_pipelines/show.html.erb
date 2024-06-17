@@ -26,11 +26,13 @@
           <th scope="col"></th>
           <th scope="col"></th>
           <th scope="col"></th>
+          <th scope="col"></th>
         </tr>
       </thead>
       <tbody classs="align-middle">
         <% @job_pipeline.stages.list.each do |stage| %>
         <tr>
+          <td><%= stage.display_order %></td>
           <td><%= stage.name %></td>
           <td><%= stage.kind %></td>
           <td>

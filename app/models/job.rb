@@ -37,7 +37,19 @@ class Job < ApplicationRecord
   def salary_to_text
     min = salary_min.present? ? salary_min.to_fs(:delimited) : "***"
     max = salary_max.present? ? salary_max.to_fs(:delimited) : "***"
-    frequency + [min, max].join(" - ")
+
+    frequency_text = case frequency
+    when "month"
+      I18n.t("job_frequencies.month")
+    when "day"
+      I18n.t("job_frequencies.day")
+    when "year"
+      I18n.t("job_frequencies.year")
+    else
+      "給与"  # 未入力の場合
+    end
+
+    frequency_text + [min, max].join(" - ")
   end
 
   def job_pipeline_stages
