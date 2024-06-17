@@ -3,6 +3,29 @@ ja:
     owner: "オーナー"
     admin: "管理者"
     member: "メンバー"
+  candidate_genders:
+    man: "男"
+    woman: "女"
+    unknown: "未回答"
+  candidate_source_types:
+    form: "フォーム"
+    entry: "応募"
+    recruiter: "リクルーター"
+    referral: "リファラル"
+    others: "その他"
+  job_visibilities:
+    public: "公開"
+    private: "非公開"
+    archive: "アーカイブ"
+  job_contracts:
+    full_time: "正社員"
+    part_time: "アルバイト・パート"
+    intern: "インターン"
+  job_frequencies:
+    month: "【月給】"
+    day: "【日給】"
+    year: "【年収】"
+
   are_you_sure: "この操作は取り消せません。本当に実行しますか？"
   back: "戻る"
   detail: "詳細"
@@ -16,6 +39,7 @@ ja:
   setting: "設定"
   optional: "任意項目"
   password_warning: "パスワードは%{minimum}文字以上で入力してください"
+  refused: "招待を拒否しました"
 
   account_invitations_mailer:
     invite:
@@ -24,6 +48,7 @@ ja:
       description_html: "この招待を%{link} できます。"
       accept_or_decline: "受け取る または 拒否"
       accept_invitation: "招待を受け取る"
+      refuse_invitation: "招待を拒否する"
 
   account_invitations:
     invite_user: "ユーザーを招待"
@@ -37,6 +62,10 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d (%a) %H:%M:%S"
+
+  date:
+    formats:
+      long: "%Y年%m月%d日"
 
   account:
     passwords:
@@ -184,6 +213,8 @@ ja:
   public_jobs:
     index:
       title: "公開されている求人"
+    new:
+      title: "応募用フォーム"
 
   shared:
     list:
@@ -306,7 +337,6 @@ ja:
         email: "メールアドレス"
         name: "名前"
         terms_of_service: "利用規約"
-
       account_invitation:
         name: "名前"
         email: "メールアドレス"

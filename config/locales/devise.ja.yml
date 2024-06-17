@@ -50,5 +50,6 @@ ja:
     registrations:
       new:
         terms_html: "%{terms} と %{privacy} に同意する"
+        refuse_invitation: "招待を拒否する"
       edit:
         cancel: "退会"

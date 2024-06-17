@@ -26,8 +26,19 @@
               <%= image_tag image_path(candidate, size:40), height: 20, width: 20, class: "rounded" %>
               <span><%= link_to candidate.name, [@account, candidate], class: "btn btn-link fixed-link" %></span>
             </td>
-            <td class="fixed-text"><%= candidate.gender %></td>
-            <td class="fixed-text"><%= candidate.birth_date %></td>
+            
+            <% if candidate.gender.present? %>
+              <td class="fixed-text"><%= t("candidate_genders." + candidate.gender) %></td>
+            <% else %>
+              <td class="fixed-text"><%= candidate.gender %></td>
+            <% end %>
+
+            <% if candidate.birth_date.present? %>
+              <td class="fixed-text"><%= l candidate.birth_date, format: :long %></td>
+            <% else %>
+              <td class="fixed-text"><%= candidate.birth_date %></td>
+            <% end %>
+            
             <td class="fixed-text"><%= candidate.email %></td>
             <td class="fixed-text"><%= candidate.phone_number %></td>
             <td class="fixed-text"><%= candidate.location %></td>
@@ -35,8 +46,8 @@
               <%= image_tag image_path(candidate.owner, size:40), height: 20, width: 20, class: "rounded" %>
               <span><%= candidate.owner&.name %></span>
             </td>
-            <td class="fixed-text"><%= candidate.source_type %></td>
-            <td class="fixed-text"><%= candidate.is_employee %></td>
+            <td class="fixed-text"><%= t("candidate_source_types." + candidate.source_type) %></td>
+            <td class="fixed-text"><%= candidate.is_employee ? "雇用済み" : "" %></td>
           </tr>
         <% end %>
       </tbody>

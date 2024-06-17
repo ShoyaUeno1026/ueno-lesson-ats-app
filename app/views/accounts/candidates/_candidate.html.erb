@@ -20,7 +20,9 @@
             <strong><%= Candidate.human_attribute_name(:gender) %></strong>
           </div>
           <div class="col-md-8">
-            <%= candidate.gender %>
+            <% if candidate.gender.present? %>
+              <%= t("candidate_genders." + candidate.gender) %>
+            <% end %>
           </div>
         </div>
       </li>
@@ -30,7 +32,9 @@
             <strong><%= Candidate.human_attribute_name(:birth_date) %></strong>
           </div>
           <div class="col-md-8">
-            <%= candidate.birth_date %>
+            <% if candidate.birth_date.present? %>
+              <%= l candidate.birth_date, format: :long %>
+            <% end %>
           </div>
         </div>
       </li>
@@ -83,7 +87,7 @@
             <strong><%= Candidate.human_attribute_name(:source_type) %></strong>
           </div>
           <div class="col-md-8">
-            <%= candidate.source_type %>
+            <%= t("candidate_source_types." + candidate.source_type) %>
           </div>
         </div>
       </li>
@@ -93,7 +97,7 @@
             <strong><%= Candidate.human_attribute_name(:is_employee) %></strong>
           </div>
           <div class="col-md-8">
-            <%= candidate.is_employee %>
+            <%= candidate.is_employee ? "雇用済み" : "" %>
           </div>
         </div>
       </li>
