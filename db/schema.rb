@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_05_010946) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_18_041818) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -106,7 +106,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_05_010946) do
     t.jsonb "custom_fields", default: {}, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "job_id"
     t.index ["account_id"], name: "index_candidates_on_account_id"
+    t.index ["job_id"], name: "index_candidates_on_job_id"
     t.index ["owner_id"], name: "index_candidates_on_owner_id"
   end
 
@@ -251,6 +253,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_05_010946) do
   add_foreign_key "account_invitations", "users", column: "invited_by_id"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "candidates", "jobs"
   add_foreign_key "match_histories", "users"
   add_foreign_key "matches", "users"
 end

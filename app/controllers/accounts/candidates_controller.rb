@@ -31,18 +31,23 @@ class Accounts::CandidatesController < Accounts::BaseController
   end
 
   def create_from_public_job
-    @candidate = Candidate.new(candidate_params)
     @account = Account.find_by(id: session[:account_id])
-    @candidate.account = @account
-    @candidate.owner = @account.owner
+    
+    if @account.present?
+      @candidate = @account.candidates.build(candidate_params)
+      @candidate.owner = @account.owner
+      @candidate.from_public_job = true # 仮想的な属性として設定する
 
-    if @candidate.save
-      session.delete(:account_id)
-      redirect_to public_jobs_url, notice: t(".entered")
+      if @candidate.save
+        redirect_to public_jobs_url, notice: I18n.t(".entered")
+        session.delete(:account_id)
+      else
+        render 'public_jobs/new'
+      end
     else
+      # アカウントが見つからない場合のエラーハンドリング
       render 'public_jobs/new'
     end
-
   end
 
   def update
@@ -81,7 +86,8 @@ class Accounts::CandidatesController < Accounts::BaseController
         :location,
         :source_type,
         :is_employee,
-        :custom_fields
+        :custom_fields,
+        :job_id
       )
   end
 
