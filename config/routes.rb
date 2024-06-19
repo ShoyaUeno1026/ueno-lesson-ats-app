@@ -56,7 +56,9 @@ Rails.application.routes.draw do
       resources :job_pipelines do
         resources :job_pipeline_stages, path: :stages, module: :job_pipelines
       end
-      resources :matches
+      resources :matches do
+        post 'create_from_candidate', on: :collection
+      end
       resources :match_histories
       resources :account_users
       resources :account_invitations, path: :invitations do

@@ -1,8 +1,9 @@
 class Accounts::MatchesController < Accounts::BaseController
-  before_action :set_account
-  before_action :set_user
+  before_action :set_account, except: [:create_from_candidate]
+  before_action :set_user, except: [:create_from_candidate]
   before_action :set_match, only: %i[show edit update destroy]
   before_action :set_match_history, only: :show
+  skip_before_action :authenticate_user!, only: [:create_from_candidate]
 
   def index
   end
@@ -36,6 +37,25 @@ class Accounts::MatchesController < Accounts::BaseController
       redirect_to account_job_url(@account, @match.job), notice: t(".created")
     else
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def create_from_candidate
+    @account = Account.find_by(id: session[:account_id])
+    @match = Match.new(create_params)
+    @match.account = @account
+    @match.user = @account.owner
+    # アカウント内から取得するように再定義
+    @match.job = @account.jobs.find(@candidate.job_id)
+    @match.candidate = @account.candidates.find(@match.candidate_id)
+
+    if @match.save
+      new_history
+      session.delete(:account_id)
+      session.delete(:candidate_id)
+      redirect_to public_jobs_url, notice: t(".entered")
+    else
+      render 'public_jobs/new'
     end
   end
 
@@ -108,7 +128,6 @@ class Accounts::MatchesController < Accounts::BaseController
     new_history.user_id = current_user.id
     new_history.save
   end
-  
 
   def create_params
     params.require(:match)

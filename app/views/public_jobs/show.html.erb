@@ -48,7 +48,9 @@
               <strong><%= Job.human_attribute_name(:contract) %></strong>
             </div>
             <div class="col-md-8">
-              <%= t("job_contracts." + @public_job.contract) %>
+              <% if @public_job.contract.present? %>
+                <%= t("job_contracts." + @public_job.contract) %>
+              <% end %>
             </div>
           </div>
         </li>
@@ -92,7 +94,9 @@
               <strong><%= Job.human_attribute_name(:frequency) %></strong>
             </div>
             <div class="col-md-8">
-              <%= t("job_frequencies." + @public_job.frequency) %>
+              <% if @public_job.frequency.present? %>
+                <%= t("job_frequencies." + @public_job.frequency) %>
+              <% end %>
             </div>
           </div>
         </li>
