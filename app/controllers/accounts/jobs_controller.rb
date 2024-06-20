@@ -47,6 +47,8 @@ class Accounts::JobsController < Accounts::BaseController
   end
 
   def destroy
+    candidates_to_update = Candidate.where(job_id: @job.id)
+    candidates_to_update.update_all(job_id: nil)
     @job.destroy!
 
     redirect_to account_jobs_url(@account), notice: t(".destroyed", name: @job.position_name)

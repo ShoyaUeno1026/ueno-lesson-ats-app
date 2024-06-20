@@ -40,25 +40,6 @@ class Accounts::MatchesController < Accounts::BaseController
     end
   end
 
-  def create_from_candidate
-    @account = Account.find_by(id: session[:account_id])
-    @match = Match.new(create_params)
-    @match.account = @account
-    @match.user = @account.owner
-    # アカウント内から取得するように再定義
-    @match.job = @account.jobs.find(@candidate.job_id)
-    @match.candidate = @account.candidates.find(@match.candidate_id)
-
-    if @match.save
-      new_history
-      session.delete(:account_id)
-      session.delete(:candidate_id)
-      redirect_to public_jobs_url, notice: t(".entered")
-    else
-      render 'public_jobs/new'
-    end
-  end
-
   def update
     @match.assign_attributes(update_params)
 

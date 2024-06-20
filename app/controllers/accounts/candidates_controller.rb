@@ -39,7 +39,7 @@ class Accounts::CandidatesController < Accounts::BaseController
       @candidate.from_public_job = true # 仮想的な属性として設定する
 
       if @candidate.save
-        redirect_to public_jobs_url, notice: I18n.t(".entered")
+        redirect_to public_jobs_url, notice: t(".entered")
         session.delete(:account_id)
       else
         render 'public_jobs/new'

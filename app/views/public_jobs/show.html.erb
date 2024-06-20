@@ -57,46 +57,10 @@
         <li class="list-group-item">
           <div class="row">
             <div class="col-md-4">
-              <strong><%= Job.human_attribute_name(:currency) %></strong>
+              <strong><%= PublicJob.human_attribute_name(:salary) %></strong>
             </div>
-            <div class="col-md-8">
-              <%= @public_job.currency %>
-            </div>
-          </div>
-        </li>
-        <li class="list-group-item">
-          <div class="row">
-            <div class="col-md-4">
-              <strong><%= Job.human_attribute_name(:salary_min) %></strong>
-            </div>
-            <div class="col-md-8">
-              <% if @public_job.salary_min.present? %>
-                <%= @public_job.salary_min.to_fs(:delimited) %>
-              <% end %>
-            </div>
-          </div>
-        </li>
-        <li class="list-group-item">
-          <div class="row">
-            <div class="col-md-4">
-              <strong><%= Job.human_attribute_name(:salary_max) %></strong>
-            </div>
-            <div class="col-md-8">
-              <% if @public_job.salary_max.present? %>
-                <%= @public_job.salary_max.to_fs(:delimited) %>
-              <% end %>
-            </div>
-          </div>
-        </li>
-        <li class="list-group-item">
-          <div class="row">
-            <div class="col-md-4">
-              <strong><%= Job.human_attribute_name(:frequency) %></strong>
-            </div>
-            <div class="col-md-8">
-              <% if @public_job.frequency.present? %>
-                <%= t("job_frequencies." + @public_job.frequency) %>
-              <% end %>
+            <div class="col-md-8">              
+              <%= @public_job.currency + @public_job.salary_to_text %>
             </div>
           </div>
         </li>

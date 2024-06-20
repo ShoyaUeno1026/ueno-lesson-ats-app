@@ -23,12 +23,12 @@ class Candidate < ApplicationRecord
   after_save :create_match, if: :from_public_job?
 
   private
-  # create_from_public_job でのみマッチングを作成する条件を定義
+  # create_from_public_job でのみ選考を作成する条件を定義
   def from_public_job?
     from_public_job.present? && from_public_job
   end
 
-  # マッチングを作成するメソッド
+  # 選考を作成するメソッド
   def create_match
     account = Account.find_by(id: self.account_id)
     
@@ -41,10 +41,10 @@ class Candidate < ApplicationRecord
       )
 
       if match.save
-        # マッチング作成後の追加の処理（例えば、履歴の作成など）
+        # 選考作成後の追加の処理（例えば、履歴の作成など）
         create_history_for_match(match)
       else
-        # マッチング作成に失敗した場合のエラーハンドリング
+        # 選考作成に失敗した場合のエラーハンドリング
         errors.add(:base, "Match creation failed")
         raise ActiveRecord::Rollback
       end
@@ -55,7 +55,7 @@ class Candidate < ApplicationRecord
     end
   end
 
-  # マッチに関連する履歴を作成するメソッド
+  # 選考に関連する履歴を作成するメソッド
   def create_history_for_match(match)
     history = match.match_histories.build(
       account_id: match.account.id,
@@ -69,7 +69,7 @@ class Candidate < ApplicationRecord
       dropped_at: match.dropped_at,
       drop_reasons: match.drop_reasons,
       display_order: match.display_order,
-      user_id: match.account.owner.id
+      user_id: match.job.owner.id
     )
 
     history.save

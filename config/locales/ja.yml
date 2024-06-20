@@ -213,6 +213,8 @@ ja:
   public_jobs:
     index:
       title: "公開されている求人"
+    show:
+      salary: "給与"
     new:
       title: "応募用フォーム"
 
@@ -340,6 +342,8 @@ ja:
       account_invitation:
         name: "名前"
         email: "メールアドレス"
+      public_job:
+        salary: "給与"
 
     errors:
       models:
