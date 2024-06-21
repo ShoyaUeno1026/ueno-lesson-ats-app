@@ -31,7 +31,9 @@ class Accounts::CandidatesController < Accounts::BaseController
   end
 
   def create_from_public_job
-    @account = Account.find_by(id: session[:account_id])
+    @account = Account.find(params[:account_id])
+    @job = Job.find(candidate_params[:job_id])
+    @public_job = @job
     
     if @account.present?
       @candidate = @account.candidates.build(candidate_params)
@@ -40,13 +42,11 @@ class Accounts::CandidatesController < Accounts::BaseController
 
       if @candidate.save
         redirect_to public_jobs_url, notice: t(".entered")
-        session.delete(:account_id)
       else
-        render 'public_jobs/new'
+        render "public_jobs/new", status: :unprocessable_entity
       end
     else
-      # アカウントが見つからない場合のエラーハンドリング
-      render 'public_jobs/new'
+      render "public_jobs/new", status: :unprocessable_entity
     end
   end
 

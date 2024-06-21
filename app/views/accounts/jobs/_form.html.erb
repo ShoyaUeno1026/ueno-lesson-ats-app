@@ -19,7 +19,7 @@
 
   <div class="mb-3">
     <%= form.label :visibility, class: "form-label" %>
-    <%= form.select :visibility, options_for_select(Job::VISIBILITIES.map { |key, value| [I18n.t("job_visibilities.#{key}", default: key.to_s.humanize), key] }, "form"), { prompt: true }, class: "form-select" %>
+    <%= form.select :visibility, options_for_select(Job::VISIBILITIES.map { |key, value| [I18n.t("job_visibilities.#{key}", default: key.to_s.humanize), key] }, @job.visibility.presence || "private"), { prompt: true }, class: "form-select" %>
   </div>
 
   <div class="mb-3">
@@ -34,7 +34,7 @@
 
   <div class="mb-3">
     <%= form.label :contract, class: "form-label" %>
-    <%= form.select :contract, options_for_select(Job::CONTRACTS.map { |key, value| [I18n.t("job_contracts.#{key}", default: key.to_s.humanize), key] }, "form"), { prompt: true }, class: "form-select" %>
+    <%= form.select :contract, options_for_select(Job::CONTRACTS.map { |key, value| [I18n.t("job_contracts.#{key}", default: key.to_s.humanize), key] }), { prompt: true }, class: "form-select" %>
   </div>
 
   <div class="mb-3">
@@ -53,7 +53,7 @@
       </div>
       <div class="col">
         <%= form.label :frequency, class: "form-label" %>
-        <%= form.select :frequency, options_for_select(Job::FREQUENCIES.map { |key, value| [I18n.t("job_frequencies.#{key}", default: key.to_s.humanize), key] }, "form"), { prompt: true }, class: "form-select" %>
+        <%= form.select :frequency, options_for_select(Job::FREQUENCIES.map { |key, value| [I18n.t("job_frequencies.#{key}", default: key.to_s.humanize), key] }), { prompt: true }, class: "form-select" %>
       </div>
     </div>
   </div>

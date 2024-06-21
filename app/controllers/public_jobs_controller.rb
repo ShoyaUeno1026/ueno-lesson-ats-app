@@ -7,7 +7,6 @@ class PublicJobsController < ApplicationController
   def new
     @public_job = @public_jobs.find(params[:public_job_id])
     @account = @public_job.account
-    session[:account_id] = @account.id
     @candidate = Candidate.new
   end
   
@@ -18,6 +17,6 @@ class PublicJobsController < ApplicationController
   private
 
   def set_public_jobs
-    @public_jobs = Job.all.where(visibility: "public")
+    @public_jobs = Job.where(visibility: "public").order(created_at: :desc)
   end
 end

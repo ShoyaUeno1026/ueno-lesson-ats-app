@@ -3,28 +3,28 @@
 </div>
 <div>
     <h1 class="h4"><%= @public_job.account.name %></h1>
-  </div>
+</div>
 
 <div class="row">
   <div class="col-lg-9">
-    <div class="py-4">
+    <div class="py-2">
       <ul class="list-group">
         <li class="list-group-item">
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-2">
               <strong><%= Job.human_attribute_name(:department_id) %></strong>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-7">
               <%= @public_job.department.name %>
             </div>
           </div>
         </li>
         <li class="list-group-item">
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-2">
               <strong><%= Job.human_attribute_name(:owner_id) %></strong>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-7">
               <div class="d-flex align-items-center">
                 <%= image_tag image_path(@public_job.owner, size: 40), height: 20, width: 20, class: "rounded me-2" %>
                 <span><%= @public_job.owner&.name %></span>
@@ -34,20 +34,20 @@
         </li>
         <li class="list-group-item">
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-2">
               <strong><%= Job.human_attribute_name(:visibility) %></strong>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-7">
               <%= t("job_visibilities." + @public_job.visibility) %>
             </div>
           </div>
         </li>
         <li class="list-group-item">
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-2">
               <strong><%= Job.human_attribute_name(:contract) %></strong>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-7">
               <% if @public_job.contract.present? %>
                 <%= t("job_contracts." + @public_job.contract) %>
               <% end %>
@@ -56,61 +56,61 @@
         </li>
         <li class="list-group-item">
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-2">
               <strong><%= PublicJob.human_attribute_name(:salary) %></strong>
             </div>
-            <div class="col-md-8">              
+            <div class="col-md-7">              
               <%= @public_job.currency + @public_job.salary_to_text %>
             </div>
           </div>
         </li>
         <li class="list-group-item">
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-2">
               <strong><%= Job.human_attribute_name(:headcount) %></strong>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-7">
               <%= @public_job.headcount %>
             </div>
           </div>
         </li>
         <li class="list-group-item">
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-2">
               <strong><%= Job.human_attribute_name(:location) %></strong>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-7">
               <%= @public_job.location %>
             </div>
           </div>
         </li>
         <li class="list-group-item">
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-2">
               <strong><%= Job.human_attribute_name(:is_remote) %></strong>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-7">
               <%= @public_job.is_remote ? "可" : "不可" %>
             </div>
           </div>
         </li>
         <li class="list-group-item">
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-2">
               <strong><%= Job.human_attribute_name(:description) %></strong>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-10">
               <%= @public_job.description %>
             </div>
           </div>
         </li>
       </ul>
     </div>
-    <div>
+    <div class="mb-2">
       <%= link_to t("back"), public_jobs_path%>
     </div>
   </div>
-  <div class="col-lg-3 mb-4">
+  <div class="col-lg-3 mt-2">
     <%= link_to t("応募する"), new_public_job_path(public_job_id: @public_job.id), class: "btn btn-success" %>
   </div>
 </div>

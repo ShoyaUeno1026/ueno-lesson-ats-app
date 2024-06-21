@@ -21,12 +21,12 @@
 
   <div class="mb-3">
     <%= form.label :gender, class: "form-label" %>
-    <%= form.select :gender, options_for_select(Candidate::GENDERS.map { |key, value| [I18n.t("candidate_genders.#{key}", default: key.to_s.humanize), key] }, "form"), { prompt: true }, class: "form-select" %>
+    <%= form.select :gender, options_for_select(Candidate::GENDERS.map { |key, value| [I18n.t("candidate_genders.#{key}", default: key.to_s.humanize), key] }, selected: @candidate.gender), { prompt: true }, class: "form-select" %>
   </div>
 
   <div class="mb-3">
     <%= form.label :source_type, class: "form-label" %>
-    <%= form.select :source_type, options_for_select(Candidate::SOURCE_TYPES.map { |key, value| [I18n.t("candidate_source_types.#{key}", default: key.to_s.humanize), key] }, "form"), { prompt: true }, class: "form-select" %>
+    <%= form.select :source_type, options_for_select(Candidate::SOURCE_TYPES.map { |key, value| [I18n.t("candidate_source_types.#{key}", default: key.to_s.humanize), key] }, selected: (@candidate.source_type.present? ? @candidate.source_type : "form")), { prompt: true }, class: "form-select" %>
 
   </div>
 

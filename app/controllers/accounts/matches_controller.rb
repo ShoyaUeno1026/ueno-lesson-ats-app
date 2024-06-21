@@ -1,9 +1,8 @@
 class Accounts::MatchesController < Accounts::BaseController
-  before_action :set_account, except: [:create_from_candidate]
-  before_action :set_user, except: [:create_from_candidate]
+  before_action :set_account
+  before_action :set_user
   before_action :set_match, only: %i[show edit update destroy]
   before_action :set_match_history, only: :show
-  skip_before_action :authenticate_user!, only: [:create_from_candidate]
 
   def index
   end
