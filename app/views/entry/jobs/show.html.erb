@@ -1,8 +1,8 @@
 <div class="d-flex justify-content-between align-items-center mb-2">
-  <h1 class="h2 text-success fw-semibold"><%= @public_job.position_name %></h1>
+  <h1 class="h2 text-success fw-semibold"><%= @job.position_name %></h1>
 </div>
 <div>
-    <h1 class="h4"><%= @public_job.account.name %></h1>
+    <h1 class="h4"><%= @job.account.name %></h1>
 </div>
 
 <div class="row">
@@ -15,7 +15,7 @@
               <strong><%= Job.human_attribute_name(:department_id) %></strong>
             </div>
             <div class="col-md-7">
-              <%= @public_job.department.name %>
+              <%= @job.department.name %>
             </div>
           </div>
         </li>
@@ -26,8 +26,8 @@
             </div>
             <div class="col-md-7">
               <div class="d-flex align-items-center">
-                <%= image_tag image_path(@public_job.owner, size: 40), height: 20, width: 20, class: "rounded me-2" %>
-                <span><%= @public_job.owner&.name %></span>
+                <%= image_tag image_path(@job.owner, size: 40), height: 20, width: 20, class: "rounded me-2" %>
+                <span><%= @job.owner&.name %></span>
               </div>
             </div>
           </div>
@@ -38,7 +38,7 @@
               <strong><%= Job.human_attribute_name(:visibility) %></strong>
             </div>
             <div class="col-md-7">
-              <%= t("job_visibilities." + @public_job.visibility) %>
+              <%= t("job_visibilities." + @job.visibility) %>
             </div>
           </div>
         </li>
@@ -48,8 +48,8 @@
               <strong><%= Job.human_attribute_name(:contract) %></strong>
             </div>
             <div class="col-md-7">
-              <% if @public_job.contract.present? %>
-                <%= t("job_contracts." + @public_job.contract) %>
+              <% if @job.contract.present? %>
+                <%= t("job_contracts." + @job.contract) %>
               <% end %>
             </div>
           </div>
@@ -57,10 +57,10 @@
         <li class="list-group-item">
           <div class="row">
             <div class="col-md-2">
-              <strong><%= PublicJob.human_attribute_name(:salary) %></strong>
+              <strong><%= Job.human_attribute_name(:salary) %></strong>
             </div>
             <div class="col-md-7">              
-              <%= @public_job.currency + @public_job.salary_to_text %>
+              <%= @job.currency + @job.salary_to_text %>
             </div>
           </div>
         </li>
@@ -70,7 +70,7 @@
               <strong><%= Job.human_attribute_name(:headcount) %></strong>
             </div>
             <div class="col-md-7">
-              <%= @public_job.headcount %>
+              <%= @job.headcount %>
             </div>
           </div>
         </li>
@@ -80,7 +80,7 @@
               <strong><%= Job.human_attribute_name(:location) %></strong>
             </div>
             <div class="col-md-7">
-              <%= @public_job.location %>
+              <%= @job.location %>
             </div>
           </div>
         </li>
@@ -90,7 +90,7 @@
               <strong><%= Job.human_attribute_name(:is_remote) %></strong>
             </div>
             <div class="col-md-7">
-              <%= @public_job.is_remote ? "可" : "不可" %>
+              <%= @job.is_remote ? "可" : "不可" %>
             </div>
           </div>
         </li>
@@ -100,17 +100,17 @@
               <strong><%= Job.human_attribute_name(:description) %></strong>
             </div>
             <div class="col-md-10">
-              <%= @public_job.description %>
+              <%= @job.description %>
             </div>
           </div>
         </li>
       </ul>
     </div>
     <div class="mb-2">
-      <%= link_to t("back"), public_jobs_path%>
+      <%= link_to t("back"), jobs_path%>
     </div>
   </div>
   <div class="col-lg-3 mt-2">
-    <%= link_to t("応募する"), new_public_job_path(public_job_id: @public_job.id), class: "btn btn-success" %>
+    <%= link_to t("応募する"), new_job_path(job_id: @job.id), class: "btn btn-success" %>
   </div>
 </div>

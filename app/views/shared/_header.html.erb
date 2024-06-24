@@ -16,7 +16,7 @@
         <li class="nav-item"><%= link_to t(".announcements"), announcements_path, class: "nav-link #{unread_announcements(current_user)}" %></li>
 
         <% if user_signed_in? %>
-          <li class="nav-item"><%= link_to t(".public_job"), public_jobs_path, class: "nav-link", target: :_blank %></li>
+          <li class="nav-item"><%= link_to t(".public_job"), jobs_path, class: "nav-link", target: :_blank %></li>
           <li class="nav-item">
             <%= link_to notifications_path, class: "nav-link" do %>
               <span><i class="bi bi-bell-fill"></i></span>
@@ -49,7 +49,7 @@
           </li>
         <% else %>
           <li class="nav-item"><%= link_to t(".sign_in"), new_user_session_path, class: "nav-link" %></li>
-          <li class="nav-item"><%= link_to t(".public_job"), public_jobs_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to t(".public_job"), jobs_path, class: "nav-link" %></li>
           <li class="nav-item"><%= link_to t(".sign_up"), new_user_registration_path, class: "btn btn-primary" %></li>
           
         <% end %>

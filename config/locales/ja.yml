@@ -100,7 +100,6 @@ ja:
       created: "候補者を作成しました"
       updated: "%{name}を変更しました"
       destroyed: "%{name}を削除しました"
-      entered: "応募が完了しました"
       index:
         title: "候補者"
       show:
@@ -192,6 +191,10 @@ ja:
       new:
         title: "ユーザーを招待する"
 
+  entry:
+    candidates:
+      entered: "応募が完了しました"
+
   announcements:
     index:
       title: "News"
@@ -209,14 +212,6 @@ ja:
     edit:
       update_password: パスワードを変更
       update: 変更する
-
-  public_jobs:
-    index:
-      title: "公開されている求人"
-    show:
-      salary: "給与"
-    new:
-      title: "応募用フォーム"
 
   shared:
     list:
@@ -315,6 +310,7 @@ ja:
         headcount: "採用可能数"
         is_remote: "リモート勤務"
         location: "勤務場所"
+        salary: 給与
         salary_min: "給与下限"
         salary_max: "給与上限"
         visibility: "表示設定"
@@ -342,8 +338,6 @@ ja:
       account_invitation:
         name: "名前"
         email: "メールアドレス"
-      public_job:
-        salary: "給与"
 
     errors:
       models:

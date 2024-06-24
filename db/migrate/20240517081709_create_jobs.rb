@@ -5,6 +5,7 @@ class CreateJobs < ActiveRecord::Migration[7.1]
       t.belongs_to :department
       t.belongs_to :job_pipeline
       t.belongs_to :owner
+      t.belongs_to :job
       t.string :position_name
       t.integer :headcount
       t.string :contract

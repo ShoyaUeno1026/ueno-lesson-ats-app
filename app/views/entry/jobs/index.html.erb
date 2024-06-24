@@ -4,36 +4,36 @@
       <h1 class="h2"><%= t(".title") %></h1>
     </div>
 
-    <div id="public_jobs">
-      <% @public_jobs.each do |public_job| %>
+    <div id="jobs">
+      <% @jobs.each do |job| %>
         <div class="card mb-4">
-          <%= link_to public_job_path(public_job), class: "card-body nav-link" do %>
+          <%= link_to job_path(job), class: "card-body nav-link" do %>
             <div>
-              <h4 class="p-1 text-success fw-semibold"><%= public_job.position_name %></h4>
+              <h4 class="p-1 text-success fw-semibold"><%= job.position_name %></h4>
             </div>
             <div>
               <div>
                 <i class="bi bi-building-fill me-2"></i>
-                <span><%= public_job.account.name %></span>
+                <span><%= job.account.name %></span>
               </div>
               <div class="bg-body-secondary">
-                <% if public_job.description.present? %>
-                  <span><%= truncate(strip_tags(public_job.description), length: 50) %></span>
+                <% if job.description.present? %>
+                  <span><%= truncate(strip_tags(job.description), length: 50) %></span>
                 <% else %>
-                  <span><%= public_job.description %></span>
+                  <span><%= job.description %></span>
                 <% end %>
               </div>
               <div>
                 <i class="bi bi-currency-yen me-2"></i>
-                <span><%= public_job.salary_to_text %></span>
+                <span><%= job.salary_to_text %></span>
               </div>
               <div>
                 <i class="bi bi-geo-alt-fill me-2"></i>
-                <td class="fixed-text"><%= public_job.location %></td>
+                <td class="fixed-text"><%= job.location %></td>
               </div>
               <div class="d-flex justify-content-end">
                 <i class="bi bi-clock me-2"></i>
-                <td><%= time_ago_in_words(public_job.created_at) %>前</td>
+                <td><%= time_ago_in_words(job.created_at) %>前</td>
               </div>
             </div>
           </div>

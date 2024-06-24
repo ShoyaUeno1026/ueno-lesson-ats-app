@@ -19,11 +19,12 @@ Rails.application.routes.draw do
 
   get 'registrations/update_resource'
   get 'dashboards/show'
-  get 'announcements/index'
   
   get "/terms"   => "static_pages#terms"
   get "/privacy" => "static_pages#privacy"
-  
+  get "/announcements" => "announcements#index"
+  get "/notifications" => "notifications#index"
+
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions',
@@ -36,11 +37,6 @@ Rails.application.routes.draw do
   namespace :account do
     resource :passwords
   end
-  
-  get "/announcements" => "announcements#index"
-  get "/notifications" => "notifications#index"
-
-  resources :public_jobs
 
   resources :accounts do
     member do
@@ -49,16 +45,12 @@ Rails.application.routes.draw do
 
     scope module: :accounts do
       resources :departments
-      resources :candidates do        
-        post 'create_from_public_job', on: :collection
-      end
+      resources :candidates
       resources :jobs
       resources :job_pipelines do
         resources :job_pipeline_stages, path: :stages, module: :job_pipelines
       end
-      resources :matches do
-        post 'create_from_candidate', on: :collection
-      end
+      resources :matches
       resources :match_histories
       resources :account_users
       resources :account_invitations, path: :invitations do
@@ -70,6 +62,15 @@ Rails.application.routes.draw do
   end
 
   resources :account_invitations
+
+  scope module: :entry do
+    resources :accounts
+    resources :departments
+    resources :candidates
+    resources :jobs
+    resources :matches
+  end
+
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   

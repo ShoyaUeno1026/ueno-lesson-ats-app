@@ -1,0 +1,2 @@
+module Entry::JobsHelper
+end
