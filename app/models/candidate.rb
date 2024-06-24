@@ -18,25 +18,26 @@ class Candidate < ApplicationRecord
   validates :gender, inclusion: {in: GENDERS}, allow_blank: true
   validates :source_type, inclusion: {in: SOURCE_TYPES}, allow_blank: true
 
-  attr_accessor :from_public_job  # 仮想的な属性の定義
+  attr_accessor :from_entry_job  # 仮想的な属性の定義
 
-  after_save :create_match, if: :from_public_job?
+  after_save :create_match, if: :from_entry_job?
 
   private
-  # create_from_public_job でのみ選考を作成する条件を定義
-  def from_public_job?
-    from_public_job.present? && from_public_job
+  # 公開求人からの応募でのみ選考を作成する条件を定義
+  def from_entry_job?
+    from_entry_job.present? && from_entry_job
   end
 
   # 選考を作成するメソッド
   def create_match
     account = Account.find_by(id: self.account_id)
+    job = Job.find_by(id: self.job_id)
     
     if account.present?
       match = Match.new(
         account: account,
         user: account.owner,
-        job: account.jobs.find(self.job_id),
+        job: job,
         candidate: self
       )
 

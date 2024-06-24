@@ -2,10 +2,10 @@
   <div class="col-lg-8">
     <div class="row justify-content-center">
       <h1 class="h2"><%= t(".title") %></h1>
-      <%= form_with(model: @candidate, url: create_from_public_job_account_candidates_path(account_id: @account.id), method: :post) do |form|%>
+      <%= form_with(model: @candidate, url: candidates_path(account_id: @account.id, job_id: @job.id), method: :post) do |form|%>
         <%= render "shared/error_messages", resource: @candidate %>
 
-        <%= form.hidden_field :job_id, value: @public_job.id %>
+        <%= form.hidden_field :job_id, value: @job.id %>
 
         <div class="mb-3">
           <%= form.label :name, class: "form-label" %>

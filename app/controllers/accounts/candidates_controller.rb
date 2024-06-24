@@ -1,8 +1,7 @@
 class Accounts::CandidatesController < Accounts::BaseController
-  before_action :set_account, except: [:create_from_public_job]
+  before_action :set_account
   before_action :set_candidate, only: %i[show edit update destroy]
   before_action :require_candidate_owner_or_admin, only: %i[edit update destroy]
-  skip_before_action :authenticate_user!, only: [:create_from_public_job] # ログイン不要なアクション
 
   def index
     @candidates = @account.candidates.all
@@ -27,26 +26,6 @@ class Accounts::CandidatesController < Accounts::BaseController
       redirect_to account_candidate_url(@account, @candidate), notice: t(".created")
     else
       render :new, status: :unprocessable_entity
-    end
-  end
-
-  def create_from_public_job
-    @account = Account.find(params[:account_id])
-    @job = Job.find(candidate_params[:job_id])
-    @public_job = @job
-    
-    if @account.present?
-      @candidate = @account.candidates.build(candidate_params)
-      @candidate.owner = @account.owner
-      @candidate.from_public_job = true # 仮想的な属性として設定する
-
-      if @candidate.save
-        redirect_to public_jobs_url, notice: t(".entered")
-      else
-        render "public_jobs/new", status: :unprocessable_entity
-      end
-    else
-      render "public_jobs/new", status: :unprocessable_entity
     end
   end
 
