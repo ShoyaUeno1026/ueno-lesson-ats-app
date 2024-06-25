@@ -190,6 +190,9 @@ ja:
       destroyed: "招待を削除しました。"
       new:
         title: "ユーザーを招待する"
+    tasks:
+      create:
+        created: "タスクが登録されました"
 
   entry:
     jobs:

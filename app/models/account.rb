@@ -12,6 +12,7 @@ class Account < ApplicationRecord
   has_many :job_pipeline_stages, dependent: :destroy
   has_many :matches, dependent: :destroy
   has_many :match_histories, dependent: :destroy
+  has_many :tasks, dependent: :destroy
 
   has_one_attached :image
 

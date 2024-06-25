@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_18_041818) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_25_035927) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -225,6 +225,18 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_18_041818) do
     t.index ["department_id"], name: "index_public_jobs_on_department_id"
     t.index ["job_id"], name: "index_public_jobs_on_job_id"
     t.index ["owner_id"], name: "index_public_jobs_on_owner_id"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.bigint "account_id", null: false
+    t.bigint "user_id", null: false
+    t.string "state"
+    t.string "content"
+    t.date "limit_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_tasks_on_account_id"
+    t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -58,6 +58,7 @@ Rails.application.routes.draw do
           post :resend
         end
       end
+      resources :tasks
     end
   end
 

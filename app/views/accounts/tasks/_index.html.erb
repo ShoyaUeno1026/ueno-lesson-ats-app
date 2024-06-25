@@ -1,0 +1,59 @@
+<div class="row">
+  <h2>タスク一覧</h2>
+  <span><%= current_user&.name %></span>
+  <span><%= account&.name %></span>
+</div>
+
+<h1>New Task</h1>
+<%= form_with model: @task, url: account_tasks_path(account, method: :post)  do |form| %>
+<%= render "shared/error_messages", resource: @task %>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="row">
+        <div class="col-md-2 mb-3">
+          <%= form.label :state, class: "form-label" %>
+          <%= form.select :state, options_for_select(Task::STATES.map { |key, value| [I18n.t("task_states.#{key}", default: key.to_s.humanize), key] }, "todo"), { prompt: true }, class: "form-select" %>
+        </div>
+
+        <div class="col-md-2 mb-3">
+          <%= form.label :limit_date, class: "form-label" %>
+          <%= form.date_field :limit_date, min: Time.zone.now, value: Time.zone.now, class: "form-control" %>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <%= form.label :content, class: "form-label" %>
+          <%= form.text_field :content, class: "form-control" %>
+        </div>
+
+        <div class="col d-grid align-self-end mb-3">
+          <%= form.submit t("save"), class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<div id="tasks">
+  <div class="text-nowrap table-responsive">
+    <table class="table table-hover table-fixed">
+      <thead>
+        <tr>
+          <th scope="col-2"><%= Task.human_attribute_name(:state) %></th>
+          <th scope="col-2"><%= Task.human_attribute_name(:limit_date) %></th>
+          <th scope="col-4"><%= Task.human_attribute_name(:content) %></th>
+        </tr>
+      </thead>
+      <tbody class="align-middle">
+        <% @tasks.each do |task| %>
+        <tr>
+          <td><%= task.state %></td>
+          <td><%= task.limit_date %></td>
+          <td><%= task.content %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
