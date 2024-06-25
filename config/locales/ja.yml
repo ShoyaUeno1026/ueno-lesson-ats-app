@@ -192,6 +192,9 @@ ja:
         title: "ユーザーを招待する"
 
   entry:
+    jobs:
+      index:
+        title: "公開された求人"
     candidates:
       entered: "応募が完了しました"
 
@@ -203,6 +206,7 @@ ja:
   dashboards:
     show:
       title: "ダッシュボード"
+      detail: "詳細"
 
   notifications:
     index:
@@ -233,6 +237,9 @@ ja:
       sign_in: "ログイン"
       sign_up: "アカウント登録"
       public_job: "公開求人"
+    footer:
+      terms: "利用規約"
+      privacy: "プライバシーポリシー"
 
   static_pages:
     home:
