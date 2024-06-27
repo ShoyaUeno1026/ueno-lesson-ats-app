@@ -1,0 +1,35 @@
+<div class="row">
+  <h1 class="mb-3"><%= t(".title") %></h1>
+</div>
+
+<%= form_with(model: [@account, @task]) do |form| %>
+<%= render "shared/error_messages", resource: @task %>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="row">
+        <div class="col-md-2 mb-3">
+          <%= form.label :state, class: "form-label" %>
+          <%= form.select :state, options_for_select(Task::STATES.map { |key, value| [I18n.t("task_states.#{key}", default: key.to_s.humanize), key] }, "todo"), { prompt: true }, class: "form-select" %>
+        </div>
+
+        <div class="col-md-2 mb-3">
+          <%= form.label :limit_date, class: "form-label" %>
+          <%= form.date_field :limit_date, value: @default_limit_date || Time.zone.now, class: "form-control" %>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <%= form.label :content, class: "form-label" %>
+          <%= form.text_field :content, class: "form-control" %>
+        </div>
+
+        <div class="col d-grid align-self-end mb-3">
+          <%= form.submit t("update"), class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<div>
+  <%= link_to t("back"), root_path %>
+</div>

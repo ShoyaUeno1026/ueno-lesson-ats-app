@@ -191,13 +191,18 @@ ja:
       new:
         title: "ユーザーを招待する"
     tasks:
-      create:
-        created: "タスクが登録されました"
+      updated: "タスクを更新しました"
+      created: "タスクが登録されました"
+      destroyed: "タスクが削除されました"
+      edit:
+        title: "タスクを編集"
 
   entry:
     jobs:
       index:
         title: "公開された求人"
+      new:
+        title: "%{name} に応募する"
     candidates:
       entered: "応募が完了しました"
 
@@ -209,6 +214,7 @@ ja:
   dashboards:
     show:
       title: "ダッシュボード"
+      tasks: "Todoリスト"
       detail: "詳細"
 
   notifications:
@@ -348,6 +354,10 @@ ja:
       account_invitation:
         name: "名前"
         email: "メールアドレス"
+      task:
+        state: "状態"
+        limit_date: "期限"
+        content: "タスク"
 
     errors:
       models:
